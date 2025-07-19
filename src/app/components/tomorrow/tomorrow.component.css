@@ -1,0 +1,14 @@
+.col-center {
+  position: relative;
+  margin-left: 0%;
+  margin-right: 26.0416666667%;
+  padding: 0 5px;
+}
+
+.tab {
+  min-width: 375px;
+  width: 40%;
+  margin: 10px 0 10px;
+  border-left: 1px solid #3b5160;
+  border-radius: 5px;
+}

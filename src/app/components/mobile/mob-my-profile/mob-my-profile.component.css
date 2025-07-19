@@ -1,0 +1,7 @@
+@import './../../../../mob-style.css';
+.mian-wrap{
+    margin-top: 21.666667vw;
+}
+.marquee-box{
+   position: fixed;
+}

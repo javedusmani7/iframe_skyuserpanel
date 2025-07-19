@@ -1,0 +1,124 @@
+<div class="parent">
+  <div class="main_wrap">
+
+    <app-profile-left-comp></app-profile-left-comp>
+
+    <div class="col-center report">
+      <h2>My Bets</h2>
+      <ul class="tab col3">
+        <li><a class="select" [routerLink]="['/mybet']">Current Bets</a></li>
+        <li><a [routerLink]="['/bet-history']">Bets History</a></li>
+        <li><a [routerLink]="['/profit-loss']">Profit &amp; Loss</a></li>
+      </ul>
+      <ul class="report-tab-wrap" style="display:block">
+        <li class="report-tab">Exchange</li>
+        <li class="report-tab">FancyBet</li>
+        <li class="report-tab">Fancy1Bet</li>
+        <li class="report-tab">TossBet</li>
+        <li class="report-tab select">CasinoBet</li>
+        <li class="report-tab">Sportsbook</li>
+        <li class="report-tab">BookMaker</li>
+        <li class="report-tab">Premium</li>
+        <li class="report-tab">Other</li>
+        <li class="report-tab">SABA SPORTS</li>
+      </ul>
+
+
+      <!-- function -->
+      <div class="function-wrap">
+        <ul class="input-list">
+          <li><label>Bet Status</label></li>
+          <li>
+            <select id="betStatus">
+              <option value="">All</option>
+              <option value="Unmatched">Unmatched</option>
+              <option value="Matched">Matched</option>
+            </select>
+          </li>
+          <li></li>
+          <li><label>Order By</label></li>
+          <li>
+            <input id="orderBetPlaced" type="checkbox" checked=""><label for="orderBetPlaced">Bet placed
+            </label>
+            <input id="orderMarket" type="checkbox"><label for="orderMarket">Market
+            </label>
+          </li>
+        </ul>
+      </div>
+      <!-- function end-->
+
+      <table id="Matched_Table" class="table-s" style="line-height:15px">
+        <caption>Matched</caption>
+        <tbody>
+          <tr>
+            <th id="Matched_market" width="" class="align-L">Market</th>
+            <th id="Matched_selection" width="10%">Selection</th>
+            <th id="Matched_type" width="3%">Type</th>
+            <th id="Matched_betId" width="9%">Bet ID</th>
+            <th id="Matched_betPlaced" width="8%">Bet placed</th>
+            <th id="Matched_oddsReq" width="8%">Odds req.</th>
+            <th id="Matched_matched" width="9%">Matched</th>
+            <th id="Matched_unMatched" width="10%" style="display: none;">Unmatched</th>
+            <th id="Matched_avgOdds" width="10%">Avg. odds matched</th>
+            <th id="Matched_dateMatched" width="10%">Date matched</th>
+          </tr>
+        </tbody>
+        <tbody id="Matched_Content">
+          <tr id="tempTr">
+            <td class="align-L">
+              <label id="title">Cricket
+                <img id="arrow" class="fromto" src="../../../assets/images/icon-fromto.png">
+                <strong>IND vs AUS</strong>
+                <img id="arrow" class="fromto" src="../../../assets/images/icon-fromto.png">Exchange
+              </label>
+            </td>
+            <td id="selection">Rohit Sharma</td>
+            <td>
+              <span id="type" class="back">Back</span>
+            </td>
+            <td><a id="betId" style="color:blue" (click)="details()">12345678</a></td>
+            <td><span id="betPlaced" class="small-date">2025-07-10 14:30:00</span></td>
+
+            <td id="oddsReq">3.5/100</td>
+            <td id="oddsReq">4.00</td>
+            <td id="oddsReq">300</td>
+
+            <td><span id="dateMatched" class="small-date">2025-07-10 14:32:00</span></td>
+          </tr>
+          @if (expandcheck) {
+          <tr class="expand">
+            <td colspan="3"></td>
+            <td colspan="7">
+              <img class="expand-arrow" src="../../../assets/images/transparent.gif">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Bet taken</th>
+                    <th width="16%">Odds req.</th>
+                    <th width="17%">Stake</th>
+                    <th width="24%">Liability</th>
+                    <th width="24%">Odds matched</th>
+                  </tr>
+                </tbody>
+                <tbody id="sub_content">
+                  <tr id="tempSubTr" class="even">
+                    <td><span id="betTaken" class="small-date">2025-07-10 14:30:00</span></td>
+
+                    <td id="oddsReq">3.5/100</td>
+                    <td id="oddsReq">4.00</td>
+                    <td id="txStake">500</td>
+                    <td id="txLiability" style="color: red;">(1500)</td>
+                    <td id="oddsReq">4.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          }
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

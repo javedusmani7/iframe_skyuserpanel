@@ -1,0 +1,71 @@
+@import "./../../../../mob-style.css";
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+}
+.bets-head h4{
+    background-color: #fff;
+    /* font-size: 1rem !important; */
+    border-bottom-width: 0;
+    margin: 0;padding: 0;
+}
+.slip-list{
+    line-height: 3vw!important;
+}
+.side-head h3{
+    font-weight: bold;
+}
+.bets-back{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.bets-back #selectionName,.bets-back .back{
+    font-size: 3.4666666667vw;
+    color: #1E1E1E !important;
+}
+.bets-lay #selectionName,.bets-lay .lay{
+  font-size: 3.4666666667vw;
+  color: #1E1E1E !important;
+}
+
+.menu-list li a{
+    font-weight: bold;
+    color: #2789ce;
+}
+.bets-back h4, .bets-lay h4{
+    flex: 0 0 32vw;
+}
+.slip-list #selectionName{
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5;
+    margin-bottom: 0;
+
+}
+.bets-head h4{
+    font-size: 3vw;
+    font-weight: bold;
+}
+.col-stake{
+    flex: 0 1 12.666667vw!important;
+    padding-right: 0;
+}
+.col-odds{
+    flex: 0 3 12vw  !important;
+    padding-right: 0;
+}
+.slip-list h4, .slip-list .tc-content h5, .tc-content .slip-list h5 {
+    padding: 0px 0 0 5px;
+}
+.bets-back dd span, .bets-lay dd span{
+    white-space: none;
+    overflow: visible;
+    font-size: 4vw;
+}
+
+dt{
+  width: 50%;
+}

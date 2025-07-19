@@ -1,0 +1,86 @@
+@media screen and (max-height: 700px) {
+    .login-policy {
+        top: 0;
+        height: 100%;
+    }
+
+    .login-policy .tc-content {
+        max-height: inherit;
+        height: calc(100% - 56px - 24px - 8px);
+    }
+}
+
+.login-policy {
+    top: 0;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.login-policy .announce-header {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+}
+
+.announce-header {
+    height: 56px;
+    padding-left: 24px;
+    border-bottom: 1px solid #e0e6e6;
+}
+
+.announce-header h1 {
+    color: #000;
+    font-size: 20px;
+    line-height: 56px;
+    font-weight: 900;
+}
+
+.announce-header h1::before {
+    background: #ffbd14;
+}
+
+.announce-header h1:before {
+    position: relative;
+    top: 4px;
+    width: 6px;
+    height: 24px;
+    margin-right: 8px;
+    content: "";
+    background: #ffb80c;
+    border-radius: 100px;
+}
+
+
+.login-policy .tc-content {
+    max-height: inherit;
+    height: calc(100% - 56px - 24px - 8px);
+    padding-top: 0;
+    padding-bottom: 24px;
+    margin-top: 56px;
+}
+
+.login-policy p {
+    margin-bottom: 12px;
+}
+
+.tc-content h2 {
+    margin: 16px 0;
+    padding: 0;
+    font-size: 20px;
+    color: #1b2d38;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 8px;
+    font-weight: 900;
+}
+
+.tc-content h3 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: rgba(30, 30, 30, .9);
+    font-weight: 900;
+}

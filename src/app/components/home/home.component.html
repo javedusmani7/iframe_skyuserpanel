@@ -1,0 +1,939 @@
+<div class="full-wrap">
+  <div id="centerColumn" class="col-center gamehall">
+    <div class="marquee-box desktop-marquee">
+      <app-marquee-comp>
+      </app-marquee-comp>
+    </div>
+    <div id="overWrap">
+      <div id="carouselExampleIndicators" data-ride="carousel" class="carousel slide mb-4 pointer-event">
+        <!-- <ol class="carousel-indicators">
+          @for ( item of banners;let i= $index; ; track item) {
+          <li data-target="#carouselExampleIndicators" [attr.data-slide-to]="i" [ngClass]="i==0?'active':''"></li>
+          }
+        </ol> -->
+        <div class="carousel-inner">
+          @for ( item of banners;let i= $index; ; track item) {
+          <div class="carousel-item" [ngClass]="i==0?'active':''">
+            <img [src]="item.banner_images" class="d-block w-100" alt="..." style="height: 192px;">
+          </div>
+          }
+        </div>
+
+        <button type="button" data-target="#carouselExampleIndicators" data-slide="prev"
+          class="carousel-control-prev"><span aria-hidden="true" class="carousel-control-prev-icon"></span><span
+            class="sr-only">Previous</span></button>
+        <button type="button" data-target="#carouselExampleIndicators" data-slide="next"
+          class="carousel-control-next"><span aria-hidden="true" class="carousel-control-next-icon"></span><span
+            class="sr-only">Next</span></button>
+      </div>
+
+      <div class="gamehall-wrap-simple">
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="no clickable">
+          <dl id="onLiveBoard" class="on_live">
+            <dt>
+              <p class="live_icon"><span></span> LIVE</p>
+            </dt>
+            <dd id="onLiveCount_CRICKET1">
+              <p>Cricket </p><span id="count">21</span>
+            </dd>
+            <dd id="onLiveCount_SOCCER1">
+              <p>Soccer </p><span id="count">102</span>
+            </dd>
+            <dd id="onLiveCount_TENNIS1">
+              <p>Tennis </p><span id="count">37</span>
+            </dd>
+          </dl>
+          <dl class="entrance-title">
+            <dt>Sports</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-b1.webp/MainImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="no clickable">
+          <dl class="entrance-title">
+            <dt>Sport Book</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-b9.webp/MainImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="no clickable">
+          <dl class="entrance-title">
+            <dt>Playtech Gaming</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-PlaytechLcx.webp/MainImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Aviator</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-aviator-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Skyward</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-skywar.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Evolution</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-evo-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Pragmatic Play</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-pp.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Spade Gaming</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-spadeg.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>JetX</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-jetx.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Ae Sexy</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-aesexy-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Kingmaker</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-kingdoms.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Jili</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jili-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Red Tiger</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-redtiger-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Bet Games</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-newbetgames-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Ludo</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-ludo.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Teen Patti</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-teenpatti-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Teen Patti</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-teenpattilive.jpg/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>7 UpDown</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-7up7down-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Coin Toss</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-cointos-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Card Matka</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-kingmaker-cardmatka-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Number Matka</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-numbermatka-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Sic Bo</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-sicbo-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Andar Bahar</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-andar-baharlc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>32 Cards</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-32cards-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Color Game</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-COLORlc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>5 Card Poker</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-5cardpokerslc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Heist</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-heist-247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Bonus Dice</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-bonus dicelc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Minesweeper</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-mine-sweeper-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Blackjack</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-blackjacklc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Horse Racing</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-horseracinglc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Teen Patti 20-20</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jiliteenpatti-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Number King</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilinumberkinglc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Big Small</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilibigsmall-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Teenpatti Joker</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-tpjoker-lc27.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>7 Up 7 Down</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jili7updowndlc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Dragon Tiger</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilidtlc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Call break Quick</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilicallquicknew-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>SicBo</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilisicbolc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Baccarat</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilibacacrat-lc247.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Iron Dome</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-irondom.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Elite Aviator Club</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-elite-aviator-club.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="entrance-half clickable">
+          <dl class="entrance-title">
+            <dt>Interstellar Run</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-intesteller.webp/ClassImage?v=0.44">
+        </a>
+        <a id="casinoLoginBtn " style="cursor: pointer;" class="no clickable">
+          <dl class="entrance-title">
+            <dt>Slot Games</dt>
+            <dd
+              style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+              Play Now</dd>
+          </dl><img id="show" alt="" draggable="false"
+            src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-slotgames.png/MainImage?v=0.44">
+        </a>
+
+
+      </div>
+    </div>
+    <div>
+      <app-desktop-footer>
+      </app-desktop-footer>
+    </div>
+  </div>
+</div>
+<div class="mian-wrap">
+  <div class="marquee-box mob-marquee">
+    <app-marquee-comp>
+    </app-marquee-comp>
+  </div>
+
+
+  <div id="mob-caro" data-interval="3000" data-ride="carousel" class="carousel slide mob-caro1 pointer-event">
+    <div class="carousel-inner">
+      @for ( item of banners;let i=$index; ; track item) {
+      <div class="carousel-item" [ngClass]="i==0?'active':''">
+        <img [src]="item.banner_images" class="d-block w-100" alt="..." style="height: 20vw;">
+      </div>
+      }
+
+
+    </div><button type="button" data-target="#mob-caro" data-slide="prev" class="carousel-control-prev">
+      <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button type="button" data-target="#mob-caro" data-slide="next" class="carousel-control-next">
+      <span aria-hidden="true" class="carousel-control-next-icon"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+  <div class="gamehall"><a id="casinoLoginBtn" style="cursor: pointer;" class="no clickable">
+      <dl class="entrance-title">
+        <dt>Sports</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+      <dl id="onLiveBoard" class="on_live-mob">
+        <dt>
+          <p class="live_icon-mob"><span></span> LIVE</p>
+        </dt><a href="/mob-sport/4">
+          <dd id="onLiveCount_CRICKET">
+            <p>Cricket </p><span id="count1">21</span>
+          </dd>
+        </a><a href="/mob-sport/1">
+          <dd id="onLiveCount_SOCCER">
+            <p>Soccer </p><span id="count2">102</span>
+          </dd>
+        </a><a href="/mob-sport/2">
+          <dd id="onLiveCount_TENNIS">
+            <p>Tennis </p><span id="count3">37</span>
+          </dd>
+        </a>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-b1.webp/MainImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="no clickable">
+      <dl class="entrance-title">
+        <dt>Sport Book</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-b9.webp/MainImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="no clickable">
+      <dl class="entrance-title">
+        <dt>Playtech Gaming</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-PlaytechLcx.webp/MainImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Aviator</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-aviator-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Skyward</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-skywar.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Evolution</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-evo-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Pragmatic Play</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-pp.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Spade Gaming</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-spadeg.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>JetX</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-jetx.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Ae Sexy</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-aesexy-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Kingmaker</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-kingdoms.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Jili</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jili-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Red Tiger</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-redtiger-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Bet Games</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-newbetgames-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Ludo</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-ludo.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Teen Patti</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-teenpatti-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Teen Patti</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-teenpattilive.jpg/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>7 UpDown</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-7up7down-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Coin Toss</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-cointos-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Card Matka</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-kingmaker-cardmatka-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Number Matka</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-numbermatka-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Sic Bo</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-sicbo-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Andar Bahar</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-andar-baharlc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>32 Cards</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-32cards-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Color Game</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-COLORlc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>5 Card Poker</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-5cardpokerslc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Heist</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-heist-247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Bonus Dice</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-bonus dicelc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Minesweeper</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-mine-sweeper-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Blackjack</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-km-blackjacklc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Horse Racing</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-horseracinglc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Teen Patti 20-20</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jiliteenpatti-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Number King</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilinumberkinglc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Big Small</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilibigsmall-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Teenpatti Joker</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-tpjoker-lc27.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>7 Up 7 Down</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jili7updowndlc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Dragon Tiger</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilidtlc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Call break Quick</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilicallquicknew-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>SicBo</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilisicbolc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Baccarat</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lcx247.live-jilibacacrat-lc247.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Iron Dome</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-irondom.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Elite Aviator Club</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-elite-aviator-club.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="entrance-half clickable">
+      <dl class="entrance-title">
+        <dt>Interstellar Run</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-intesteller.webp/ClassImage?v=0.44">
+    </a><a id="casinoLoginBtn" style="cursor: pointer;" class="no clickable">
+      <dl class="entrance-title">
+        <dt>Slot Games</dt>
+        <dd
+          style="color: rgb(0, 0, 0); background-color: rgb(255, 184, 12); clip-path: polygon(27% 0px, 100% 0%, 100% 100%, 0px 100%);">
+          Play Now</dd>
+      </dl>
+
+      <img id="show" alt="" draggable="false"
+        src="https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-slotgames.png/MainImage?v=0.44">
+    </a>
+
+  </div>
+  <!-- <app-mob-footer>
+
+  </app-mob-footer> -->
+</div>

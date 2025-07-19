@@ -1,0 +1,26 @@
+@import '../../../../mob-style.css';
+.nav a {
+  height: 13.3333333333vw;
+  color: #fff;
+  font-size: 3.2vw;
+  line-height: 1.1;
+  padding: 1.8666666667vw 2.6666666667vw 0;
+}
+
+.icon-promote {
+  width: 15.6vw !important;
+  height: 21.266667vw !important;
+  margin: -8vw 0px 0px -2vw !important;
+  z-index: 99;
+}
+
+nav svg {
+  width: 5.3333333333vw;
+  height: 5.3333333333vw;
+  margin: 0 auto 0.5333333333vw;
+  display: block;
+}
+.icoInply{
+   width: 0;
+  height: 0;
+}

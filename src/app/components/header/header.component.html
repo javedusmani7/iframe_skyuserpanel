@@ -1,0 +1,405 @@
+<div class="top" [style]="{'background-image':'linear-gradient(180deg, #383838 0%, #010101 100%)'}">
+  <!-- headerBackground is not working -->
+  <div class="header full-wrap">
+    <h1 [style.background-image]="'url(../../../../../assets/images/login/logo.png)'"><a routerLink="/"> </a></h1>
+
+    <div id="searchWrap" class="search-wrap">
+      <div>
+        <input id="searchInput" class="search-input" type="text" placeholder="Search Events" />
+        <button id="searchClear" class="search-clear" style="display: none"></button>
+      </div>
+      <div id="searchResult" class="suggestion-wrap" style="display: none">
+        <ul id="searchList">
+          <li id="noMatching" style="display: none">
+            <p class="no-matching">No events found matching ...</p>
+          </li>
+          <li id="resultTemplate" style="display: none"><a></a></li>
+        </ul>
+      </div>
+    </div>
+    @if (!loggedIn) {
+    <div>
+      <ul id="loggedIn" class="login-wrap">
+        <form>
+          <li class="user error">
+            <input id="loginName"  type="text" maxlength="12" placeholder="Username" />
+          </li>
+          <li style="position: relative;">
+            <i (click)="showpwd()"
+              style="margin-right:8px;line-height:25px;position:absolute;right: 0; color:#000;font-size:16px;"
+              class="fa fa-eye-slash" aria-hidden="true"></i>
+            <input id="password"  [type]="showpwrd ? 'text':'password'" maxlength="16"
+              placeholder="Password" />
+          </li>
+          <li class="valid-code" style="display: block">
+            <input id="validCode" type="text"  placeholder="Validation" maxlength="4" />
+            <span>4564</span>
+          </li>
+          <li>
+            <button id="loginBtn" class="btn-login" type="submit"
+              [ngStyle]="{ 'background-image':'linear-gradient(-180deg, #f72424 0%, #bb1c00 100%)', 'background-color':'#e83523;','border':'0'}">
+              Login <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li>
+            <a id="signupButton" target="_blank" class="sign" style="cursor:pointer;">
+              Sign up</a>
+          </li>
+
+          <!-- <li id="errorMsg" *ngIf="errMsg" class="error">{{ errMsg }}</li> -->
+        </form>
+      </ul>
+    </div>
+    }@else {
+    <ul id="afterLoggedIn" class="account-wrap ">
+      <li class="main-wallet">
+        <a id="multiWallet" href="#multiBalancePop" class="a-wallet">
+          <ul id="accountCredit" *ngIf="!refreshBtn">
+            <li><span>Main Balance </span> <span id="betCredit">USD {{ '50' | number :'1.0-2'}}</span></li>
+            <li><span>Exposure </span> <span id="totalExposure" class="red">{{ '2' | number :'1.0-2'}}</span>
+            </li>
+            <li class="nums">+<span id="vendorQuantity">5</span></li>
+          </ul>
+          <!-- show wallet-->
+          <div class="wallet-detail" id="multiBalancePop">
+            <div class="wallet-detail-group">
+              <dl class="wallet-detail-content">
+                <dt>Main Balance </dt>
+                <dd class="wallet-balance-num"><span class="badge-currency" id="currency">USD</span><span
+                    id="mainBalance">50.00</span></dd>
+                <dd class="wallet-exposure">Exposure <span id="mainExposure">0.00</span></dd>
+              </dl>
+            </div>
+            <div id="walletContent" class="wallet-detail-group">
+            </div>
+            <div id="walletTemp" class="wallet-detail-group" style="display: none;">
+              <dl id="tempDl" class="wallet-detail-content">
+                <dt id="vendorTitle">Housie Balance</dt>
+                <dd class="wallet-balance-num"><span class="badge-currency" id="vendorCurrency">USD</span><span
+                    id="vendorBalance">$ 0.00</span>
+                </dd>
+                <dd class="wallet-recall">
+                  <button class="btn-recall" id="recall">Recall</button>
+                </dd>
+              </dl>
+              <dl id="recallAllDl" class="wallet-detail-content">
+                <dd class="align-R">
+                  <button class="btn-recall" id="recallAll">Recall All</button>
+                </dd>
+              </dl>
+            </div>
+            <div class="btn-box">
+              <button class="btn" onclick="location.href='javascript:history.back();'">Close</button>
+            </div>
+          </div>
+
+          <p class="loading-bar" id="menuRefreshLoading" *ngIf="refreshBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </p>
+        </a>
+        <a id="menuRefresh" class="a-refresh" title="Refresh Main Wallet" (click)="upDateBalance()"><img
+            src="../../../../assets/images/transparent.gif"></a>
+      </li>
+
+
+      <li (click)="$event.stopPropagation()" class="account">
+        <a id="accountPopup" style="cursor: pointer" (click)="toggleMenu()">My Account</a>
+
+        <ul *ngIf="accPopoup" id="account_pop" style="display: block;" (click)="hideAccPopup()">
+          <li>
+            <h4>
+              <span>amuser</span>
+            </h4>
+            <span class="gmt" title="Time Zone">GMT+5:30</span>
+          </li>
+          <li><a [routerLink]="['/my-profile']">My Profile</a></li>
+          <li><a [routerLink]="['/balance-overview']">Balance Overview</a></li>
+          <li><a [routerLink]="['/account-statement']">Account Statement</a></li>
+          <li><a [routerLink]="['/mybet']">My Bets</a></li>
+          <li><a [routerLink]="['/bet-history']">Bets History</a></li>
+          <li><a [routerLink]="['/profit-loss']">Profit &amp; Loss</a></li>
+          <li><a [routerLink]="['/checkresults']">Results</a></li>
+          <li><a [routerLink]="['/activity-log']">Activity Log</a></li>
+          <li class="logout"><a id="logout">LOGOUT<img src="../../../assets/images/transparent.gif"></a></li>
+        </ul>
+      </li>
+    </ul>
+    }
+
+  </div>
+
+  <!-- Menu Wrap -->
+  <div class="menu-wrap mt-2">
+    <div class="full-wrap my-nav">
+      <ul id="tabMenu" class="menu">
+        <li><a id="menu_Home" routerLink="home" neua="Home" routerLinkActive="active">Home</a></li>
+        <li><a id="menu_InPlay" routerLink="inplay" neua="In-Play" routerLinkActive="active">In-Play</a></li>
+        <li><a neua="Multi Markets" routerLink="multiMarkets" routerLinkActive="active">Multi Market</a></li>
+        <li>
+          <a id="menu_CRICKET" routerLink="sport/4" routerLinkActive="active">
+            <span id="tagLive" class="tag-live"><strong></strong>2</span>
+            Cricket
+          </a>
+        </li>
+        <li>
+          <a id="menu_SOCCER" routerLink="sport/1" routerLinkActive="active">
+            <span id="tagLive" class="tag-live"><strong></strong>5</span>
+            Soccer
+          </a>
+        </li>
+        <li>
+          <a id="menu_TENNIS" routerLink="sport/2" routerLinkActive="active">
+            <span id="tagLive" class="tag-live"><strong></strong>6</span>
+            Tennis
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/checkresults']" routerLinkActive="active">
+            Result
+          </a>
+        </li>
+        <li class="dark_menu-li">
+          <a class="casino tag-new">Casino</a>
+        </li>
+      </ul>
+
+      <ul class="setting-wrap">
+        <li class="time_zone"><span>Time Zone :</span> GMT+5:30</li>
+        <li>&nbsp;&nbsp;&nbsp;</li>
+
+        <li>
+          <a (click)="oneClickBet()" id="oneClickSetting" [class]="oneClick? 'one_click select' : 'one_click' " style="cursor: pointer">
+            <img src="./../../../assets/images/transparent.gif" />One Click Bet
+          </a>
+        </li>
+
+        <li>
+          <a  (click)="fadeLoginPopup('')" id="slipSet" class="setting" style="cursor: pointer">
+            Setting <i class="fa fa-cog" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- mob-header -->
+@if (!loggedIn) {
+
+<header class="header2" style="background-image:linear-gradient(180deg, #383838 0%, #010101 100%)">
+
+  <ul id="afterLoggedIn">
+    <li class="li-tv_bet">
+      <a id="openTV" class="a-open_tv ui-link" style="background: linear-gradient(rgb(71, 71, 71), rgb(7, 7, 7));"><img
+          src="../../../../assets/images/transparent.gif"></a>
+      <a id="openBetsBtn" routerLink="/mob-bets" class="a-open_bets ui-link"
+        style="background: linear-gradient(rgb(71, 71, 71), rgb(7, 7, 7));"><img
+          src="../../../../assets/images/transparent.gif">Bets</a>
+    </li>
+    <li class="main-wallet">
+      <a id="multiWallet" href="#" class="a-wallet ui-link"
+        style="background:linear-gradient(rgb(71, 71, 71), rgb(7, 7, 7))">
+        @if (!refreshBtn) {
+          <ul id="accountCredit">
+            <li><span>Main</span><span id="betCredit"> USD 79.65</span></li>
+            <li><span>Exposure</span><span id="totalExposure" class="mexpo">0</span></li>
+            <li class="nums">+<span id="vendorQuantity">5</span></li>
+          </ul>
+        }
+        @else {
+          <p class="loading-bar2" id="menuRefreshLoading">
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+            <span>*</span>
+          </p>
+        }
+      </a>
+      <a class="a-refresh" style="background: linear-gradient(rgb(71, 71, 71), rgb(7, 7, 7));
+    color: rgb(0, 0, 0);" id="menuRefresh" title="Refresh Main Wallet" (click)="upDateBalance()"><img
+          src="../../../../assets/images/transparent.gif"></a>
+    </li>
+    <li><a class="a-setting ui-link" routerLink="/mob-setting" title="Setting"><img
+          src="../../../../assets/images/transparent.gif"></a></li>
+  </ul>
+
+
+  <div id="msgBox" class="message-wrap success to-open_bets" style="display: none;">
+    <div class="message">
+      <h4 id="header">Bet Matched</h4>
+      <p id="info">
+        <span id="sideType" class="back">Back</span>
+        <strong id="selectionName">England</strong> <strong id="stake">$1,000</strong> at odds <strong
+          id="odds">1.29</strong>
+      </p>
+    </div>
+    <a id="close" class="close ui-link" href="#">Close</a>
+  </div>
+
+
+  <div id="multiWalletDiv" class="overlay" style="display: none;">
+    <div class="wallet-detail">
+      <div class="wallet-detail-group">
+        <dl class="wallet-detail-content">
+          <dt>Main Balance</dt>
+          <dd class="wallet-balance-num"><span class="badge-currency" id="currency">USD</span><span
+              id="mainBalance">18.50</span></dd>
+          <dd class="wallet-exposure">Exposure <span id="mainExposure">0.00</span></dd>
+        </dl>
+      </div>
+      <div id="walletContent" class="wallet-detail-group">
+      </div>
+      <div id="walletTemp" class="wallet-detail-group" style="display: none;">
+        <dl id="tempDl" class="wallet-detail-content">
+          <dt id="vendorTitle">Housie Balance</dt>
+          <dd class="wallet-balance-num"><span class="badge-currency" id="vendorCurrency">USD</span><span
+              id="vendorBalance">$ 0.00</span>
+          </dd>
+          <dd class="wallet-recall">
+            <button class="btn-recall ui-btn ui-shadow ui-corner-all" id="recall">Recall</button>
+          </dd>
+        </dl>
+        <dl id="recallAllDl" class="wallet-detail-content">
+          <dd class="align-R">
+            <button class="btn-recall ui-btn ui-shadow ui-corner-all" id="recallAll">Recall All</button>
+          </dd>
+        </dl>
+      </div>
+      <div class="btn-box">
+        <button class="btn ui-btn ui-shadow ui-corner-all" id="balanceClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+</header>
+} @else {
+<div>
+  <header id="loggedIn" class="mob-header"
+    style="background-image: linear-gradient(rgb(71, 71, 71) 0%, rgb(7, 7, 7) 100%);">
+    <h1 routerLink="/home" class="top-logo" tabindex="0" ng-reflect-router-link="/home"
+      style="background-image: url(&quot;../../../../../assets/images/login/logo.png&quot;);">
+    </h1>
+    <div class="btn-wrap">
+      <a id="signupButton" target="_blank" class="btn-signup ui-link"
+        style="background-image: linear-gradient(-180deg, rgb(102, 102, 102), rgb(51, 51, 51));">Sign up
+      </a>
+      <a routerLink="/mob-login" class="login-index ui-link"
+        style="background-image: linear-gradient(-180deg, rgb(247, 36, 36) 0%, rgb(187, 28, 0) 100%);"><i
+          class="fa fa-user usericn"></i>Login</a>
+    </div>
+  </header>
+</div>
+}
+
+
+<app-popup-box *ngIf="popup" (showPopup)="closeloginpopup()"></app-popup-box>
+
+<!-- <div id="set_pop" class="slip_set-pop d-none">
+  <div id="coinList" class="set-content">
+
+    <dl class="odds-set">
+      <dd class="col-defult">
+        <label for="defult_stake"><strong>Default stake
+          </strong></label>
+        <input id="userCoin" class="stake-input" type="text" [value]="loginResData?.defaultStake" maxlength="7"
+          value="">
+      </dd>
+    </dl>
+
+
+    <dl id="stakeSet" class="stake-set" *ngIf="editStakeContainer">
+      <dt>Stake
+      </dt>
+      <dd><a id="coin_1" class="btn ui-link select" href="">{{stakeArr?.stake1}}</a></dd>
+      <dd><a id="coin_2" class="btn ui-link select" href="">{{stakeArr?.stake2}}</a></dd>
+      <dd><a id="coin_3" class="btn ui-link select" href="">{{stakeArr?.stake3}}</a></dd>
+      <dd><a id="coin_4" class="btn ui-link" href="">{{stakeArr?.stake4}}</a></dd>
+      <dd><a id="coin_5" class="btn ui-link select" href="">{{stakeArr?.stake5}}</a></dd>
+      <dd><a id="coin_6" class="btn ui-link" href="">{{stakeArr?.stake6}}</a></dd>
+      <dd><a id="coin_7" class="btn ui-link select" href="">{{stakeArr?.stake7}}</a></dd>
+      <dd><a id="coin_8" class="btn ui-link select" href="">{{stakeArr?.stake8}}</a></dd>
+
+      <dd class="col-edit edit-stake" (click)="editStake()"><a id="edit" class="btn-edit">Edit
+          <img src="../../../assets/images/transparent.gif"></a>
+      </dd>
+    </dl>
+    <form [formGroup]="editStakesArr" (ngSubmit)="updateStakes()">
+      <dl id="editCustomizeStakeList" class="stake-set" *ngIf="editStakeHere">
+        <dt>Stake
+        </dt>
+        <dd><input id="stakeEdit_1" class="stake_edit-input" type="text" formControlName="stake1" maxlength="7"></dd>
+        <dd><input id="stakeEdit_2" class="stake_edit-input" type="text" formControlName="stake2" maxlength="7"></dd>
+        <dd><input id="stakeEdit_3" class="stake_edit-input" type="text" formControlName="stake3" maxlength="7"></dd>
+        <dd><input id="stakeEdit_4" class="stake_edit-input" type="text" formControlName="stake4" maxlength="7"></dd>
+        <dd><input id="stakeEdit_5" class="stake_edit-input" type="text" formControlName="stake5" maxlength="7"></dd>
+        <dd><input id="stakeEdit_6" class="stake_edit-input" type="text" formControlName="stake6" maxlength="7"></dd>
+        <dd><input id="stakeEdit_7" class="stake_edit-input" type="text" formControlName="stake7" maxlength="7"></dd>
+        <dd><input id="stakeEdit_8" class="stake_edit-input" type="text" formControlName="stake8" maxlength="7"></dd>
+        <dd class="col-edit"><button id="ok" class="btn-send">OK</button></dd>
+      </dl>
+    </form>
+
+    <dl class="odds-set">
+      <dt>Odds
+      </dt>
+      <dd>
+        <input id="enableSparkCheck" type="checkbox"><label for="enableSparkCheck">Highlight when odds change
+        </label>
+      </dd>
+    </dl>
+
+
+    <dl class="odds-set">
+      <dt>FancyBet
+      </dt>
+      <dd>
+        <input id="fancyBetAcceptAnyOddsCheckBox" type="checkbox"><label for="fancy_odd">Accept Any Odds
+        </label>
+      </dd>
+    </dl>
+
+
+    <dl class="odds-set">
+      <dt>SportsBook
+      </dt>
+      <dd>
+        <input id="sportsBookAcceptAnyOddsCheckBox" type="checkbox"><label>Accept Any Odds
+        </label>
+      </dd>
+    </dl>
+
+
+    <dl class="odds-set">
+      <dt>Binary
+      </dt>
+      <dd>
+        <input id="financialAcceptAnyOddsCheckBox" type="checkbox"><label>Accept Any Price
+        </label>
+      </dd>
+    </dl>
+
+
+    <dl class="odds-set">
+      <dt>Win Selection forecast</dt>
+      <dd><input id="withCommCheckBox" type="checkbox"><label for="withCommCheckBox">With Commission</label></dd>
+    </dl>
+    <ul class="btn-wrap">
+      <li><a id="closeSet" class="btn" (click)="closePopup()" style="cursor:pointer;">Cancel
+        </a></li>
+      <li class="col-send"><a id="coinSave" class="btn-send" style="cursor:pointer;">Save
+        </a></li>
+    </ul>
+  </div>
+</div> -->

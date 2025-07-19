@@ -1,0 +1,85 @@
+<div class="parent">
+  <div class="main_wrap">
+
+    <app-profile-left-comp></app-profile-left-comp>
+
+    <div class="col-center report">
+
+      <h2>Account Statement</h2>
+
+      <table id="table_log" class="table01">
+        <tbody>
+
+          <tr>
+            <th width="13%" class="align-L">Date/Time</th>
+            <th width="10%">Deposit</th>
+            <th width="10%">Withdraw</th>
+            <th width="10%">Balance</th>
+            <th width="50%">Remark</th>
+            <th width="">From/To</th>
+          </tr>
+
+        <tbody id="content">
+          <tr id="tempTr">
+            <td id="createDate" class="align-L">2025-07-10 15:45:12</td>
+            <td id="deposit" class="green">1000.00</td>
+            <td id="withdraw" class="red">-</td>
+            <td id="balance">5000.00</td>
+            <td id="remark">--</td>
+            <td>
+              <span id="from">Admin</span>
+              <img class="fromto" src="../../../assets/images/icon-fromto.png">
+              <span id="to">Ashish</span>
+            </td>
+          </tr>
+          <tr id="tempTr">
+            <td id="createDate" class="align-L">2025-07-09 11:20:00</td>
+            <td id="deposit" class="green">-</td>
+            <td id="withdraw" class="red">500.00</td>
+            <td id="balance">4500.00</td>
+            <td id="remark">--</td>
+            <td>
+              <span id="from">Ashish</span>
+              <img class="fromto" src="../../../assets/images/icon-fromto.png">
+              <span id="to">Withdrawal</span>
+            </td>
+          </tr>
+          <tr id="tempTr">
+            <td id="createDate" class="align-L">2025-07-08 09:10:30</td>
+            <td id="deposit" class="green">-</td>
+            <td id="withdraw" class="red">-</td>
+            <td id="balance">4500.00</td>
+            <td id="remark">Bonus credited</td>
+            <td>
+              <span id="from">System</span>
+              <img class="fromto" src="../../../assets/images/icon-fromto.png">
+              <span id="to">Ashish</span>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+
+
+      <script type="text/javascript"
+        src="https://statics3.skyexch.art/js/util/PageUtil.js?v=20231004_1696375800000"></script>
+      <!-- Pages List -->
+      <div>
+        <ul id="pageNumberContent" class="pages">
+          <li id="prev">
+            <a [class]="this.pages[this.pages.length - 1] < 6 ? 'disable' : ''">Prev
+            </a>
+          </li>
+          <li id="pageNumber" *ngFor=" let page of pages">
+            <a [class]="currentPage == page ? 'select' : ''">{{page}}</a>
+          </li>
+          <li id="next"><a [class]="pages[pages.length + 1] > 6 || currentPage+1  > totalPages? 'disable' : ''">Next
+            </a></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</div>

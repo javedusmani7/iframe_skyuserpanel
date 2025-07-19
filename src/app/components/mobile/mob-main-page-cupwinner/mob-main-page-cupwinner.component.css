@@ -1,0 +1,157 @@
+@import './../../../../mob-style.css';
+
+.marquee-box {
+  position: fixed;
+  width: 100%;
+  top: 14.7vw;
+  z-index: 100;
+  line-height: 6.6666666667vw;
+  height: 6.6666666667vw;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(-180deg, #2f424d 0%, #141e21 100%);
+  zoom: 1;
+}
+
+.mian-wrap{
+  font-size: 3.46667vw;
+  font-family: 'Averta Std semibold', sans-serif !important;
+}
+
+.bets-selections {
+    line-height: 18px !important;
+}
+
+#betsHead {
+  min-height: 9.4vw;
+}
+
+.sportoption{
+  display: list-item;
+}
+
+.market-type {
+  position: relative;
+  height: 9.6vw;
+  background-color: #e0e6e6;
+  padding: 1.8666666667vw;
+  overflow: scroll;
+}
+
+.a-depth {
+  width: 6.6666666667vw;
+  height: 6.6666666667vw;
+  background: url('data:image/svg+xml,<svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="a" cx="12.5" cy="12.5" r="12.5"/></defs><g fill="none" fill-rule="evenodd"><g><use fill="%23FFF" xlink:href="%23a"/><circle stroke="%237E97A7" cx="12.5" cy="12.5" r="12"/></g><path d="M10 12H8v5h2v-5zm3-4h-2v9h2V8zm7 10H7V6H6v13h14v-1zm-4-8h-2v7h2v-7zm3-3h-2v10h2V7z" fill="%237E97A7"/></g></svg>') no-repeat;
+  background-size: contain;
+  padding: 0;
+  margin-right: 1.8666666667vw;
+}
+.sportsbook_bet-head .in-play pre, .fancy_bet-head .in-play pre {
+  width: 4.8vw;
+  height: 4.8vw;
+  background-image: linear-gradient(-180deg, #91d527 0%, #60ba1e 79%);
+  border-radius: 1.0666666667vw;
+  margin-right: 1.6vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.fancy-bet > h5 {
+  font-size: 3.46667vw;
+}
+
+.bets-selections:last-child{
+  border-bottom: 1px solid #7e97a7;
+}
+
+.game-info li {
+  padding: 0;
+  margin-right: 8px;
+}
+
+.scorelive{
+  width: 100vw;
+  border:none;
+  height:190px;
+  margin-right:0;
+}
+
+.tvlive{
+  width: 100vw; border:none; height:56vw;
+}
+
+.block{
+    overflow-y:scroll;
+    margin-bottom: -11px;
+}
+
+.row{
+  display: block;
+  margin-right:0;
+}
+
+.message-wrap{
+  position: fixed;
+  width: 100%;
+  background-color: #f8e71c;
+  border: 0.2666666667vw solid #9b9011;
+  border-width: 0.2666666667vw 0 0.2666666667vw 0;
+  box-shadow: 0 0.8vw 1.0666666667vw 0 rgba(0,0,0,.5);
+  margin-top: 12vw;
+  margin-left: 5vw;
+  z-index: 1000000;
+}
+
+.message {
+  flex: 1;
+  line-height: 1.4;
+  padding: 1.8666666667vw;
+}
+.message .back, .message .lay {
+  font-size: 3.2vw;
+  color: #1e1e1e;
+  border-radius: 1.0666666667vw;
+  padding: 0 1.8666666667vw;
+  background-color: #b7d5eb;
+  margin-right: 1.3333333333vw;
+}
+
+.disabled dd a {
+  cursor: not-allowed;
+  background: rgba(51,51,51,.2) url(../../../../assets/images/bg-disabled.png);
+}
+
+.backoddoff a {
+  cursor: not-allowed;
+  background: #72bbef url(../../../../assets/images/bg-disabled.png);
+}
+
+.layoddoff a {
+  cursor: not-allowed;
+  background: #faa9ba url(../../../../assets/images/bg-disabled.png);
+}
+
+.fancybg{
+  background: #243A48;
+  color: white !important;
+}
+
+#fancyBetBookLeftSide{
+  z-index: 999;
+}
+.fancy-bet .bets-selections dt {
+  padding: 4.533333vw 0.866667vw;
+  position: relative;
+}
+
+.limit_info-popup {
+  box-shadow: 0 6px 10px rgb(0 0 0 / 70%);
+  display: block;
+  width: 25vw;
+}
+.limit_info-popup:not(:target) {
+  display: block;
+}
+
+.overlay {
+  z-index: 999;
+}

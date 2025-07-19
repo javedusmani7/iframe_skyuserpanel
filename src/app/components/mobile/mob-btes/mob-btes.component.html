@@ -1,0 +1,89 @@
+<div id="openBetsLeftSide" class="overlay left-side" style="display: block;">
+  <div id="openBetSlide" class="side-wrap" style="display: flex;">
+
+    <div id="sideHead" class="side-head">
+      <h3 class="a-open_bets">
+        <img src="../../../../assets/images/transparent.gif"> Open Bets
+      </h3>
+      <a id="close" class="close" routerLink="/home"></a>
+    </div>
+
+    <div id="sideContent" class="side-content">
+
+      <!-- Event List -->
+      @if (betList) {
+      <ul id="eventMenuList" class="menu-list" style="display: flex;">
+        <li id="eventMenu_1" class="inplay-off" (click)="openListInfo()">
+          <a categorytype="2">
+            <p>India vs Australia - Betfair</p>
+          </a>
+        </li>
+      </ul>
+      }
+
+      <!-- Selected Bet Details -->
+       @if (betListInfo) {
+         <div>
+           <div id="pathWrap" class="path-wrap" style="display: flex;">
+             <a id="goBack" class="go_back" (click)="goBack()"></a>
+             <ul>
+               <li id="eventName">India vs Australia</li>
+             </ul>
+           </div>
+
+           <h3 id="txnHeader" style="display: flex;">Matched</h3>
+
+           <!-- Standard Back Bet -->
+           <div id="txnList" class="slip-list">
+             <dl id="header_back" class="bets-head">
+               <dt >
+                 <h4>Back</h4>
+               </dt>
+               <dd class="col-odds"><span>Odds</span></dd>
+               <dd class="col-stake"><span>Stake</span></dd>
+               <dd class="col-profit"><span>Profit</span></dd>
+             </dl>
+             <dl class="bets-back">
+               <dt>
+                 <span id="sideType" class="back">Back</span>
+                 <h4 id="selectionName">Virat Kohli (Match Odds)</h4>
+               </dt>
+               <dd id="odds" class="col-odds"><span>3.50</span></dd>
+               <dd id="stake" class="col-stake"><span>500</span></dd>
+               <dd id="pl" class="col-profit"><span>1250</span></dd>
+             </dl>
+           </div>
+
+           <!-- Fancy Bet -->
+           <div id="txnList" class="slip-list">
+             <dl id="header_back" class="bets-head">
+               <dt>
+                 <h4>Yes</h4>
+               </dt>
+               <dd class="col-odds"><span>Odds</span></dd>
+               <dd class="col-stake"><span>Stake</span></dd>
+               <dd class="col-profit"><span>Profit</span></dd>
+             </dl>
+             <dl class="bets-back">
+               <dt>
+                 <span id="sideType" class="back">Yes</span>
+                 <h4 id="selectionName">Runs Over 50</h4>
+               </dt>
+               <dd id="odds" class="col-odds"><span>1.90 <br> Price: 100</span></dd>
+               <dd id="stake" class="col-stake"><span>1000</span></dd>
+               <dd id="pl" class="col-profit"><span>900</span></dd>
+             </dl>
+           </div>
+
+           <!-- Options -->
+           <ul id="openBetOption" class="check-list" style="display: flex;">
+             <li><a id="showBetInfo">Bet Info</a></li>
+             <li><a id="showTimeOrder">Time Order</a></li>
+             <li style="display: none;"><a id="averageOdds">Average Odds</a></li>
+           </ul>
+         </div>
+       }
+
+    </div>
+  </div>
+</div>

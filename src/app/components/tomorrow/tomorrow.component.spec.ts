@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { TomorrowComponent } from './tomorrow.component';
+
+describe('TomorrowComponent', () => {
+  let component: TomorrowComponent;
+  let fixture: ComponentFixture<TomorrowComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [TomorrowComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(TomorrowComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

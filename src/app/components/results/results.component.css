@@ -1,0 +1,48 @@
+.col-center.report .act-details {
+  font-size: 14px;
+  font-weight: bolder;
+  line-height: 2;
+  margin: 0;
+  padding: 3px 0px 6px 1px;
+}
+
+.function-wrap {
+  position: relative;
+  padding: 10px 10px 0;
+  background-color: #E0E6E6;
+  border-bottom: 1px solid #7e97a7;
+  margin-bottom: 10px;
+}
+.search-wrap {
+  position: relative;
+  margin: 30px;
+}
+
+.blk {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.table-s td, .table-s th {
+  padding: 0px 5px;
+}
+
+
+
+
+
+
+
+
+/* remove for change result  */
+.col-center {
+margin-left: 0;
+}
+.inplay .marquee-box {
+    margin-bottom: 10px;
+}
+caption {
+    caption-side: top;
+}
+
+

@@ -1,0 +1,58 @@
+app-nav {
+  display: none;
+
+}
+
+@media all and (max-width : 768px) {
+
+  app-nav {
+    display: flex;
+  }
+
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+#fc_frame {
+  width: 70px;
+}
+
+#fc_frame,
+#fc_frame.fc-widget-small {
+  bottom: 15px;
+  min-height: 73px;
+  min-width: 65px;
+  opacity: 1;
+  overflow: hidden;
+  position: fixed;
+  right: 15px;
+  z-index: 2147483600;
+}
+
+.d-hotline {
+  background-color: #ffc019 !important;
+  color: #3A4B67 !important;
+  border-color: transparent #ffc019 transparent transparent;
+}
+
+.d-hotline.h-btn {
+  align-items: center;
+  border-radius: 34px 8px 34px 34px;
+  bottom: 6px;
+  box-shadow: 0 5px 4px 0 rgba(0, 0, 0, .26);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 5px;
+  z-index: 9995;
+  height: 60px;
+  width: 60px;
+}
+
+.d-hotline.h-btn .custom-icon {
+  width: 38%;
+}

@@ -1,0 +1,74 @@
+<div class="full-wrap" bis_skin_checked="1">
+  <div id="centerColumn" class="col-center inplay" bis_skin_checked="1">
+
+
+    <div class="marquee-box">
+      <app-marquee-comp></app-marquee-comp>
+    </div>
+
+    <div class="result-search" bis_skin_checked="1">
+      <ul id="resultTab" class="tab col2">
+        <li><a id="today" class="select">Today</a></li>
+        <li><a id="yesterday">Yesterday</a></li>
+      </ul>
+      <select id="sports">
+        <option value="4">CRICKET</option>
+        <option value="1">SOCCER</option>
+        <option value="2">Tennis</option>
+        <option value="9999999">Virtual T10</option>
+      </select>
+    </div>
+
+    <div class="over-wrap" style="height: calc(100% - 39px - 31px - 35px)" bis_skin_checked="1">
+      <table id="Result_Table" class="table01">
+        <caption class="align-L" colspan="4">Result</caption>
+        <tbody>
+          <tr>
+            <th width="20%" class="align-L">Event Date/Time</th>
+            <th class="align-L">Event Name</th>
+            <th id="Result_Title_1" width="20%">Sport</th>
+            <th id="Result_Title_2" width="20%">Winner</th>
+          </tr>
+        </tbody>
+        <tbody id="Result_Content">
+          <tr id="tempTr">
+            <td id="eventDate" class="align-L">2025-07-10 14:30</td>
+            <td id="eventName" class="align-L">India vs Australia</td>
+            <td><strong><span id="resultItem1">CRICKET</span></strong></td>
+            <td><strong><span id="resultItem2">India</span></strong></td>
+          </tr>
+          <tr id="tempTr">
+            <td id="eventDate" class="align-L">2025-07-09 20:00</td>
+            <td id="eventName" class="align-L">Manchester vs Chelsea</td>
+            <td><strong><span id="resultItem1">SOCCER</span></strong></td>
+            <td><strong><span id="resultItem2">Chelsea</span></strong></td>
+          </tr>
+          <tr id="tempTr">
+            <td id="eventDate" class="align-L">2025-07-08 18:00</td>
+            <td id="eventName" class="align-L">Federer vs Nadal</td>
+            <td><strong><span id="resultItem1">Tennis</span></strong></td>
+            <td><strong><span id="resultItem2">Nadal</span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table style="display: none">
+        <tbody>
+          <tr id="tempTr">
+            <td id="eventDate" class="align-L"></td>
+            <td id="eventName" class="align-L"></td>
+            <td><strong><span id="resultItem1"></span></strong></td>
+            <td><strong><span id="resultItem2"></span></strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+  </div>
+
+  <app-right-side-comp></app-right-side-comp>
+
+</div>

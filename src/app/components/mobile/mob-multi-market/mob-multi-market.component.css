@@ -1,0 +1,79 @@
+@import "../../../../mob-style.css";
+
+.mian-wrap {
+  position: relative;
+  /* padding: 0 0 17.6vw; */
+  overflow: hidden;
+}
+.no-data {
+  background: #fff;
+  border: 1px solid #7e97a7;
+  border-radius: 1.6vw;
+  color: #7e97a7;
+  font-size: 4.2666666667vw;
+  margin: 17.3333333333vw 2.6666666667vw;
+  padding: 2.6666666667vw 1.8666666667vw 5.3333333333vw;
+}
+.no-data h3 {
+  background-image: none;
+  font-size: 3.7333333333vw;
+  color: #7e97a7;
+  border-bottom: 1px solid #e0e6e6;
+  margin-bottom: 1.3333333333vw;
+  padding: 1.8666666667vw 0;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+.no-data h3:before {
+  content: "";
+  width: 8.2666666667vw;
+  height: 8.5333333333vw;
+  background: url(../../../../assets/images/multi.svg) no-repeat;
+  background-size: contain;
+  margin-right: 1.3333333333vw;
+}
+h3 {
+  background-image: linear-gradient(-180deg, #2e4b5e 0%, #243a48 82%);
+  color: #fff;
+  font-size: 3.7333333333vw;
+  line-height: 2.2;
+}
+
+.game-info {
+  position: relative;
+  top: 0!important;
+  padding: 0 10px
+}
+.marquee-box h4{
+  font-size: 4vw;
+  font-weight: 500;
+  padding: 0 3px;
+  text-align: center;
+}
+.game-team h4 {
+  line-height: 6.9333333333vw;
+  font-size: 4vw;
+  font-weight: 700;
+}
+.game-team   th, .game-team   .announce-wrap   table   th, .announce-wrap   table   .game-team   th {
+  padding: 1.8666666667vw 0  0 10.4vw ;
+  vertical-align: top;
+}
+ .game-team  td{
+  padding: 0.866667vw;
+  vertical-align: middle;
+}
+.multi #gameInfo{
+  font-size: 4vw;
+  font-weight: 500;
+}
+.marquee-box{
+  position:fixed;
+  margin-bottom: 14.666667vw;
+}
+.mian-wrap{
+  margin-top: 10.666667vw;
+  margin-bottom: 30px;
+}
+

@@ -1,0 +1,208 @@
+
+.menu-list li.menu-select-head {
+  background-color: #000;
+}
+.full-wrap .col-left {
+  height: 100%;
+  overflow: hidden;
+}
+.col-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17.36111%;
+}
+.sub_path {
+  position: relative;
+}
+.sub_path {
+  background-color: #fff;
+  border-bottom: 1px solid #7e97a7;
+  margin-bottom: 1px;
+}
+.betbuzz365 .path {
+  background: #2c4758;
+}
+
+.path {
+  position: relative;
+  height: 25px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 25px;
+  overflow: hidden;
+  background-repeat: repeat-x;
+  background-position: 0 -2507px;
+}
+
+.path{
+  /* background-image: url(../../../assets/images/arrow.svg); */
+  /* background-repeat: no-repeat; */
+  background-color: #2c4758;
+}
+.path-icon {
+  position: absolute;
+  width: 45px;
+  left: -9px;
+}
+
+.betbuzz365 .path .path-back {
+  background-position: 0 -1550px;
+  height: 25px;
+  width: 36px;
+}
+.path .path-back,.betbuzz365 .path .path-back{
+  background-image: url(../../../assets/images/arrow.svg);
+  background-repeat: no-repeat;
+  color: #fff;
+}
+.betbuzz365 .path a {
+  color: #ffb80c !important;
+}
+.path .path-back{
+  display: block;
+  font-size: 0;
+  text-indent: -99999px;
+}
+.path .path-back {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  background-position: 0 -1700px;
+  height: 25px;
+  width: 36px;
+}
+.path a {
+  display: inline;
+  color: #fff !important;
+}
+.path .path-back{
+  color: #fff !important;
+}
+.path ul{
+  text-align: right;
+}
+.path ul {
+  position: absolute;
+  right: 0;
+  width: 9999px;
+}
+.path {
+  position: relative;
+  height: 25px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 25px;
+  overflow: hidden;
+  background-repeat: repeat-x;
+  background-position: 0 -2507px;
+}
+.path li {
+  display: inline;
+  padding: 4px 13px 5px 6px;
+  background-position: 100% -675px;
+}
+.path li{
+  background-image: url(../../../assets/images/mobile/left-angle.png);
+  background-repeat: no-repeat;
+}
+.betbuzz365 .path a {
+  color: #fff !important;
+}
+.betbuzz365 .path-pop {
+  background-color: #222;
+}
+.path-pop:not(:target) {
+  display: none;
+}
+.path-pop {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  max-width: 100%;
+  background-color: #243a48;
+  padding: 5px 0;
+  z-index: 5;
+}
+.path-pop{
+  box-shadow: 0 4px 5px rgba(0, 0, 0, .5);
+}
+.path-pop a{
+  display: block;
+}
+
+.path-pop li {
+  list-style: none;
+  white-space: nowrap;
+}
+.path-pop a {
+  color: #fff;
+  padding: 5px 10px 5px 15px;
+  background-position: -21px -925px;
+}
+.path-pop a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.path-pop a {
+  background-image: url(../../../assets/images/mobile/left-angle.png);
+  /* background-color: #000; */
+  background-repeat: no-repeat;
+}
+
+.betbuzz365 .menu-list .Go {
+  background-position: 100% -500px;
+  height: 25px;
+  width: 23px;
+}
+.menu-list .Go, .betbuzz365 .menu-list .Go{
+  background-image: url(../../../assets/images/mobile/left-angle.png);
+  background-repeat: no-repeat;
+}
+.betbuzz365 .menu-list a {
+  color: #222;
+}
+.menu-list a, .menu-list .Go{
+  display: block;
+}
+.menu-list .Go {
+  padding: 0 0 0 8px;
+  background-position: 100% -600px;
+  height: 25px;
+  width: 23px;
+}
+.menu-list .Go{
+  font-size: 0;
+  text-indent: -99999px;
+  float: right;
+}
+.menu-list a {
+  line-height: 25px;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu-list li {
+  border-bottom: 1px solid #e0e6e6;
+  list-style: none;
+}
+.menu-list .Go::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  color: #222;
+  border: 1px solid #e0e6e6;
+  border-radius: 4px;
+  content: "";
+}
+/* .menu-list a {
+  color: #222;
+} */

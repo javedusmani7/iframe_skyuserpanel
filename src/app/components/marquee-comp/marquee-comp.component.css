@@ -1,0 +1,311 @@
+.marquee-box {
+  color: #fff;
+  line-height: 25px;
+  height: 25px;
+  margin-bottom: 1px;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(180deg, #2a3a43 27%, #1c282d 83%);
+}
+
+.marquee-box {
+  zoom: 1;
+}
+
+.marquee-box h4,
+.marquee-box .tc-content h5,
+.tc-content .marquee-box h5 {
+  position: relative;
+  flex-basis: 72px;
+  justify-content: center;
+  align-items: center;
+}
+
+.marquee-box h4 {
+  display: flex;
+}
+
+.marquee-box h4:before,
+.marquee-box .tc-content h5:before,
+.tc-content .marquee-box h5:before {
+  content: "";
+  height: 17px;
+  width: 17px;
+  margin-right: 2px;
+  background: url('data:image/svg+xml,<svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><g fill="rgb(255,255,255)" fill-rule="nonzero"><path d="M8.5 10.083c1.519 0 2.75-1.195 2.75-2.669V2.67C11.25 1.195 10.019 0 8.5 0S5.75 1.195 5.75 2.67v4.744c0 1.474 1.231 2.67 2.75 2.67zM7.278 2.67c0-.654.548-1.186 1.222-1.186.674 0 1.222.532 1.222 1.186v4.745c0 .654-.548 1.186-1.222 1.186-.674 0-1.222-.532-1.222-1.186V2.67z"/><path d="M14 7.333h-1.447c0 2.36-1.818 4.278-4.053 4.278S4.447 9.692 4.447 7.333H3c0 2.942 2.085 5.374 4.776 5.75v.973h-2.46v1.527h6.368v-1.527h-2.46v-.973c2.69-.376 4.776-2.808 4.776-5.75z"/></g></svg>') no-repeat;
+}
+
+.marquee-box h4:before {
+  display: block;
+}
+
+.marquee-box h4:after,
+.marquee-box .tc-content h5:after,
+.tc-content .marquee-box h5:after {
+  content: "";
+  position: absolute;
+  right: -7px;
+  top: 0;
+  z-index: 2;
+  background-image: url(../../../assets/images/main/path_arrow_new.png);
+  background-repeat: no-repeat;
+  width: 7px;
+  height: 25px;
+}
+
+.marquee-box .marquee {
+  flex: 1;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.marquee-box .marquee a {
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  color: #6ac2ff;
+  margin-right: 100px;
+  align-items: center;
+}
+
+.marquee-box .marquee a {
+  display: flex;
+
+}
+
+.marquee-box .marquee a {
+  float: left;
+}
+
+.marquee-box .marquee a span {
+  height: 15px;
+  line-height: 15px;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: normal;
+  color: #1c2834;
+  background-color: #6ac2ff;
+  border-radius: 2px;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
+.marquee-box .marquee a span {
+  display: block;
+}
+
+h4 {
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+
+
+/* .marquee-box {
+  position: fixed;
+  width: 100%;
+  top: 14.9vw;
+  z-index: 10;
+  color: #fff;
+  line-height: 6.6666666667vw;
+  height: 6.6666666667vw;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(-180deg, #2f424d 0%, #141e21 100%);
+  zoom: 1;
+} */
+
+.announce-wrap,
+.casino-result {
+  color: #000;
+  left: 5%;
+  top: 20%;
+  height: calc(100% - 24px - 24px);
+  min-height: 298px;
+  position: absolute;
+  width: 90%;
+}
+
+.article-date {
+  width: 18.6666666667vw;
+  margin-bottom: 4.2666666667vw;
+  border-top: 1.0666666667vw solid #4a4a4a;
+  padding-top: 1.0666666667vw;
+  color: #4a4a4a;
+}
+
+/* .side-head{
+  background-color: #000;
+} */
+
+.side-head {
+  background: linear-gradient(180deg, #474747 0%, #070707 100%);
+  color: #ffb200;
+  padding: 5px 0 3px 10px;
+  font-size: 11px;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0;
+  left: 28%;
+}
+
+.announce-wrap,
+.casino-result {
+  height: calc(100% - 24px - 97px);
+}
+
+/* // */
+
+.side-head .close {
+  border-left-color: rgba(255, 178, 0, .3);
+}
+
+.side-head .close {
+  padding: 0 3.4666666667vw;
+  border-left: 1px solid #be7809;
+}
+
+.close {
+  justify-content: center;
+  align-items: center
+}
+
+.close {
+  display: flex;
+  font-size: 0;
+  text-indent: -99999px;
+}
+
+a {
+  text-decoration: none;
+  color: #2789ce;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(182, 223, 253, .5);
+}
+
+.side-head .close:before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="%23ffb200" fill-rule="evenodd" d="M9 .912L5.412 4.5 9 8.088 8.088 9 4.5 5.412.912 9 0 8.088 3.588 4.5 0 .912.912 0 4.5 3.588 8.088 0z"/></svg>') no-repeat;
+  background-size: contain;
+}
+
+.close:before {
+  content: "";
+  width: 2.4vw;
+  height: 2.4vw;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"><path fill="rgb(30,30,30)" fill-rule="evenodd" d="M9 .912L5.412 4.5 9 8.088 8.088 9 4.5 5.412.912 9 0 8.088 3.588 4.5 0 .912.912 0 4.5 3.588 8.088 0z"/></svg>');
+  background-size: contain;
+}
+
+.close::before {
+  display: block;
+}
+
+.close {
+  position: relative;
+  top: -32px;
+  font-size: 30px;
+}
+
+.announc-text {
+  margin: 0 12vw 0;
+}
+
+@media all and (max-width : 430px) {
+
+  .announce-wrap,
+  .casino-result {
+    /* color: #000;
+    left: 16px; */
+    top: 12%;
+    /* height: calc(100% - 24px - 97px);
+    min-height: 298px;
+    position: absolute;
+    width: 90%; */
+  }
+
+  .announc-text {
+    margin: 0 6vw 0;
+  }
+}
+
+
+.announceOver {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 95%;
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  margin: 2.6666666667vw 0;
+}
+
+.pages li {
+  list-style: none;
+  margin-right: 0.8vw;
+  margin-left: 0.8vw;
+}
+
+.btn,
+.calendarTable_inputBox input,
+.calendarTable_inputBox textarea,
+.pages a,
+.marquee-pop .pages a,
+.btn-send {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 4vw;
+}
+
+.pages a {
+  display: block;
+  font-weight: normal;
+  margin: 0;
+  line-height: 9.3333333333vw;
+  padding: 0vw 3.2vw;
+}
+
+.article-wrap {
+  padding: 0;
+  border-bottom: 1px solid #e0e6e6;
+  padding-top: 0;
+  padding-bottom: 6.6666666667vw;
+}
+
+.date-article {
+  width: 18.6666666667vw;
+  margin-bottom: 4.2666666667vw;
+  border-top: 1.0666666667vw solid #4a4a4a;
+  padding-top: 1.0666666667vw;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+.date-article dt {
+  margin-right: 0.5333333333vw;
+  font-size: 8vw;
+  line-height: 8.5333333333vw;
+  float: left;
+  font-weight: normal;
+}
+
+.date-article dd {
+  font-size: 3.7333333333vw;
+  line-height: 4.2666666667vw;
+  margin: 0;
+}
+
+.announce-wrap p,
+.tc-wrap p {
+  margin: 0 0 3.2vw 0;
+  font-size: 4vw;
+}
+
+@media (max-width: 430px) {
+
+  .announce-wrap,
+  .casino-result {
+    top: 10%;
+  }
+}

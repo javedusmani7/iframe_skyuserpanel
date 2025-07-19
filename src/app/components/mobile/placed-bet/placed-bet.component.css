@@ -1,0 +1,11 @@
+@import './../../../../mob-style.css';
+.btn-list li p {
+    text-align: center;
+    margin:0;
+}
+.bet_slip-wrap{
+    padding: 0;
+}
+.loader{
+  z-index: 999999;
+}

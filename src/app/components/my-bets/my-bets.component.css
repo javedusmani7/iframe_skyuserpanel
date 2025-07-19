@@ -1,0 +1,11 @@
+.report-tab-wrap .report-tab:nth-child(10):after {
+  content: none;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 4px 0 4px;
+  border-color: #3b5160 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  margin-left: 5px;
+}

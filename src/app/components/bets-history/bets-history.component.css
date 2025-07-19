@@ -1,0 +1,32 @@
+.betData .time-input{
+  padding: 0px;
+  width: 65px;
+}
+.cal-input{
+  padding: 0;
+  margin-right: 9px;
+}
+/* .expand-close, .expand-open, .align-L .expand-close {
+background-image: url(../../../assets/images/report-sf227858fbc.png);
+background-repeat: no-repeat;
+} */
+
+.green{
+color:green;
+}
+.red{
+color:red;
+}
+
+
+.report-tab-wrap .report-tab:nth-child(10):after {
+content: none;
+display: inline-block;
+vertical-align: middle;
+width: 0;
+height: 0;
+border-style: solid;
+border-width: 6px 4px 0 4px;
+border-color: #3b5160 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+margin-left: 5px;
+}

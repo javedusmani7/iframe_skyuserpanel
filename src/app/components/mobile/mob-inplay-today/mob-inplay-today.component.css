@@ -1,0 +1,32 @@
+@import './../../../../mob-style.css';
+.myHead{
+  font-weight: 600;
+}
+.marquee-box {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 14.666667vw!important;
+}
+h3 {
+  color: Gold;
+}
+
+.desktop-marquee {
+  position: fixed;
+  top: 14vw;
+}
+
+.marq-space1 {
+  margin-top: 19.666667vw;
+}
+.marq-space {
+  margin-top: 12.666667vw;
+}
+
+/* .highlight-list .inplay-off a:hover{
+  color: #FFB80C !important;
+} */
+.highlight-list .inplay-off a:active{
+  color: #FFB80C !important;
+}

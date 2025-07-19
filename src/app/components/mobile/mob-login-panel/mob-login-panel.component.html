@@ -1,0 +1,34 @@
+<div class="ui-mobile-viewport body ui-overlay-a">
+  <div data-role="page" data-url="/exchange/mobile/login/members/login.jsp" tabindex="0"
+    class="ui-page ui-page-theme-a ui-page-active">
+    <header class="login-head" [style.background-image]="'url(../../../../../../assets/images/login/KV-pic.png)'">
+      <a class="close ui-link" routerLink="/home"></a>
+      <h1>SKYEXCHANGE
+      </h1>
+    </header>
+    <form >
+      <dl class="form-login">
+        <dd id="loginNameErrorClass">
+          <input type="text" id="loginName" maxlength="30" data-role="none"
+            placeholder="Username">
+        </dd>
+        <dd id="passwordErrorClass">
+          <input [type]="showpwrd ? 'text':'password'" id="password" maxlength="30" formControlName="pass"
+            data-role="none" placeholder="Password">
+          <i (click)="showpwd()" style="position:absolute;color:#000;right:7%;top: 33%; font-size:5vw;"
+            class="fa fa-eye-slash" aria-hidden="true"></i>
+        </dd>
+        <dd id="validCodeErrorClass" style="display: block">
+          <input type="text" id="validCode" pattern="[0-9]*" maxlength="4" formControlName="validCode"
+            placeholder="Validation Code" autocomplete="off" inputmode="numeric">
+          <span>7412</span>
+        </dd>
+        <dd><button class="btn-send1 ui-link" type="submit"
+            [ngStyle]="{'background-image':'linear-gradient(-180deg, rgb(70, 70, 70) 15%, rgb(18, 18, 18))', 'color' : '#ffb200'}"
+            id="loginBtn">Login</button></dd>
+        <!-- <dd id="errorMsg" class="state">invalid</dd> -->
+      </dl>
+    </form>
+    <app-mob-footer class="mob-footer"></app-mob-footer>
+  </div>
+</div>

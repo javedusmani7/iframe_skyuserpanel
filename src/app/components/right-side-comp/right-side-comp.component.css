@@ -1,0 +1,124 @@
+.slip-wrap{
+  overflow: hidden;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.betheight{
+  line-height: 15px;
+}
+
+.betheight1{
+  line-height: 24px;
+}
+
+.slip-list {
+    font-size: 11px;
+}
+
+.slip-list h4, .slip-list .tc-content h5, .tc-content .slip-list h5{
+    font-size: 11px;
+}
+#noBetSlipInfo{
+    padding: 2px 5px 2px;
+}
+.slip-wrap .no-open-bet_slip
+{
+display: flex;
+}
+
+.live-wrap h3, .tv-wrap h3, .matched-wrap h3, .slip-wrap h3 {
+  box-shadow: 0 2px 0 rgba(0,0,0,.1);
+  background: initial;
+  background-image: linear-gradient(180deg, #2d4a5c 0%, #203846 100%);
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.cricketInplaySlip, .soccerInplaySlip, .tennisInplaySlip {
+  background-image: linear-gradient(-180deg,#2E4B5E 0%,#243A48 82%);
+  float: right;
+  height: 7px;
+  width: 10px;
+  border-radius: 2px;
+  border: 0.5px solid white;
+  line-height: 3px;
+  margin-top: 8px;
+  margin-right: -2px;
+  padding: 0 0 1.5px;
+}
+.small, small {
+  font-size: 84%;
+  font-weight: 400;
+  color: #fff;
+
+}
+.plus{
+  font-size: 9px!important;
+  color: #fff;
+}
+
+.stakes{
+  margin: 0;
+}
+.betslipContainer{
+  min-height: 50%!important;
+}
+
+.matched-wrap h3 {
+  text-align: left!important;
+}
+.slip-book dt, .slip-lay dt, .slip-back dt {
+  position: relative;
+  width: 42.090395%;
+  font-weight: bold;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.slip-back dt .short-amount, .slip-lay dt .short-amount, .slip-book dt .short-amount, .slip-back dt .full-amount, .slip-lay dt .full-amount, .slip-book dt .full-amount {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.slip-back {
+  background-color: #beddf4;
+  border-bottom: 1px solid #67afe5;
+}
+
+.slip-back dt span, .slip-lay dt span, .slip-book dt span {
+  color: #222;
+  opacity: 0.5;
+  font-weight: normal;
+}
+
+.slip-back dt .slip-type, .slip-lay dt .slip-type, .slip-book dt .slip-type {
+  line-height: 22px;
+  border-radius: 3px;
+  color: #1e1e1e;
+  padding: 0 5px;
+  margin: 5px 5px 0 0;
+  opacity: 1;
+}
+
+.slip-lay, .slip-lay dd{
+  margin: 0;
+}
+
+.slip-back, .slip-back dd{
+  margin: 0;
+}
+
+.slip-back dt {
+  float: left;
+}
+
+.col-stake_list, .keep-option{
+  margin: 0;
+}
+
+.short-amount{
+  display: block;
+}

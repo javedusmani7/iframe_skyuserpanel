@@ -1,0 +1,32 @@
+@import './../../../../mob-style.css';
+
+.btn-list li p {
+    text-align: center;
+    margin:0;
+}
+.bet_slip-wrap{
+    padding: 0;
+}
+.loader{
+  z-index: 999999;
+}
+
+.overlay:not(:target) {
+  display: flex;
+}
+
+.pop-wrap h3, .select-list h3 {
+  background-image: linear-gradient(-180deg, #ffcc2e 0%, #ffb80c 58%);
+  font-weight: 700;
+}
+.pop-wrap h3, .select-list h3 {
+  font-size: 4vw;
+  line-height: 1.2;
+  color: #1E1E1E;
+  border-radius: 1.33333vw 1.33333vw 0 0;
+  padding: 2.4vw 1.86667vw;
+}
+.btn-send, .login {
+  background-image: linear-gradient(-180deg, #ffb80c 15%, #ffa00c 100%);
+  border-color: #bf7809;
+}

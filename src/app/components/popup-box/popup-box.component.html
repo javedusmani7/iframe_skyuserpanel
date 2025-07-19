@@ -1,0 +1,21 @@
+<div id="loginPopup" class="dialog-wrap-w login_to_go">
+    <div class="kv"
+        style="background-image: url(&quot;https://imagedelivery.net/I9sos4ch_2vM7bVAQ311tg/lc247.life-lc-web.jpeg/LoginImage?v=0.44&quot;);">
+    </div>
+    <dl class="login-panel">
+        <form novalidate="" ng-reflect-form="[object Object]" class="ng-untouched ng-pristine ng-invalid">
+            <dt>Please login to continue</dt>
+            <dd><input id="loginBoxLoginName" type="text" maxlength="12" formcontrolname="userId" placeholder="Username"
+                    ng-reflect-maxlength="12" ng-reflect-name="userId" class="ng-untouched ng-pristine ng-invalid"></dd>
+            <dd><input id="loginBoxPassword" type="password" maxlength="16" formcontrolname="pass"
+                    placeholder="Password" ng-reflect-maxlength="16" ng-reflect-name="pass"
+                    class="ng-untouched ng-pristine ng-invalid"></dd>
+            <dd class="valid-code" style="display: block;"><input id="loginBoxValidCode" type="text"
+                    formcontrolname="validCode" placeholder="Validation Code" maxlength="4" ng-reflect-maxlength="4"
+                    ng-reflect-name="validCode" class="ng-untouched ng-pristine ng-invalid"><span>8761</span></dd>
+            <dd><button id="loginBoxLoginBtn" type="submit" class="btn-send" style="cursor: pointer;">Login <img
+                        src="../../../assets/images/transparent.gif" class="icon-login"></button></dd>
+            <dd id="loginBoxErrorMsg" class="error"></dd>
+        </form>
+    </dl><a id="close" class="close" style="cursor: pointer;" (click)="removePopup()"></a>
+</div>

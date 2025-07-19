@@ -1,0 +1,881 @@
+<div class="full-wrap" bis_skin_checked="1">
+    <div class="col-left" style="display: block;" bis_skin_checked="1">
+        <app-left-side-comp></app-left-side-comp>
+    </div>
+    <div id="centerColumn" class="col-center markets" bis_skin_checked="1">
+        <div id="overWrap" class="over-wrap live-match" style="height: calc(100% - 0px);"
+            bis_skin_checked="1">
+            <div id="liveMatchGameHead" class="game-head" bis_skin_checked="1">
+                <div id="matchTrackerWrap" class="match-tracker-wrap" bis_skin_checked="1">
+                    
+                    <ul id="liveMatchTrackerBtn" class="match-btn">
+                        <li><a id="liveMultiMarketPin"
+                                name="gameHeadPin" title="Add to Multi Markets" class="btn-pin"
+                                style="cursor: pointer;"></a></li>
+                        <li><a class="btn-refresh"
+                                style="cursor: pointer;"></a></li>
+                    </ul>
+                </div>
+                <div id="scoresEvent" class="match-odds" bis_skin_checked="1">Match Odds<img
+                        src="../../../assets/images/transparent.gif"></div>
+                <ul class="game-info" style="display: block;">
+                    <li id="gameInfoDate" class="green"><img
+                            src="../../../assets/images/icon-irun.png" class="icon-irun"> In-Play</li>
+                </ul><span id="lowLiquidityTag" class="game-low_liq"
+                    style="display: none;">Low Liquidity</span>
+                <dl class="game-matched" style="display: block;">
+                    <dt>Matched</dt>
+                    <dd id="liveGameMatched">PTE 87015619.47</dd>
+                </dl>
+                <dl id="minMaxBox" class="fancy-info">
+                    <dt id="minMaxDt">Min/Max</dt>
+                    <dd id="minMaxInfo">0.1/2000</dd>
+                </dl>
+            </div>
+            <div id="fullMarketBetsWrap" class="bets-wrap asiahadicap" bis_skin_checked="1">
+                <span id="selectionCounts" class="refer_only">3 selections</span>
+                <table id="fullMarketBoard" class="bets">
+                    <tbody>
+                        <tr class="bet-all">
+                            <td></td>
+                            <td id="backPercent" colspan="2" class="refer-bet">100.6%</td>
+                            <td><a id="backAll"
+                                    class="back-all"><img
+                                        src="../../../assets/images/bg-backall.png"><span
+                                       >Back all</span></a></td>
+                            <td><a id="layAll"
+                                    class="lay-all"><img
+                                        src="../../../assets/images/bg-layall.png"><span>Lay
+                                        all</span></a></td>
+                            <td id="layPercent" colspan="2" class="refer-book">99.6%</td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p><a><img
+                                            src="../../../assets/images/chart.png"
+                                            class="icon-predict"></a>England</p>
+                            </th>
+                            <td id="suspend" colspan="6" class="suspend"
+                                style="display: none;"><span>Suspend</span></td>
+                            <td side="Back" class="back-1 spark"><a
+                                   >1.38<span>11761.45</span></a>
+                            </td>
+                            <td side="Back" class="back-2 spark"><a
+                                   >1.39<span>3403.26</span></a>
+                            </td>
+                            <td side="Back" class="back-3 spark"><a
+                                   >1.4<span>1000</span></a></td>
+                            <td class="lay-1 spark"><a>1.41<span
+                                       >10700.53</span></a></td>
+                            <td class="lay-2 spark"><a>1.42<span
+                                       >3145.67</span></a></td>
+                            <td class="lay-3 spark"><a>1.43<span
+                                       >1320.85</span></a></td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p><a><img
+                                            src="../../../assets/images/chart.png"
+                                            class="icon-predict"></a>India</p>
+                            </th>
+                            <td id="suspend" colspan="6" class="suspend"
+                                style="display: none;"><span>Suspend</span></td>
+                            <td side="Back" class="back-1 spark"><a
+                                   >3.35<span>1312.47</span></a>
+                            </td>
+                            <td side="Back" class="back-2 spark"><a
+                                   >3.4<span>2.36</span></a></td>
+                            <td side="Back" class="back-3 spark"><a
+                                   >3.45<span>4443.27</span></a>
+                            </td>
+                            <td class="lay-1 spark"><a>3.55<span
+                                       >589.06</span></a></td>
+                            <td class="lay-2 spark"><a>3.6<span
+                                       >251.61</span></a></td>
+                            <td class="lay-3 spark"><a>3.65<span
+                                       >866.99</span></a></td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p><a><img
+                                            src="../../../assets/images/chart.png"
+                                            class="icon-predict"></a>The Draw</p>
+                            </th>
+                            <td id="suspend" colspan="6" class="suspend"
+                                style="display: none;"><span>Suspend</span></td>
+                            <td side="Back" class="back-1 spark"><a
+                                   >280<span>6.1</span></a></td>
+                            <td side="Back" class="back-2 spark"><a
+                                   >300<span>44.96</span></a></td>
+                            <td side="Back" class="back-3 spark"><a
+                                   >310<span>8.9</span></a></td>
+                            <td class="lay-1 spark"><a>350<span
+                                       >13.96</span></a></td>
+                            <td class="lay-2 spark"><a>390<span
+                                       >1.28</span></a></td>
+                            <td class="lay-3 spark"><a>400<span
+                                       >6.22</span></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="bookMakerWrap" class="bets-wrap bookmaker_bet" bis_skin_checked="1">
+                <table id="bookMakerMarketList" class="bets bets-bookmaker">
+                    <colgroup>
+                        <col span="1" width="280">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                    </colgroup>
+                    <tr class="colgroup-adjust">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="bookMakerSpecialBet" class="special_bet">
+                        <td colspan="7">
+                            <h3 style="padding-top: 3px;">Bookmaker Market<p
+                                   >| Zero Commission</p>
+                            </h3>
+                            <dl class="fancy-info">
+                                <dt><span>Min</span></dt>
+                                <dd id="min"> 0.1</dd>
+                                <dt><span>Max</span></dt>
+                                <dd id="max"> 5000</dd>
+                            </dl>
+                        </td>
+                    </tr>
+                    <tr class="bet-all">
+                        <td colspan="3"></td>
+                        <td>Back</td>
+                        <td>Lay</td>
+                        <td colspan="2" class="refer-book"></td>
+                    </tr>
+                    <tbody>
+                        <tr class="fancy-suspend-tr">
+                            <th colspan=""></th>
+                            <!-- <td colspan="6" class="fancy-suspend-td">
+                                <div id="suspendClass" class="fancy-suspend" bis_skin_checked="1"><span
+                                        id="bookSuspendedDivInfo4708889">Ball Running</span></div>
+                            </td> -->
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p id="runnerName">England</p>
+                            </th>
+                            <td colspan="3">
+                                <dl class="back-gradient">
+                                    <dd id="back_3 spark" style="cursor: pointer;">
+                                        <p>9.5</p>
+                                    </dd>
+                                    <dd id="back_2 spark" style="cursor: pointer;">
+                                        <p>10.5</p>
+                                    </dd>
+                                    <dd id="back_1 spark" style="cursor: pointer;" class="select"><a
+                                            style="color: #000;">11.5</a></dd>
+                                </dl>
+                            </td>
+                            <td colspan="3">
+                                <dl class="lay-gradient">
+                                    <dd id="lay_1 spark" style="cursor: pointer;"><a
+                                            style="color: #000;">12.5</a></dd>
+                                    <dd id="lay_2 spark" style="cursor: pointer;">
+                                        <p>13.5</p>
+                                    </dd>
+                                    <dd id="lay_3 spark" style="cursor: pointer;">
+                                        <p>14.5</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-quick-tr" style="display: table-row;">
+                            <td colspan="7">
+                                <app-bet-place-comp >
+                                </app-bet-place-comp>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr">
+                            <th colspan=""></th>
+                            <td colspan="6" class="fancy-suspend-td">
+                                <div id="suspendClass" class="fancy-suspend" bis_skin_checked="1"><span
+                                        id="bookSuspendedDivInfo4708889">Ball Running</span></div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p id="runnerName">India</p>
+                            </th>
+                            <td colspan="3">
+                                <dl class="back-gradient">
+                                    <dd id="back_3 spark" style="cursor: pointer;">
+                                        <p>218</p>
+                                    </dd>
+                                    <dd id="back_2 spark" style="cursor: pointer;">
+                                        <p>219</p>
+                                    </dd>
+                                    <dd id="back_1 spark" style="cursor: pointer;"><a
+                                            style="color: #000;">220</a></dd>
+                                </dl>
+                            </td>
+                            <td colspan="3">
+                                <dl class="lay-gradient">
+                                    <dd id="lay_1 spark" style="cursor: pointer;"><a
+                                            style="color: #000;">230</a></dd>
+                                    <dd id="lay_2 spark" style="cursor: pointer;">
+                                        <p>231</p>
+                                    </dd>
+                                    <dd id="lay_3 spark" style="cursor: pointer;">
+                                        <p>232</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr">
+                            <th colspan=""></th>
+                            <td colspan="6" class="fancy-suspend-td">
+                                <div id="suspendClass" class="fancy-suspend" bis_skin_checked="1"><span
+                                        id="bookSuspendedDivInfo4708889">Ball Running</span></div>
+                            </td>
+                        </tr>
+                        <tr style="display: table-row;">
+                            <th class="predict">
+                                <p id="runnerName">The Draw</p>
+                            </th>
+                            <td colspan="3">
+                                <dl class="back-gradient">
+                                    <dd id="back_3 spark" style="cursor: pointer;">
+                                        <p>9998</p>
+                                    </dd>
+                                    <dd id="back_2 spark" style="cursor: pointer;">
+                                        <p>9999</p>
+                                    </dd>
+                                    <dd id="back_1 spark" style="cursor: pointer;"><a
+                                            style="color: #000;">10000</a></dd>
+                                </dl>
+                            </td>
+                            <td colspan="3">
+                                <dl class="lay-gradient">
+                                    <dd id="lay_1 spark" style="cursor: pointer;"><a
+                                            style="color: #000;">0</a></dd>
+                                    <dd id="lay_2 spark" style="cursor: pointer;">
+                                        <p>0</p>
+                                    </dd>
+                                    <dd id="lay_3 spark" style="cursor: pointer;">
+                                        <p>0</p>
+                                    </dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="fancyContainer" class="bets-wrap fancy_bet" bis_skin_checked="1">
+                <div id="fancyBetHead" class="fancy-head" bis_skin_checked="1">
+                    <h4 class="in-play"><span
+                            id="headerName">Fancy Bet</span><a
+                            class="btn-fancybet_rules"></a></h4><a id="showSportsBookBtn"
+                        class="other-tab pfnacy"><span class="tag-new">New</span> Premium
+                        Cricket </a>
+                </div>
+                <div id="fancyBetTabWrap" class="fancy_bet_tab-wrap" bis_skin_checked="1">
+                    <ul class="special_bets-tab">
+                        <li class="select"><a>All</a></li>
+                        <li><a>Normal</a></li>
+                        <li><a>Fancy1</a></li>
+                        <li><a>Over</a></li>
+                        <li><a>Ball by Ball</a></li>
+                        <li><a>Khadda</a></li>
+                        <li><a>Lottery</a></li>
+                        <li><a>Odd/Even</a></li>
+                    </ul>
+                </div>
+                <p id="fancyBetNoBet" class="no_bet" style="display: none;">has no markets
+                </p>
+                <table id="fancyBetMarketList" class="bets">
+                    <colgroup>
+                        <col span="1" width="280">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                        <col span="1" width="70">
+                    </colgroup>
+                    <tr class="colgroup-adjust">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tbody>
+                        <tr id="fancyBetSpecialBet" class="special_bet">
+                            <td colspan="7">
+                                <h3>Normal Fancy</h3>
+                            </td>
+                        </tr>
+                        <tr class="bet-all">
+                            <td></td>
+                            <td colspan="2" class="refer-bet"></td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td colspan="2" class="refer-book"></td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">8th Wkt IND (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">125<span
+                                               >110</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">125<span
+                                               >90</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">8th Wkt IND Run Bhav (2)</p>
+                                        
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">109<span
+                                               >10</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">109<span
+                                               >7</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">8th Wkt Pship Boundaries IND (2)
+                                        </p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">3<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">4<span
+                                               >100</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">8th Wkt Caught Out IND 1 (2)</p>
+                                        
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >80</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">R Jadeja Runs (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">35<span
+                                               >110</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">35<span
+                                               >90</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">R Jadeja Run Bhav (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">18<span
+                                               >12</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">18<span
+                                               >8</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">R Jadeja Boundaries (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">2<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">3<span
+                                               >100</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">Nitish Runs (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">25<span
+                                               >110</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">25<span
+                                               >90</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">Nitish Run Bhav (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">11<span
+                                               >12</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">11<span
+                                               >8</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">Nitish Boundaries (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">2<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">3<span
+                                               >100</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">Lambi IND (2)</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">153<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">155<span
+                                               >100</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">Lambi IND 1 '2'</p>
+                                    </dt>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">153<span
+                                               >100</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">155<span
+                                               >100</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr id="fancyBetSpecialBet" class="special_bet">
+                            <td colspan="7">
+                                <h3>Odd Even</h3>
+                            </td>
+                        </tr>
+                        <tr class="bet-all">
+                            <td></td>
+                            <td colspan="2" class="refer-bet"></td>
+                            <td>No</td>
+                            <td>Yes</td>
+                            <td colspan="2" class="refer-book"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">40 OVER TOTAL ODD IND (2)</p>
+                                    </dt>
+                                    <dd class="dd-tips"></dd>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >102</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >98</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                        <tr class="fancy-suspend-tr" style="display: table-row;">
+                            <th></th>
+                            <td colspan="2"></td>
+                            <td colspan="2" class="fancy-suspend-td">
+                                <div id="fancyStatus112" class="fancy-suspend"
+                                    bis_skin_checked="1"><span id="info">Suspend</span></div>
+                            </td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr id="fancyBetMarket_1184889">
+                            <th colspan="3">
+                                <dl class="fancy-th-layout">
+                                    <dt>
+                                        <p id="marketName">45 OVER TOTAL ODD IND (2)</p>
+                                    </dt>
+                                    <dd class="dd-tips"></dd>
+                                </dl>
+                            </th>
+                            <td colspan="2" class="multi_select">
+                                <ul>
+                                    <li id="lay_1" class="lay-1"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >102</span></a></li>
+                                    <li id="back_1" class="back-3"><a
+                                            id="runsInfo" style="cursor: pointer;">1<span
+                                               >98</span></a></li>
+                                </ul>
+                            </td>
+                            <td colspan="2" class="td-fancy_merge">
+                                <dl class="fancy-info">
+                                    <dt>Min/Max</dt>
+                                    <dd id="minMax"> 0.1 / 1000</dd>
+                                </dl>
+                                <dl class="fancy-info">
+                                    <dt id="rebateName" style="display: none;">Rebate</dt>
+                                    <dd id="rebate" style="display: none;"></dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <app-right-side-comp></app-right-side-comp>
+        
+</div>

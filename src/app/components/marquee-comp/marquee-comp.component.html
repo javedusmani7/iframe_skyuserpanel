@@ -1,0 +1,82 @@
+<div class="marquee-box" style="display: flex;">
+  <h4>News</h4>
+  <div class="marquee">
+    <marquee direction="left" loop="infinite" scrollAmount="4">
+      <div style="width: 1000px;" class="js-marquee-wrapper">
+        <div class="js-marquee">
+          <a (click)="clickonmarq()">
+            <span>10 July 2025</span> Server Maintenance : Scheduled from 2AM to 4AM.
+          </a>
+        </div>
+        <div class="js-marquee">
+          <a (click)="clickonmarq()">
+            <span>09 July 2025</span> New Sports Added : Basketball now available in the lobby.
+          </a>
+        </div>
+        <div class="js-marquee">
+          <a (click)="clickonmarq()">
+            <span>08 July 2025</span> Promo Offer : Get 10% cashback on your first deposit.
+          </a>
+        </div>
+      </div>
+    </marquee>
+  </div>
+</div>
+
+
+<div class="overlay" *ngIf="announcemntPopup" style="display: flex;">
+
+  <div class="frame-wrap">
+
+    <div class="news-wrap news-wrap-frame">
+
+      <div class="announce-wrap announce-wrap-mob">
+        <div class="side-head">
+          <h3 class="a-depth">Announcement</h3>
+          <a class="close ui-link" (click)="closePopup()">Close</a>
+        </div>
+        <div class="announceOver">
+          <div id="announcementTemplate" class="article-wrap">
+            <dl class="date-article">
+              <dt id="date_6">10</dt>
+              <dd id="month_6">July</dd>
+              <dd id="year_6">2025</dd>
+            </dl>
+            <p id="textByLanguageType_6" class="announc-text" style="margin: 0 0 1.2vw 0;">Maintenance Notice</p>
+            <p id="textByLanguageType_6" class="announc-text">Our servers will be down from 2:00 AM to 4:00 AM.</p>
+          </div>
+
+          <div id="announcementTemplate" class="article-wrap">
+            <dl class="date-article">
+              <dt id="date_6">09</dt>
+              <dd id="month_6">July</dd>
+              <dd id="year_6">2025</dd>
+            </dl>
+            <p id="textByLanguageType_6" class="announc-text" style="margin: 0 0 1.2vw 0;">New Feature Launched</p>
+            <p id="textByLanguageType_6" class="announc-text">Check out the new live match stats panel on your
+              dashboard.</p>
+          </div>
+
+          <div id="announcementTemplate" class="article-wrap">
+            <dl class="date-article">
+              <dt id="date_6">08</dt>
+              <dd id="month_6">July</dd>
+              <dd id="year_6">2025</dd>
+            </dl>
+            <p id="textByLanguageType_6" class="announc-text" style="margin: 0 0 1.2vw 0;">Deposit Bonus</p>
+            <p id="textByLanguageType_6" class="announc-text">Get 10% extra chips on deposits made this weekend.</p>
+          </div>
+        </div>
+
+
+        <div>
+          <ul id="pageNumberContent" class="pages">
+            <li id="prev"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Prev</a></li>
+            <li id="pageNumber"><a href="javascript:void(0);" class="select" style="pointer-events: none;">1</a></li>
+            <li id="next"><a href="javascript:void(0);" class="disable" style="pointer-events: none;">Next</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,182 @@
+<div class="parent">
+  <div class="main_wrap">
+    <app-profile-left-comp></app-profile-left-comp>
+
+    <div class="col-center report">
+
+      <h2>My Bets</h2>
+
+      <ul class="tab col3">
+        <li><a [routerLink]="['/mybet']">Current Bets</a></li>
+        <li><a class="select" [routerLink]="['/bet-history']">Bets History</a></li>
+        <li><a [routerLink]="['/profit-loss']">Profit &amp; Loss</a></li>
+      </ul>
+
+      <ul class="report-tab-wrap" style="display:block">
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Odds']">Exchange</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Fancy']">FancyBet</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Fancy1']">Fancy1Bet</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Toss']">TossBet</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/casino']">Casino Bet
+        </li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Sportsbook']">Sportsbook
+        </li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/BookMaker']">BookMaker
+        </li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Premium']">Premium</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/Other']">Others</li>
+        <li class="report-tab" routerLinkActive="select" [routerLink]="['/myAccount/bet-history/SABA SPORTS']">SABA
+          SPORTS</li>
+      </ul>
+
+      <div class="function-wrap">
+        <form>
+          <ul class="input-list">
+            <div id="statusCondition">
+              <li><label>Bet Status:</label></li>
+              <li>
+                <select name="betStatus" id="betStatus" fdprocessedid="p6duu">
+                  <option value="Settled">Settled</option>
+                  <option value="suspended">Cancelled</option>
+                  <option value="deleted">Voided</option>
+                </select>
+              </li>
+            </div>
+
+            <li><label>Period</label></li>
+            <li class="betData">
+              <input id="startDate" class="cal-input" type="date" placeholder="YYYY-MM-DD" fdprocessedid="l93o1">
+              <input id="startTime" class="time-input " type="time" placeholder="09:00" fdprocessedid="7l9mjt">
+              to
+              <input id="endDate" class="cal-input" type="date" placeholder="YYYY-MM-DD" fdprocessedid="77jx5">
+              <input id="endTime" class="time-input " type="time" placeholder="08:59" fdprocessedid="i0gdg">
+            </li>
+            <li style="display: none;">(TimeZone:IST)</li>
+
+            <div id="inPlayCondition" style="display: none;">
+              <li><label>inPlay:</label></li>
+              <li>
+                <select name="inPlayStatus" id="inPlayStatus">
+                  <option value="0">All</option>
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </li>
+            </div>
+          </ul>
+
+          <ul class="input-list">
+            <li><a id="today" class="btn">Just For Today</a></li>
+            <li><a id="yesterday" class="btn">From Yesterday</a></li>
+            <li><button id="getPL" type="submit" class="btn-send">Get History</button></li>
+          </ul>
+
+        </form>
+      </div>
+      <!-- No Report Message -->
+      <div id="noReportMessage" *ngIf="!betAllHistory?.betlist.length; else showBetData">
+        <p>Betting History enables you to review the bets you have placed. <br>Specify the time period during which
+          your bets were placed, the type of markets on which the bets were placed, and the sport.</p>
+        <p>Betting History is available online for the past 62 days.</p>
+        <p>User can search up to 14 days records per query only .</p>
+      </div>
+
+      <!-- Report Table -->
+      <ng-template #showBetData>
+        <div id="report" style="display: block">
+
+          <ul id="inPlayIcon" class="report-info" style="display: none;">
+            <li class="icon-inplay">inplay</li>
+            <li class="icon-noninplay">non-inplay</li>
+          </ul>
+
+          <table id="matchTableTemplate" class="table-s" style="display: block;line-height:15px;">
+            <tbody>
+              <tr>
+                <th width="9%" class="align-L">Bet ID</th>
+                <th width="9%" class="align-L">PL ID</th>
+                <th width="" class="align-L">Market</th>
+                <th width="12%">Selection</th>
+                <th width="4%">Type</th>
+                <th width="8%">Bet placed</th>
+                <th width="7%">Odds req.</th>
+                <th width="8%">Stake</th>
+                <th width="8%">Avg. odds matched</th>
+                <th width="10%">Profit/Loss</th>
+              </tr>
+
+              <tr>
+                <td class="align-L"><a id="betID" class="expand-close">ABCD1234</a></td>
+                <td class="align-L" id="playerID">user_101</td>
+                <td class="align-L">
+                  <label id="title">
+                    Cricket
+                    <img id="arrow" class="fromto" src="../../../assets/images/icon-fromto.png">
+                    <strong>IND vs AUS</strong>
+                    <img id="arrow" class="fromto" src="../../../assets/images/icon-fromto.png">
+                    Betfair
+                  </label>
+                </td>
+                <td id="matchSelection">Virat Kohli</td>
+                <td>
+                  <span id="type" class="back">Back</span>
+                </td>
+                <td><span id="betPlaced" class="small-date">2025-07-10 13:45:22</span></td>
+                <td id="matchOddsReq">1.85</td>
+                <td id="matchStake">500</td>
+                <td id="matchAvgOdds">1.85</td>
+                <td><span class="green">(425.00)</span></td>
+              </tr>
+
+              <tr class="expand">
+                <td colspan="2"></td>
+                <td colspan="9">
+                  <table id="txTable0">
+                    <tbody>
+                      <tr>
+                        <th>Bet taken</th>
+                        <th width="16%">Odds req.</th>
+                        <th width="17%">Stake</th>
+                        <th width="24%">Liability</th>
+                        <th width="24%">Odds matched</th>
+                      </tr>
+                      <tr id="txRow0" style="display: table-row;" class="even">
+                        <td><span id="betTaken" class="small-date">2025-07-10 13:45:00</span></td>
+                        <td id="txOddsReq">1.85</td>
+                        <td id="txStake">500</td>
+                        <td id="txLiability">-</td>
+                        <td id="txOddsMatched">1.85</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+
+
+            </tbody>
+          </table>
+
+          <p class="table-other"></p>
+
+          <!-- Pages List -->
+          <div>
+            <ul id="pageNumberContent" class="pages">
+              <li id="prev">
+                <a [class]="this.pages[this.pages.length - 1] < 6 ? 'disable' : ''">Prev
+                </a>
+              </li>
+              <li id="pageNumber" *ngFor=" let page of pages">
+                <a [class]="currentPage == page ? 'select' : ''">{{page}}</a>
+              </li>
+              <li id="next"><a [class]="this.pages[this.pages.length + 1] > 6 ? 'disable' : ''">Next
+                </a></li>
+            </ul>
+          </div>
+
+        </div>
+      </ng-template>
+
+    </div>
+  </div>
+
+</div>

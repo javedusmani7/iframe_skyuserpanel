@@ -1,0 +1,43 @@
+@import './../../../../mob-style.css';
+
+.myHead {
+    font-weight: 600;
+}
+
+.tab-wrap {
+    background-color: #172832;
+    color: #fff;
+    /* margin-top: 13.666667vw; */
+    font-size: 3.4666666667vw;
+    line-height: 8.8vw;
+    font-weight: bold;
+}
+
+.marquee-box {
+    position: sticky;
+    position: -webkit-sticky;
+    width: 100%;
+    top: 14.666667vw;
+    z-index: 10;
+    color: #fff;
+    line-height: 6.6666666667vw;
+    height: 6.6666666667vw;
+    background-repeat: repeat-x;
+    background-image: linear-gradient(-180deg, #2f424d 0%, #141e21 100%);
+    border-bottom: 1px solid #fff;
+}
+
+h3 {
+    color: Gold;
+}
+
+.desktop-marquee {
+    position: fixed;
+}
+
+.marq-space1 {
+    margin-top: 19.666667vw;
+}
+.marq-space {
+    margin-top: 12.666667vw;
+}

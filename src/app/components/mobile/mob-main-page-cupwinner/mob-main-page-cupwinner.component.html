@@ -1,0 +1,71 @@
+<!-- <div id="msgBox" class="message-wrap success to-open_bets" style="display: fixed;">
+  <div class="message">
+    <h4 id="header">Bet Placed Successfully</h4>
+    <p id="info" class="" style="text-align:left">
+      <span id="sideType" class="back">Back</span>
+      <strong id="selectionName">Team A</strong>
+      <strong id="stake">1000</strong>
+      at odds <strong id="odds">1.85</strong>
+    </p>
+  </div>
+  <a id="close" class="close ui-link">Close</a>
+</div> -->
+<div class="mian-wrap">
+
+  <div class="marquee-box desktop-marquee">
+    <app-marquee-comp></app-marquee-comp>
+  </div>
+
+  <div class="game-wrap" style="margin-top: 20vw;">
+    <div id="matchTrackerWrap" class="match-tracker-wrap">
+      <h4 id="gameInfo" class="game-info">
+        <span style="width:73vw">Match: Team A vs Team B</span>
+        <ul id="infoIcon" class="info-icon">
+          <li id="inPlayIcon">
+            <img class="info-inplay"
+              src="data:image/gif;base64,R0lGODdhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">In-Play
+          </li>
+          <li id="fancyBetIcon" style="display: none;"><span class="game-fancy">Fancy</span></li>
+          <li id="bookMakerIcon" style="display: none;"><span class="game-bookmaker">BookMaker</span></li>
+          <li id="feedingSiteIcon" style="display: none;"><span class="game-sportsbook">Sportsbook</span></li>
+          <li><span id="lowLiquidityTag" class="game-low_liq" style="display: none;">Low</span></li>
+        </ul>
+      </h4>
+    </div>
+  </div>
+
+  <!-- Odds Code Start -->
+  <div id="marketBetsWrap" class="bets-wrap asiahadicap">
+    <div>
+      <dl class="bets-selections" style="display: flex;">
+        <dt>
+          <h4 id="runnerName">Team A</h4>
+          <div>
+            <ul id="winLoss">
+              <li id="after" class="to-win">+123.45</li>
+            </ul>
+          </div>
+        </dt>
+
+        <dl class="back-gradient">
+          <dd id="back_1" class="select">
+            <a style="padding: 2px;">1.90<span> ₹500</span></a>
+          </dd>
+        </dl>
+
+        <dl class="lay-gradient disabled">
+          <dd id="lay_1" class="">
+            <a style="padding: 2px;"><span> </span></a>
+          </dd>
+        </dl>
+      </dl>
+
+
+      <app-placed-bet-cupwinner ></app-placed-bet-cupwinner>
+
+
+    </div>
+  </div>
+  <!-- Odds Code End -->
+
+</div>

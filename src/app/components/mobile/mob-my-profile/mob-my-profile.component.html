@@ -1,0 +1,26 @@
+<div class="mian-wrap">
+  @if (!isLogin) {
+    <div class="marquee-box">
+      <app-marquee-comp></app-marquee-comp>
+    </div>
+  }
+	<div class="path-wrap">
+		<p class="account-id">
+			<span>amuser</span>
+			<span class="time-zone">GMT+5:30</span>
+		</p>
+	</div>
+
+	<ul class="menu-list">
+		<li class=""><a [routerLink]="['/my-profile']">My Profile</a></li>
+		<li class=""><a [routerLink]="['/balance-overview']">Balance Overview</a></li>
+		<li class=""><a [routerLink]="['/mybet']">My Bets</a></li>
+		<li class=""><a [routerLink]="['/bet-history']">Bets History</a></li>
+		<li class=""><a [routerLink]="['/profit-loss']">Profit &amp; Loss</a></li>
+    <li class=""><a [routerLink]="['/checkresults']">Results</a></li>
+		<li class=""><a [routerLink]="['/activity-log']">Activity Log</a></li>
+	</ul>
+
+	<a id="logout" class="logout" (click)="logout()">LOGOUT</a>
+
+</div>

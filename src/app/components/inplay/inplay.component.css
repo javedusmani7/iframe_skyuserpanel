@@ -1,0 +1,81 @@
+.game-wrap-horse h3, .game-highlight-wrap h3, .game-wrap h3 {
+  margin: 0;
+  background: #243a48;
+  display: flex;
+  padding-right: 10px;
+
+}
+.cricketInplaySlip, .soccerInplaySlip, .tennisInplaySlip {
+  background-image: linear-gradient(-180deg,#2E4B5E 0%,#243A48 82%);
+  float: right;
+  height: 7px;
+  width: 10px;
+  border-radius: 2px;
+  border: 0.5px solid white;
+  line-height: 3px;
+  margin-top: 8px;
+  margin-right: -2px;
+  padding: 0 0 1.5px;
+}
+.small, small {
+  font-size: 84%;
+  font-weight: 400;
+  color: #fff;
+
+}
+.plus{
+  font-size: 9px!important;
+  color: #fff;
+}
+.beting {
+  display: none;
+}
+
+.game-list-col dt a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.col3 .col-game, .col3 .game-list-col dt, .game-list-col .col3 dt {
+  width: calc(64% - 42px);
+}
+
+.col-game, .game-list-col dt {
+  width: calc(64% - 42px);
+}
+
+.game-list-col dt .game-list-time {
+  margin-left: 0px;
+}
+#oneclickbet{
+  margin-bottom: 20px;
+}
+
+.col-center {
+  position: relative;
+  margin-left: 0%;
+  margin-right: 26.0416666667%;
+  padding: 0 5px;
+}
+
+.tab {
+  min-width: 375px;
+  width: 40%;
+  margin: 10px 0 10px;
+  border-left: 1px solid #3b5160;
+  border-radius: 5px;
+}
+
+.game-fancy, .game-sportsbook, .game-bookmaker {
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 5px;
+  border-radius: 3px;
+  width: 17px;
+  height: 16px;
+  padding: 0 !important;
+  float: right;
+}
+
