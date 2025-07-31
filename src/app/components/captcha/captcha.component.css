@@ -1,0 +1,28 @@
+.captcha-container {
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial;
+  margin-top: 40px;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+input,
+button {
+  padding: 10px;
+  margin: 5px;
+  width: 90%;
+  max-width: 300px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

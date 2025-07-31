@@ -1,0 +1,11 @@
+<div class="captcha-container">
+  <h2>Secure CAPTCHA</h2>
+  <canvas #captchaCanvas width="200" height="60"></canvas>
+  <br />
+  <button (click)="generateCaptcha()">Reload CAPTCHA</button>
+  <br />
+  <input type="text" [(ngModel)]="userInput" placeholder="Enter CAPTCHA" />
+  <br />
+  <button (click)="validateCaptcha()">Submit</button>
+  <p [ngClass]="resultClass">{{ resultMessage }}</p>
+</div>

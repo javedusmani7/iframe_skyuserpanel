@@ -13,17 +13,17 @@
             placeholder="Username">
         </dd>
         <dd id="passwordErrorClass">
-          <input [type]="showpwrd ? 'text':'password'" id="password" maxlength="30" formControlName="pass"
+          <input [type]="showpwrd ? 'text':'password'" id="password" maxlength="30"
             data-role="none" placeholder="Password">
           <i (click)="showpwd()" style="position:absolute;color:#000;right:7%;top: 33%; font-size:5vw;"
             class="fa fa-eye-slash" aria-hidden="true"></i>
         </dd>
         <dd id="validCodeErrorClass" style="display: block">
-          <input type="text" id="validCode" pattern="[0-9]*" maxlength="4" formControlName="validCode"
+          <input type="text" id="validCode" pattern="[0-9]*" maxlength="10" 
             placeholder="Validation Code" autocomplete="off" inputmode="numeric">
-          <span>7412</span>
+          <span class="captch-container"><canvas #captchaCanvas width="130" height="40" class="captchcan"></canvas></span>
         </dd>
-        <dd><button class="btn-send1 ui-link" type="submit"
+        <dd><button class="btn-send1 ui-link " type="button" (click)="generateCaptcha()"
             [ngStyle]="{'background-image':'linear-gradient(-180deg, rgb(70, 70, 70) 15%, rgb(18, 18, 18))', 'color' : '#ffb200'}"
             id="loginBtn">Login</button></dd>
         <!-- <dd id="errorMsg" class="state">invalid</dd> -->

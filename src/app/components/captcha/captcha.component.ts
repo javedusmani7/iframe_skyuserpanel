@@ -1,40 +1,34 @@
-import { CommonModule } from "@angular/common";
-import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
-import { MobFooterComponent } from "../mob-footer/mob-footer.component";
-import { RouterLink } from "@angular/router";
-import Fingerprint2 from "fingerprintjs2";
-
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, Signal, signal, ViewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import Fingerprint2 from 'fingerprintjs2';
 
 @Component({
-  imports:[CommonModule,MobFooterComponent,RouterLink],
-  selector: 'app-mob-login-panel',
-  templateUrl: './mob-login-panel.component.html',
-  styleUrls: ['./mob-login-panel.component.css']
+  selector: 'app-captcha',
+  imports: [CommonModule,FormsModule],
+  templateUrl: './captcha.component.html',
+  styleUrl: './captcha.component.css'
 })
-export class MobLoginPanelComponent implements AfterViewInit{
-  showpwrd = false;
-
-   @ViewChild('captchaCanvas') captchaCanvas!: ElementRef<HTMLCanvasElement>;
+export class CaptchaComponent {
+  @ViewChild('captchaCanvas') captchaCanvas!: ElementRef<HTMLCanvasElement>;
 
   captchaText = '';
   userInput = '';
   resultMessage = '';
   resultClass = '';
   fingerprintHash = '';
-  showpwd(){
-    this.showpwrd = !this.showpwrd
-  }
- ngAfterViewInit(): void {
-   
-   Fingerprint2.get((components) => {
-     this.fingerprintHash = Fingerprint2.x64hash128(
-       components.map((c) => c.value).join(''),
-       31
+
+  ngAfterViewInit(): void {
+    Fingerprint2.get((components) => {
+      this.fingerprintHash = Fingerprint2.x64hash128(
+        components.map((c) => c.value).join(''),
+        31
       );
       this.generateCaptcha();
     });
   }
-   generateCaptcha(): void {
+
+  generateCaptcha(): void {
     const canvas = this.captchaCanvas.nativeElement;
     const ctx = canvas.getContext('2d')!;
     const chars =
@@ -66,5 +60,21 @@ export class MobLoginPanelComponent implements AfterViewInit{
     this.userInput = '';
     this.resultMessage = '';
     this.resultClass = '';
+  }
+
+  validateCaptcha(): void {
+    if (
+      this.userInput.trim().toLowerCase() ===
+      this.captchaText.toLowerCase()
+    ) {
+      this.resultMessage =
+        '✅ CAPTCHA passed. Fingerprint: ' + this.fingerprintHash.slice(0, 8);
+      this.resultClass = 'success';
+    } else {
+      this.resultMessage = '❌ CAPTCHA incorrect!';
+      this.resultClass = 'error';
+      this.generateCaptcha();
+    }
+    this.userInput = '';
   }
 }

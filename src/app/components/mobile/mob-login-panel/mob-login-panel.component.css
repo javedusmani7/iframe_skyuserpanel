@@ -5156,7 +5156,7 @@ h3 .check-list a:before {
   color: #000;
   height: 5.0666666667vw;
   right: 4.866667vw;
-  top: 1.133333vw;
+  top: 0;
   font-weight: 700;
   font-size: 6vw;
   border-radius: 1.0666666667vw;
@@ -7174,8 +7174,28 @@ input {
   pointer-events: auto !important;
 }
 
-.login-head .close{
+.login-head .close {
   box-shadow: none;
   opacity: unset;
   border: 0;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  margin: 0;
+}
+
+.captch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vw !important;
+}
+@media screen and (max-width : 445px) {
+  .captch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vw !important;
+}
 }
