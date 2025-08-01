@@ -52,38 +52,48 @@ export class MobLoginPanelComponent implements OnInit {
   }
 
   login(): void {
-    // const body = {
-    //   userInput: this.captchaInput,
-    //   fingerprint: this.fingerprintHash
-    // };
+    const body = {
+      username: this.loggedData.value.userId,
+      password: this.loggedData.value.pass,
+      captcha: this.loggedData.value.validCode,
+      fp: this.fingerprintHash
+    };
 
-    // this.http.post<any>('https://node.fluc.eu/api/v1/users/validate-captcha', body, {
-    //   withCredentials: true,
-    //   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    // }).subscribe((response) => {
-    //   if (response.success) {
-    //     this.resultMessage = '✅ ' + response.message;
-    //     this.resultClass = 'success';
-    //   } else {
-    //     this.resultMessage = '❌ ' + response.message;
-    //     this.resultClass = 'error';
-    //     this.loadCaptcha(); // refresh
-    //   }
-    //   this.captchaInput = '';
-    // });
+    this.http.post<any>('https://node.fluc.eu/api/v1/users/login', body, {
+      withCredentials: true,
+    }).subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.resultMessage = '✅ ' + response.message;
+          this.resultClass = 'success';
+        } else {
+          this.resultMessage = '❌ ' + response.message;
+          this.resultClass = 'error';
+          this.loadCaptcha(); // refresh
+        }
+        this.captchaInput = '';
+      },
+      error: (error) => {
+        this.resultMessage = '❌ ' + (error.error?.error || 'Something went wrong');
+        this.resultClass = 'error';
+        this.loadCaptcha(); // refresh
+        this.captchaInput = '';
+      }
+    });
 
-    if(this.loggedData.value.validCode != null){
-      // if((this.loggedData.value.userId != null) && (this.loggedData.value.pass != null)){
-      //   this.dataServe.validateLogin(this.loggedData.value);
-        // this.router.navigate(['/home'])
-      // }else{
-      //   this.errMsg= 'Username and Password is Required'
-      // }
-    }else{
-      this.resultMessage = '❌ Enter Validation Code'
-      this.resultClass = 'error';
-      this.loadCaptcha(); // refresh
-    }
+
+    // if(this.loggedData.value.validCode != null){
+    //   // if((this.loggedData.value.userId != null) && (this.loggedData.value.pass != null)){
+    //   //   this.dataServe.validateLogin(this.loggedData.value);
+    //     // this.router.navigate(['/home'])
+    //   // }else{
+    //   //   this.errMsg= 'Username and Password is Required'
+    //   // }
+    // }else{
+    //   this.resultMessage = '❌ Enter Validation Code'
+    //   this.resultClass = 'error';
+    //   this.loadCaptcha(); // refresh
+    // }
     this.loggedData.reset();
   }
 
