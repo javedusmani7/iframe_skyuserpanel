@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MobFooterComponent } from '../mob-footer/mob-footer.component';
 import { RouterLink } from '@angular/router';
@@ -14,7 +14,7 @@ import Fingerprint2 from 'fingerprintjs2';
   styleUrls: ['./mob-login-panel.component.css']
 })
 
-export class MobLoginPanelComponent implements AfterViewInit {
+export class MobLoginPanelComponent implements OnInit {
   showpwrd = false;
   captchaUrl = '';
   captchaInput = '';
@@ -27,14 +27,6 @@ export class MobLoginPanelComponent implements AfterViewInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.loggedData = new FormGroup({
-      userId: new FormControl(null, [Validators.maxLength(30)]),
-      pass: new FormControl(null, [Validators.max(30)]),
-      validCode: new FormControl(null, [Validators.required,Validators.pattern(/^[0-9]{1,4}$/), Validators.max(4)])
-    })
-  }
-
-  ngAfterViewInit(): void {
     Fingerprint2.get((components) => {
       this.fingerprintHash = Fingerprint2.x64hash128(
         components.map(c => c.value).join(''),
@@ -42,6 +34,12 @@ export class MobLoginPanelComponent implements AfterViewInit {
       );
       this.loadCaptcha();
     });
+
+    this.loggedData = new FormGroup({
+      userId: new FormControl(null, [Validators.maxLength(30)]),
+      pass: new FormControl(null, [Validators.max(30)]),
+      validCode: new FormControl(null, [Validators.required,Validators.pattern(/^[0-9]{1,4}$/), Validators.max(4)])
+    })
   }
 
   loadCaptcha(): void {
