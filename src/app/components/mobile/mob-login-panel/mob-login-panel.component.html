@@ -5,17 +5,17 @@
       <h1>SKYEXCHANGE</h1>
     </header>
 
-    <form>
+    <form [formGroup]="loggedData" (ngSubmit)="login()">
       <dl class="form-login">
         <dd id="loginNameErrorClass">
-          <input type="text" id="loginName" maxlength="30" data-role="none" placeholder="Username">
+          <input type="text" id="loginName" maxlength="30" formControlName="userId" data-role="none" placeholder="Username">
         </dd>
 
         <dd id="passwordErrorClass" style="position: relative;">
-          <input [type]="showpwrd ? 'text':'password'" id="password" maxlength="30"
+          <input [type]="showpwrd ? 'text':'password'" id="password" formControlName="pass" maxlength="30"
             data-role="none" placeholder="Password">
           <i (click)="showpwd()"
-             style="position:absolute;color:#000;right:7%;top:33%;font-size:5vw;"
+             style="position:absolute;color:#000;right:7%;top:23%;font-size:5vw;"
              class="fa"
              [ngClass]="showpwrd ? 'fa-eye' : 'fa-eye-slash'"
              aria-hidden="true">
@@ -23,33 +23,31 @@
         </dd>
 
         <dd id="validCodeErrorClass" style="display: block;">
-          <input type="text" id="validCode" maxlength="10" pattern="[0-9]*" inputmode="numeric" placeholder="Validation Code" autocomplete="off"
-                 [(ngModel)]="captchaInput" name="captchaInput">
+          <input type="text" id="validCode" maxlength="4" pattern="[0-9]*" formControlName="validCode"
+                 inputmode="numeric" placeholder="Validation Code" autocomplete="off" (paste)="numberOnly($event)" (focus)="numberOnly($event)" (keypress)="numberOnly($event)" (input)="numberOnly($event)">
           <span class="captch-container">
-          <ng-container *ngIf="captchaUrl; else loadingCaptcha">
-            <img [src]="captchaUrl"
-                alt="CAPTCHA"
-                width="130"
-                height="40"
-                class="captchcan"
-                (load)="captchaLoaded = true"
-                (error)="captchaLoaded = false" />
-          </ng-container>
-          <ng-template #loadingCaptcha>
-            <div class="captcha-placeholder">Loading CAPTCHA...</div>
-          </ng-template>
-        </span>
+            <ng-container *ngIf="captchaUrl; else loadingCaptcha">
+              <img [src]="captchaUrl"
+                  alt="CAPTCHA"
+                  width="130"
+                  height="40"
+                  class="captchcan"
+                  (load)="captchaLoaded = true"
+                  (error)="captchaLoaded = false" />
+            </ng-container>
+            <ng-template #loadingCaptcha>
+              <div class="captcha-placeholder">Loading CAPTCHA...</div>
+            </ng-template>
+          </span>
         </dd>
 
         <dd>
-          <button class="btn-send1 ui-link" type="button" (click)="validateCaptcha()" [ngStyle]="{'background-image': 'linear-gradient(-180deg, rgb(70, 70, 70) 15%, rgb(18, 18, 18))','color': '#ffb200'}">
+          <button class="btn-send1 ui-link" type="submit" [ngStyle]="{'background-image': 'linear-gradient(-180deg, rgb(70, 70, 70) 15%, rgb(18, 18, 18))','color': '#ffb200'}">
             Login
           </button>
         </dd>
 
-        <dd *ngIf="resultMessage" [ngClass]="resultClass">
-          {{ resultMessage }}
-        </dd>
+        <dd id="errorMsg" class="state">{{resultMessage}}</dd>
 
       </dl>
     </form>

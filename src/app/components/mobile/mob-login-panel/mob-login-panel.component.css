@@ -5296,7 +5296,8 @@ h3 .check-list a:before {
 
 .state {
   font-size: 3.2vw;
-  color: #f8e71c
+  color: #f8e71c;
+  text-align: center;
 }
 
 @media(orientation: landscape) {
