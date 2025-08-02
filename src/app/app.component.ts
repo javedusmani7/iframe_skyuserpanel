@@ -11,17 +11,17 @@ import { NavComponent } from './components/mobile/nav/nav.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'skydesignB2B-19';
+  title = 'skydesign';
   showHeaderFooter: boolean = true;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.showHeaderFooter =!(
-  event.url.includes('/mob-bets') ||
-  event.url.includes('/mob-login')||
-  event.url.includes('/regulations')
-);
+        event.url.includes('/mob-bets') ||
+        event.url.includes('/mob-login')||
+        event.url.includes('/regulations')
+      );
       }
     });
 

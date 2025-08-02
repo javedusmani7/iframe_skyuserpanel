@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MobFooterComponent } from '../mob-footer/mob-footer.component';
 import { RouterLink } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Subject } from 'rxjs';
+import { AuthserviceService } from '../../../services/authservice.service';
+import { DataHandlerService } from '../../../services/datahandler.service';
+import { trimValidator } from '../../../services/trim.validator';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import Fingerprint2 from 'fingerprintjs2';
 
