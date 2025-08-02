@@ -5145,7 +5145,7 @@ h3 .check-list a:before {
   width: 19.666667vw;
   height: 8.066667vw;
   right: 1.866667vw;
-  /* top: 2.1333333333vw; */
+  top: 0vw;
   padding-top: 1.3333333333vw;
   border-radius: 1.0666666667vw;
 }
@@ -7211,5 +7211,6 @@ canvas {
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  margin-top: 2vw;
   border: 1px solid #ccc;
 }
