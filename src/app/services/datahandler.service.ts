@@ -1,10 +1,9 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import * as CryptoJS from 'crypto-js';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -27,13 +26,11 @@ export class DataHandlerService implements OnInit{
   sessionTimeout:any;
   domain : any;
 
-  constructor(private http: HttpClient, private router : Router,private jwtHelper: JwtHelperService) {}
+  constructor(private http: HttpClient, private router : Router) {}
 
   ngOnInit(): void {
     this.domain = this.getdomain();
     // this.domain = 'luckywin.asia'
-    // this.domain = 'bet36.buzz'
-    // this.domain = 'lc247.life'
     this.baseUrl = `https://ag.${this.domain}/api-V2`
   }
 
@@ -77,7 +74,9 @@ export class DataHandlerService implements OnInit{
   }
 
   validateLogin(obj: any) {
-    return this.http.post(`${this.baseUrl}/validateLogin`, obj ).subscribe((res:any)=>{
+    return this.http.post(`${this.baseUrl}/users/login`, obj ).subscribe((res:any)=>{
+      console.log('Login Response:', res);
+
       if (res.type !== 'error') {
         localStorage.setItem('loginTime', new Date().getTime().toString());
         localStorage.setItem('token', res.password)
@@ -480,11 +479,11 @@ export class DataHandlerService implements OnInit{
 
   }
   decodejwt(token: string): any {
-    try {
-      return this.jwtHelper.decodeToken(token);
-    } catch (error) {
-      return null;
-    }
+    // try {
+    //   return this.jwtHelper.decodeToken(token);
+    // } catch (error) {
+    //   return null;
+    // }
   }
 }
 function lowercase(sourceBetType: any) {

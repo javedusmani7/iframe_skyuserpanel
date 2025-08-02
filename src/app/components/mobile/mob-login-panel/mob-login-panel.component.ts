@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MobFooterComponent } from '../mob-footer/mob-footer.component';
-import { RouterLink } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AuthserviceService } from '../../../services/authservice.service';
 import { DataHandlerService } from '../../../services/datahandler.service';
 import { trimValidator } from '../../../services/trim.validator';
@@ -28,7 +26,7 @@ export class MobLoginPanelComponent implements OnInit {
   captchaLoaded = false;
   loggedData: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataServe: DataHandlerService,private authserve : AuthserviceService, private router : Router, private activeRoute : ActivatedRoute) {}
 
   ngOnInit(): void {
     Fingerprint2.get((components) => {
@@ -39,9 +37,13 @@ export class MobLoginPanelComponent implements OnInit {
       this.loadCaptcha();
     });
 
+    this.dataServe.sendLoggedData2.subscribe((res: any)=>{
+      this.resultMessage = res
+    })
+
     this.loggedData = new FormGroup({
-      userId: new FormControl(null, [Validators.maxLength(30)]),
-      pass: new FormControl(null, [Validators.max(30)]),
+      userId: new FormControl(null, [Validators.maxLength(30), trimValidator()]),
+      pass: new FormControl(null, [Validators.maxLength(30), trimValidator()]),
       validCode: new FormControl(null, [Validators.required,Validators.pattern(/^[0-9]{1,4}$/), Validators.max(4)])
     })
   }
@@ -63,41 +65,18 @@ export class MobLoginPanelComponent implements OnInit {
       fp: this.fingerprintHash
     };
 
-    this.http.post<any>('https://node.fluc.eu/api/v1/users/login', body, {
-      withCredentials: true,
-    }).subscribe({
-      next: (response) => {
-        if (response.success) {
-          this.resultMessage = '✅ ' + response.message;
-          this.resultClass = 'success';
-        } else {
-          this.resultMessage = '❌ ' + response.message;
-          this.resultClass = 'error';
-          this.loadCaptcha(); // refresh
-        }
-        this.captchaInput = '';
-      },
-      error: (error) => {
-        this.resultMessage = '❌ ' + (error.error?.error || 'Something went wrong');
+    if(this.loggedData.value.validCode != null){
+      if((this.loggedData.value.userId != null) && (this.loggedData.value.pass != null)){
+        this.dataServe.validateLogin(body);
+      }else{
+        this.resultMessage= 'Username and Password is Required',
         this.resultClass = 'error';
-        this.loadCaptcha(); // refresh
-        this.captchaInput = '';
       }
-    });
-
-
-    // if(this.loggedData.value.validCode != null){
-    //   // if((this.loggedData.value.userId != null) && (this.loggedData.value.pass != null)){
-    //   //   this.dataServe.validateLogin(this.loggedData.value);
-    //     // this.router.navigate(['/home'])
-    //   // }else{
-    //   //   this.errMsg= 'Username and Password is Required'
-    //   // }
-    // }else{
-    //   this.resultMessage = '❌ Enter Validation Code'
-    //   this.resultClass = 'error';
-    //   this.loadCaptcha(); // refresh
-    // }
+    }else{
+      this.resultMessage = '❌ Enter Validation Code'
+      this.resultClass = 'error';
+      this.loadCaptcha();
+    }
     this.loggedData.reset();
   }
 

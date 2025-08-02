@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor,
-  HttpResponse
-} from '@angular/common/http';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpResponse } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { AuthserviceService } from './services/authservice.service';
 
@@ -22,21 +16,13 @@ export class AuthInterceptorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    let token = localStorage.getItem('token')
-
-    const authReq = request.clone({
-      setHeaders: {
-        Auth: `${token}`,
-      },
-    });
+    const authReq = request.clone({withCredentials: true});
 
     return next.handle(authReq).pipe(
       tap(
         (event: HttpEvent<any>) => {
           if (event instanceof HttpResponse) {
             const responseBody: ApiResponse = event.body;
-
-            // Check if the response body has a type property with value 'error'
             if (responseBody?.type === 'error' && responseBody?.message === 'Invalid Token') {
               localStorage.setItem('placebetcheck', 'false')
               this.authServe.logout();

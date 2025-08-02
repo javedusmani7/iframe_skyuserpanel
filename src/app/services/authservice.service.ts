@@ -18,8 +18,6 @@ export class AuthserviceService implements OnDestroy {
   sendLoggedData2 = new Subject<any>()
   sendLoggedData3 = new Subject<any>()
   sendPrivacy = new Subject<any>()
-
-  private countListenter = new Subject<any>();
   usersData: any;
   loginFlag: any;
   eventData: any;
@@ -45,7 +43,6 @@ export class AuthserviceService implements OnDestroy {
   }
 
   validateLogin(obj: any) {
-
     return this.http.post(`${this.baseUrl}/validateLogin`, obj).subscribe((res: any) => {
       if (res.type !== 'error') {
         this.router.navigate(['/myAccount/home'])
