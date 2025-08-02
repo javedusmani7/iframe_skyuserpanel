@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 
 export class DataHandlerService implements OnInit{
   baseUrl = environment.baseUrl;
-  secretKey=environment.secretKey;
   sendLoggedData : BehaviorSubject<any> = new BehaviorSubject('abc')
   sendLoggedData1 = new Subject<any>()
   sendLoggedData2 = new Subject<any>()
@@ -427,12 +426,6 @@ export class DataHandlerService implements OnInit{
     return this.http.post(`${this.baseUrl}/saveOneClickBetData`, data)
   }
 
-  encrypt(value : string) : string{
-    return CryptoJS.AES.encrypt(value, this.secretKey.trim()).toString();
-  }
-  decrypt(textToDecrypt : string){
-    return CryptoJS.AES.decrypt(textToDecrypt, this.secretKey.trim()).toString(CryptoJS.enc.Utf8);
-  }
   getloggedData(data : any){
     this.usersData = data
     this.sendLoggedData.next(this.usersData);

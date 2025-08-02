@@ -13,7 +13,6 @@ import { response } from 'express';
 })
 export class AuthserviceService implements OnDestroy {
   baseUrl = environment.baseUrl;
-  secretKey = environment.secretKey;
   sendLoggedData: BehaviorSubject<any> = new BehaviorSubject('abc')
   sendLoggedData1 = new Subject<any>()
   sendLoggedData2 = new Subject<any>()
