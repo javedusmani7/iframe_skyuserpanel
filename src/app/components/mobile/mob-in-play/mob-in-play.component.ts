@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MarqueeCompComponent } from '../../marquee-comp/marquee-comp.component';
 import { Router, RouterLink } from '@angular/router';
+import FingerprintJS from '@fingerprintjs/fingerprintjs';
 
 @Component({
   selector: 'app-mob-in-play',
@@ -9,9 +10,13 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './mob-in-play.component.html',
   styleUrls: ['./mob-in-play.component.css']
 })
-export class MobInPlayComponent {
-  constructor(private route: Router) {
+export class MobInPlayComponent implements OnInit{
+  deviceId: string = '';
 
+  constructor(private route: Router) {}
+
+  ngOnInit(): void {
+    this.getDeviceId();
   }
   openResults() {
     // const token = localStorage.getItem('token');
@@ -20,5 +25,12 @@ export class MobInPlayComponent {
     // }else{
     //   this.route.navigate(['/mob-login']);
     // }
+  }
+
+  async getDeviceId(): Promise<void> {
+    const fp = await FingerprintJS.load();
+    const result = await fp.get();
+    this.deviceId = result.visitorId;
+    console.log('Device ID:', this.deviceId);
   }
 }

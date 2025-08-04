@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import * as CryptoJS from 'crypto-js';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -47,6 +47,12 @@ export class DataHandlerService implements OnInit{
   }
 
   token : any = localStorage.getItem("token")
+
+  getCaptcha(fingerPrintHash: string, timestamp: number): Observable<Blob> {
+    const url = `https://node.fluc.eu/api/v1/users/captcha?fp=${fingerPrintHash}&_t=${timestamp}`;
+    return this.http.get(url, { responseType: 'blob' });
+  }
+
   getGameCount() {
     return this.http.post(`${this.baseUrl}/getGamesCount`, {})
   }
