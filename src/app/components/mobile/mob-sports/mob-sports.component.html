@@ -1,16 +1,21 @@
 <div class="mian-wrap1">
 
+  <!-- 🔄 Marquee Component (News Ticker / Info Banner) -->
   <div class="marquee-box desktop-marquee" style="margin-bottom: 20px;">
     <app-marquee-comp></app-marquee-comp>
   </div>
+
+  <!-- 🖼️ Banner Carousel -->
   <div id="mob-caro" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <ng-container *ngFor="let item of banners;let i=index;">
-        <div class="carousel-item" [ngClass]="i==0?'active':''">
-          <img [src]="item.banner_images" class="d-block w-100" alt="..." style="height: 20vw;">
+      <ng-container *ngFor="let item of banners; let i = index">
+        <div class="carousel-item" [ngClass]="i == 0 ? 'active' : ''">
+          <img [src]="item.banner_images" class="d-block w-100" alt="Banner" style="height: 20vw;">
         </div>
       </ng-container>
     </div>
+
+    <!-- Banner Navigation Buttons -->
     <button class="carousel-control-prev" type="button" data-target="#mob-caro" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -20,203 +25,173 @@
       <span class="sr-only">Next</span>
     </button>
   </div>
-  <div id="highlightLabel" class="highlight-fix">
 
+  <!-- 🏷️ Sports Tabs: Cricket, Soccer, Tennis, etc. -->
+  <div id="highlightLabel" class="highlight-fix">
     <a class="a-search">Search</a>
 
-    <div id="frame" class="wrap-highlight ps ps--theme_default ps--active-x"
-      data-ps-id="425f64a7-d6f5-67eb-dc5d-34f3d31b249e">
-
+    <div id="frame" class="wrap-highlight ps ps--theme_default ps--active-x">
+      <!-- Optional scroll arrows (if needed) -->
       <a class="a-tab_prev" style="display: none;">prev</a>
 
       <ul id="label" style="left: 0px; margin: 0px;">
 
+        <!-- 🔸 Casino (Non-clickable) -->
         <li class="menu-casino">
           <span class="tag-new">New</span>
           <a><img class="icon-casino">Casino</a>
-          <!-- <a routerLink="/mob-login"><img class="icon-casino">Casino</a> -->
         </li>
 
-        <li id="highlightTab4" routerlinkactive="select" class="select">
-          <span id="tagLive" class="tag-live"><strong></strong>14</span>
-          <a neua="Cricket">
-            <img src="../../../../assets/images/transparent.gif" class="icon-cricket">
-            Cricket 
-          </a>
-        </li>
-        <li id="highlightTab1" routerLinkActive="select">
-          <span id="tagLive" class="tag-live"><strong></strong>47</span>
-          <a routerLinkActive="select" neua="Soccer">
-            <img src="../../../../assets/images/transparent.gif" class="icon-soccer">
-            Soccer 4
-          </a>
+        <!-- 🔸 Cricket Tab -->
+        <li [class.select]="selectedTab === 'Cricket'" (click)="selectTab('Cricket')">
+          <span class="tag-live">({{ matchCounts['Cricket'] || 0 }})</span>
+          <a><img src="../../../../assets/images/transparent.gif" class="icon-cricket">Cricket</a>
         </li>
 
-        <li id="highlightTab2" routerLinkActive="select">
-          <span id="tagLive" class="tag-live"><strong></strong>95</span>
-          <a neua="Tennis">
-            <img src="../../../../assets/images/transparent.gif" class="icon-tennis">
-            Tennis 
-          </a>
+        <!-- 🔸 Soccer Tab -->
+        <li [class.select]="selectedTab === 'Soccer'" (click)="selectTab('Soccer')">
+          <span class="tag-live">({{ matchCounts['Soccer'] || 0 }})</span>
+          <a><img src="../../../../assets/images/transparent.gif" class="icon-soccer">Soccer</a>
         </li>
 
-        <li id="highlightTab2" routerLinkActive="select" (click)="openResults()">
-          <a neua="Tennis">
-            <img class="icon-cricket" src="../../../../assets/images/transparent.gif">
-            Result
-          </a>
+        <!-- 🔸 Tennis Tab -->
+        <li [class.select]="selectedTab === 'Tennis'" (click)="selectTab('Tennis')">
+          <span class="tag-live">({{ matchCounts['Tennis'] || 0 }})</span>
+          <a><img src="../../../../assets/images/transparent.gif" class="icon-tennis">Tennis</a>
         </li>
-        <li id="highlightTab137" routerLinkActive="select">
-          <span id="tagLive" class="tag-live"><strong></strong>4</span>
-          <a routerLink='/mob-sport/5' neua="E-Soccer " routerLinkActive="select">
-            <img class="icon-esoccer"src="../../../../assets/images/transparent.gif">
-            E-Soccer
-          </a> 
+
+        <!-- 🔸 Result Tab -->
+        <li [class.select]="selectedTab === 'Result'" (click)="selectTab('Result')">
+          <a><img class="icon-cricket" src="../../../../assets/images/transparent.gif">Result</a>
+        </li>
+
+        <!-- 🔸 E-Soccer Tab -->
+        <li [class.select]="selectedTab === 'E-Soccer'" (click)="selectTab('E-Soccer')">
+          <span class="tag-live">(4)</span>
+          <a><img class="icon-esoccer" src="../../../../assets/images/transparent.gif">E-Soccer</a>
         </li>
 
       </ul>
-      <div class="ps__scrollbar-x-rail" style="width: 255px; left: 0px; bottom: 0px;">
-        <div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 131px;"></div>
+
+      <!-- Custom Scrollbars (from Perfect Scrollbar maybe?) -->
+      <div class="ps__scrollbar-x-rail">
+        <div class="ps__scrollbar-x" tabindex="0"></div>
       </div>
-      <div class="ps__scrollbar-y-rail" style="top: 0px; right: 0px;">
-        <div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+      <div class="ps__scrollbar-y-rail">
+        <div class="ps__scrollbar-y" tabindex="0"></div>
       </div>
     </div>
   </div>
 
-  <div class="wrap-highlight_list" style="margin-bottom: 60px;">
-    <h3 style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);"> Highlights</h3>
-    <div class="sorting-wrap">
-      <ul id="viewType">
-        <li (click)="selectedtab('time')" [class]="activetab=='time'?'select':''">by Time</li>
-        <li (click)="selectedtab('competition')" [class]="activetab=='competition'?'select':''">by Competition</li>
-      </ul>
-    </div>
-    @if (activetab=='time') {
-      @if (matches.length == 0) {
-        <div id="noDataDiv" class="no-data">
-            <p>There are no events to be displayed. </p>
+  <!-- 📋 Main Tab Content (Cricket, Soccer, Tennis) -->
+  <div *ngIf="selectedTab === 'Cricket' || selectedTab === 'Soccer' || selectedTab === 'Tennis'">
+    <div class="wrap-highlight_list" style="margin-bottom: 60px;">
+
+      <!-- Section Title -->
+      <h3 class="tab-title">
+        Highlights - {{ selectedTab }}
+      </h3>
+
+      <!-- Sorting Toggle (Time vs Competition) -->
+      <div class="sorting-wrap">
+        <ul id="viewType">
+          <li (click)="selectedtab('time')" [class.select]="activetab == 'time'">by Time</li>
+          <li (click)="selectedtab('competition')" [class.select]="activetab == 'competition'">by Competition</li>
+        </ul>
+      </div>
+
+      <!-- 👇 View by Time -->
+      <ng-container *ngIf="activetab == 'time'">
+        <div *ngIf="matches.length === 0" class="no-data">
+          <p>There are no events to be displayed.</p>
         </div>
-      }
-      @else {
-        <ul id="highlightList" class="highlight-list">
+
+        <!-- Match List -->
+        <ul *ngIf="matches.length > 0" class="highlight-list">
           <li class="inplay-on" *ngFor="let match of matches">
-            <a id="info">
+            <a>
               <dl>
                 <dt>
-                  <span id="streamingIcon" class="game-live" style="display: flex;">game-live</span>
-                  @if(match.isAutoFancy){
-                    <span id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                      <pre>in-play</pre>Fancy
-                    </span>
-                  }
-                  
-                  <!-- -->
-                  @if(match.isAutoFancy){
-                    <span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                      <pre>in-play</pre>BookMaker
-                    </span>
-                  }
-                  
-                  <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span>
-                  @if(match.isInPlay){
-                    <span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
-                  }
-                  @else {
-                    <span id="dateTimeInfo"class="time">{{match.openDate | date :'HH:mm a'}}</span>
-                  }
-                  <span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
+                  <span class="game-live">game-live</span>
+
+                  <!-- Fancy & BookMaker Tags -->
+                  <span *ngIf="match.isAutoFancy" class="game-fancy in-play"><pre>in-play</pre>Fancy</span>
+                  <span *ngIf="match.isAutoFancy" class="game-bookmaker in-play"><pre>in-play</pre>BookMaker</span>
+
+                  <span class="game-sportsbook">Premium {{ selectedTab }}</span>
+
+                  <!-- Match Time or In-Play -->
+                  <span class="time" [style.color]="match.isInPlay ? '#508D0E' : ''">
+                    {{ match.isInPlay ? 'In-Play' : (match.openDate | date: 'HH:mm a') }}
+                  </span>
+
+                  <span class="game-E"><i></i>{{ selectedTab }}</span>
                 </dt>
-                <dd id="eventName">{{match.eventName}}</dd>
+                <dd>{{ match.eventName }}</dd>
               </dl>
             </a>
-            <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"href="/mob-login"></a>
           </li>
         </ul>
-      }
-    }
+      </ng-container>
 
-    @if (activetab=='competition') {
-      @if (matches.length == 0) {
-        <div id="noDataDiv" class="no-data">
-            <p>There are no competition to be displayed. </p>
+      <!-- 👇 View by Competition -->
+      <ng-container *ngIf="activetab == 'competition'">
+        <div *ngIf="matches.length === 0" class="no-data">
+          <p>There are no competitions to be displayed.</p>
         </div>
-      }
-      @else {
-        <div class="sortinglist-wrap filterbycomp" style="display: block;">
-          <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
+
+        <!-- Grouped Matches -->
+        <div *ngIf="groupedMatches.length > 0" class="sortinglist-wrap filterbycomp">
+          <ul class="highlight-list">
             <div *ngFor="let group of groupedMatches">
               <h4>{{ group.competitionName }}</h4>
               <li class="inplay-on" *ngFor="let match of group.matches">
-                <a id="info">
+                <a>
                   <dl>
                     <dt>
-                      <span id="streamingIcon" class="game-live" style="display: flex;">game-live</span>
-                      @if(match.isAutoFancy){
-                        <span id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                          <pre>in-play</pre>Fancy
-                        </span>
-                      }
-                      <!-- -->
-                      @if(match.isAutoFancy){
-                        <span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                          <pre>in-play</pre>BookMaker
-                        </span>
-                      }
-                      <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span>
-                      @if(match.isInPlay){
-                        <span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
-                      }
-                      @else {
-                        <span id="dateTimeInfo"class="time">{{match.openDate | date :'HH:mm a'}}</span>
-                      }
-                        <span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-                    </dt>
-                    <dd id="eventName">{{ match.eventName }}</dd>
-                  </dl>
-                </a><a class="add-pin pin-off"></a>
+                      <span class="game-live">game-live</span>
+                      <span *ngIf="match.isAutoFancy" class="game-fancy in-play"><pre>in-play</pre>Fancy</span>
+                      <span *ngIf="match.isAutoFancy" class="game-bookmaker in-play"><pre>in-play</pre>BookMaker</span>
 
+                      <span class="game-sportsbook">Premium {{ selectedTab }}</span>
+
+                      <span class="time" [style.color]="match.isInPlay ? '#508D0E' : ''">
+                        {{ match.isInPlay ? 'In-Play' : (match.openDate | date: 'HH:mm a') }}
+                      </span>
+
+                      <span class="game-E"><i></i>{{ selectedTab }}</span>
+                    </dt>
+                    <dd>{{ match.eventName }}</dd>
+                  </dl>
+                </a>
               </li>
             </div>
           </ul>
         </div>
-      }
-    }
+      </ng-container>
+    </div>
   </div>
 
+  <!-- 📢 Promo Footer Banner -->
   <div class="footer-kv">
-    <a id="sportradarHighlightEntrance" class="entrance" style="cursor: pointer" neua="BetRadar Banner">
-      <img src="../../../../assets/images/mobile/promo/kv-virtual-cricket-m.jpg" style="width: 100%" alt=""
+    <a class="entrance" neua="BetRadar Banner">
+      <img src="../../../../assets/images/mobile/promo/kv-virtual-cricket-m.jpg" style="width: 100%" alt="Promo"
         draggable="false">
     </a>
   </div>
 
 </div>
-<!-- <div id="searchWrap" *ngIf="showSerch" class="overlay" style="display: block;">
-  <div id="searchPop" class="search-pop">
-    <form>
-      <a id="searchBack" (click)="closeSerchBar()" class="search-back ui-link">Back</a>
-      <input id="searchInput" (keyup)="filteredData($event)" class="search-input" data-role="none" type="text"
-        autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Search Events" fdprocessedid="f9x51n">
-      <button id="searchClear" class="search-clear ui-btn ui-shadow ui-corner-all" type="reset" (click)="clearSearch()"
-        fdprocessedid="828hzj">Reset</button>
-      <button id="searchBtn" class="search-collapse ui-btn ui-shadow ui-corner-all"
-        fdprocessedid="xuhgo">Search</button>
-    </form>
-    <div id="searchResult" class="suggestion-wrap">
-      <dl id="noMatching" class="no-matching" style="display: none;">
-        <dt></dt>
-        <dd>No events found matching ...</dd>
-      </dl>
-      <ul id="searchList" style="display: block;">
-        <li style="display: list-item;" *ngFor="let list of filteredObj">
-          <a class="ui-link" (click)="navigateTomatch(list)"><span id="marketTime" class="time">{{list.time}}</span>
-            {{list.matchname}}</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+
+<!-- 🔍 Optional Search Overlay (commented out) -->
+<!-- 
+<div id="searchWrap" *ngIf="showSerch" class="overlay">
+  ...
+</div> 
+-->
+
+<!-- ⏳ Optional Loader -->
+<!-- 
 <div *ngIf="loading">
   <app-loader></app-loader>
-</div> -->
+</div> 
+-->

@@ -85,8 +85,6 @@ export class DataHandlerService implements OnInit {
     return this.http.post(`${this.baseUrl}/users/user-login`, obj).subscribe({
       next: (res: any) => {
         this.router.navigate(['/home']);
-        console.log("toasterLog::", this.toaster.success);
-
         this.toaster.success(res.message || 'User Logged in successfully');
       }
     })

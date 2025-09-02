@@ -44,44 +44,100 @@ export class MobSportsComponent {
     { banner_images: '../../../assets/images/main/kv-betgames-9livegames-m.png' },
   ];
   activetab = 'time';
+  loadedTabs: Set<string> = new Set();
+  selectedTab: string = 'Cricket'; // Default to Cricket
+
+  // This will hold the match counts per tab
+  matchCounts: { [key: string]: number } = {
+    Cricket: 0,
+    Soccer: 0,
+    Tennis: 0,
+  };
 
   ngOnInit(): void {
-      this.fetchMatches();
+    this.selectTab(this.selectedTab); // Optionally load default tab data
   }
 
-  // fetchMatches(): void {
-  //   const requestBody = {
-  //     sportId: this.sportId,
-  //     page: this.pageNumber,
-  //     limit: this.pageSize,
-  //     filters: {
-  //       status: this.status
-  //     }
-  //   };
+  
+  selectedtab(data: any) {
+    this.activetab = data;
+  }
+  
+  selectTab(tab: string) {
+    this.selectedTab = tab;
 
-  //   this.api.getMatches(requestBody).subscribe({
-  //     next: (res: any) => {
-  //       this.matches = res?.data?.data.map((ele: any) => {
-  //         const live = this.checkIfInPlay(ele.openDate);
-  //         return {
-  //           ...ele,
-  //           isInPlay: live
-  //         }
-  //       });
-  //       this.loading = false;
-  //     }
-  //   });
-  // }
+    // prevent reloading if the data is already available
+    if (this.loadedTabs.has(tab)) {
+      return; // Don't reload
+    }
 
-  fetchMatches(): void {
+    switch (tab) {
+      case 'Cricket':
+        this.loadCricketData();
+        break;
+      case 'Soccer':
+        this.loadSoccerData();
+        break;
+      case 'Tennis':
+        this.loadTennisData();
+        break;
+    }
+  }
+  
+  checkIfInPlay(date: any) {
+    const now = moment();
+    const gameStart =  moment(date);
+    // console.log(date,":::GAME START", gameStart);
+    const result = now.isSameOrAfter(gameStart);    
+    return result
+  }
+
+  openResults() {
+    this.router.navigateByUrl("/Mchecksportwiseresult");
+    // this.route.navigate(['/Mchecksportwiseresult']);
+  }
+
+  loadCricketData() {
+    console.log("inside loadCricketData");
+    const sportKey="Cricket";
+    const sportId="4";
+    this.loadMatchData(sportKey, sportId);
+  }
+
+  loadSoccerData() {
+    console.log("inside loadSoccerData");
+    const sportKey="Soccer";
+    const sportId="1";
+    this.loadMatchData(sportKey, sportId);
+  }
+
+  loadTennisData() {
+    const sportKey="Tennis";
+    const sportId="2";
+    this.loadMatchData(sportKey, sportId);
+  }
+
+  loadResultData() {
+    console.log("inside loadResultData");
+  }
+
+  loadESoccerData() {
+    console.log("inside loadESoccerData");
+  }
+
+  loadMatchData(sportKey: string, sportId: string) {
+    console.log(`Loading data for: ${sportId}`);
+
     const requestBody = {
-      sportId: this.sportId,
+      sportId: sportId,
       page: this.pageNumber,
       limit: this.pageSize,
       filters: {
         status: this.status
       }
     };
+
+    this.loading = true;
 
     this.api.getMatches(requestBody).subscribe({
       next: (res: any) => {
@@ -91,7 +147,11 @@ export class MobSportsComponent {
             isInPlay: this.checkIfInPlay(ele.openDate)
           };
         });
+
         this.matches = flatMatches;
+
+        // Set match count for this sport
+        this.matchCounts[sportKey] = flatMatches.length;
 
         // Group by competitionName
         const grouped: any = {};
@@ -107,31 +167,13 @@ export class MobSportsComponent {
         });
 
         this.groupedMatches = Object.values(grouped);
-        console.log(this.groupedMatches);
-        
         this.loading = false;
       },
       error: (err) => {
-        this.error = 'Failed to load matches';
+        this.error = `Failed to load matches for ${sportKey}`;
         this.loading = false;
       }
     });
   }
 
-  
-  checkIfInPlay(date: any) {
-    const now = moment();
-    const gameStart =  moment(date);
-    // console.log(date,":::GAME START", gameStart);
-    const result = now.isSameOrAfter(gameStart);    
-    return result
-  }
-
-  openResults() {
-    this.router.navigateByUrl("/Mchecksportwiseresult");
-    // this.route.navigate(['/Mchecksportwiseresult']);
-  }
-  selectedtab(data: any) {
-    this.activetab = data;
-  }
 }
