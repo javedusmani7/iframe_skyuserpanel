@@ -127,7 +127,7 @@
           <li><a [routerLink]="['/profit-loss']">Profit &amp; Loss</a></li>
           <li><a [routerLink]="['/checkresults']">Results</a></li>
           <li><a [routerLink]="['/activity-log']">Activity Log</a></li>
-          <li class="logout"><a id="logout">LOGOUT<img src="../../../assets/images/transparent.gif"></a></li>
+          <li class="logout" (click)="logout()"><a id="logout">LOGOUT<img src="../../../assets/images/transparent.gif"></a></li>
         </ul>
       </li>
     </ul>

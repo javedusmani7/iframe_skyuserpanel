@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { PopupBoxComponent } from '../popup-box/popup-box.component';
+import { AuthserviceService } from '../../services/authservice.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -19,6 +21,8 @@ export class HeaderComponent {
   oneClick: boolean = false;
   showHeader: boolean = true;
   popup: boolean = false;
+  private api = inject(AuthserviceService)
+  private toaster = inject(ToastrService)
 
   constructor(private router: Router) {
 
@@ -66,5 +70,14 @@ export class HeaderComponent {
   }
   closeloginpopup() {
     this.popup = false
+  }
+
+  logout(){
+    this.api.logout().subscribe({
+      next: (res: any) => {
+        this.router.navigateByUrl("/mob-login");
+        this.toaster.success('Logout successfully');
+      }
+    })
   }
 }

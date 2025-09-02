@@ -37,28 +37,41 @@
           <!-- <a routerLink="/mob-login"><img class="icon-casino">Casino</a> -->
         </li>
 
-        <li id="highlightTab4" routerlinkactive="select" class="select"><span id="tagLive"
-            class="tag-live"><strong></strong>14</span><a neua="Cricket"><img
-              src="../../../../assets/images/transparent.gif" class="icon-cricket">Cricket </a>
+        <li id="highlightTab4" routerlinkactive="select" class="select">
+          <span id="tagLive" class="tag-live"><strong></strong>14</span>
+          <a neua="Cricket">
+            <img src="../../../../assets/images/transparent.gif" class="icon-cricket">
+            Cricket 
+          </a>
         </li>
-        <li id="highlightTab1" routerLinkActive="select"><span id="tagLive" class="tag-live"><strong></strong>47</span>
-          <a routerLinkActive="select" neua="Soccer"><img src="../../../../assets/images/transparent.gif"
-              class="icon-soccer">Soccer </a>
+        <li id="highlightTab1" routerLinkActive="select">
+          <span id="tagLive" class="tag-live"><strong></strong>47</span>
+          <a routerLinkActive="select" neua="Soccer">
+            <img src="../../../../assets/images/transparent.gif" class="icon-soccer">
+            Soccer 4
+          </a>
         </li>
 
-        <li id="highlightTab2" routerLinkActive="select"><span id="tagLive" class="tag-live"><strong></strong>95</span>
-          <a neua="Tennis"><img src="../../../../assets/images/transparent.gif" class="icon-tennis">Tennis </a>
+        <li id="highlightTab2" routerLinkActive="select">
+          <span id="tagLive" class="tag-live"><strong></strong>95</span>
+          <a neua="Tennis">
+            <img src="../../../../assets/images/transparent.gif" class="icon-tennis">
+            Tennis 
+          </a>
         </li>
 
         <li id="highlightTab2" routerLinkActive="select" (click)="openResults()">
-          <a neua="Tennis"><img class="icon-cricket" src="../../../../assets/images/transparent.gif">Result
+          <a neua="Tennis">
+            <img class="icon-cricket" src="../../../../assets/images/transparent.gif">
+            Result
           </a>
         </li>
         <li id="highlightTab137" routerLinkActive="select">
           <span id="tagLive" class="tag-live"><strong></strong>4</span>
-          <a routerLink='/mob-sport/5' neua="E-Soccer " routerLinkActive="select"><img class="icon-esoccer"
-              src="../../../../assets/images/transparent.gif">E-Soccer
-          </a>
+          <a routerLink='/mob-sport/5' neua="E-Soccer " routerLinkActive="select">
+            <img class="icon-esoccer"src="../../../../assets/images/transparent.gif">
+            E-Soccer
+          </a> 
         </li>
 
       </ul>
@@ -72,9 +85,7 @@
   </div>
 
   <div class="wrap-highlight_list" style="margin-bottom: 60px;">
-    <h3
-      style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);">
-      Highlights</h3>
+    <h3 style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);"> Highlights</h3>
     <div class="sorting-wrap">
       <ul id="viewType">
         <li (click)="selectedtab('time')" [class]="activetab=='time'?'select':''">by Time</li>
@@ -82,528 +93,94 @@
       </ul>
     </div>
     @if (activetab=='time') {
-    <ul id="highlightList" class="highlight-list">
-      <li class="inplay-on"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                <pre>in-play</pre>Fancy
-              </span><span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                <pre>in-play</pre>BookMaker
-              </span><span id="sportsBookIcon_2" class="game-sportsbook">Premium
-                Cricket</span><span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
-            </dt>
-            <dd id="eventName">West Indies v Australia</dd>
-          </dl>
-        </a><a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"
-          href="/mob-login"></a></li>
-      <li class="inplay-on"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                <pre>in-play</pre>Fancy
-              </span><span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                <pre>in-play</pre>BookMaker
-              </span><span id="sportsBookIcon_2" class="game-sportsbook">Premium
-                Cricket</span><span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
-            </dt>
-            <dd id="eventName">Future Sports Club v Greenpark Cricket Academy</dd>
-          </dl>
-        </a><a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"
-          href="/mob-login"></a></li>
-      <li class="inplay-on"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                <pre>in-play</pre>Fancy
-              </span><span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                <pre>in-play</pre>BookMaker
-              </span><span id="sportsBookIcon_2" class="game-sportsbook">Premium
-                Cricket</span><span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span><span
-                id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-            </dt>
-            <dd id="eventName">Karachi Kings SRL T20 v Quetta Gladiators SRL T20</dd>
-          </dl>
-        </a><a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"
-          href="/mob-login"></a></li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span><span id="sportsBookIcon_2" class="game-sportsbook">Premium
-                Cricket</span><span id="dateTimeInfo" class="time">11:30 AM</span><span id="sportsBookEIcon_4"
-                class="game-E"><i></i>Cricket</span></dt>
-            <dd id="eventName">West Indies SRL T20 v England SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">01:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Gujarat Titans SRL T20 v Kolkata Knight Riders SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">03:30 PM</span>
-
-            </dt>
-            <dd id="eventName">England v India</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">03:30 PM</span>
-
-            </dt>
-            <dd id="eventName">England Under-19s v India Under-19s</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">03:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Joburg Super Kings SRL T20 v Sunrisers Eastern Cape SRL T20
-            </dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">04:30 PM</span>
-
-            </dt>
-            <dd id="eventName">Zimbabwe v South Africa</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">05:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Hobart Hurricanes SRL T20 v Melbourne Renegades SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">07:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Mumbai Indians SRL T20 v Punjab Kings SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">09:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Peshawar Zalmi SRL T20 v Islamabad United SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">11:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-            </dt>
-            <dd id="eventName">Sri Lanka SRL T20 v Bangladesh SRL T20</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">Tomorrow 11:00 PM</span>
-
-            </dt>
-            <dd id="eventName">Durham v Leicestershire</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">2025-07-16 04:30:00</span>
-
-            </dt>
-            <dd id="eventName">Hobart Hurricanes v Central Stags</dd>
-          </dl>
-        </a>
-
-        <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login" href="/mob-login"></a>
-
-      </li>
-      <li class="inplay-off"><a id="info">
-          <dl>
-            <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                id="fancyBetIcon" class="game-fancy">Fancy</span><span id="bookMakerIcon"
-                class="game-bookmaker">BookMaker</span>
-
-              <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                class="time">2025-07-16 17:30:00</span>
-
-            </dt>
-            <dd id="eventName">England W v India W</dd>
-          </dl>
-        </a><a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"
-          href="/mob-login"></a></li>
-    </ul>
+      @if (matches.length == 0) {
+        <div id="noDataDiv" class="no-data">
+            <p>There are no events to be displayed. </p>
+        </div>
+      }
+      @else {
+        <ul id="highlightList" class="highlight-list">
+          <li class="inplay-on" *ngFor="let match of matches">
+            <a id="info">
+              <dl>
+                <dt>
+                  <span id="streamingIcon" class="game-live" style="display: flex;">game-live</span>
+                  @if(match.isAutoFancy){
+                    <span id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
+                      <pre>in-play</pre>Fancy
+                    </span>
+                  }
+                  
+                  <!-- -->
+                  @if(match.isAutoFancy){
+                    <span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
+                      <pre>in-play</pre>BookMaker
+                    </span>
+                  }
+                  
+                  <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span>
+                  @if(match.isInPlay){
+                    <span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
+                  }
+                  @else {
+                    <span id="dateTimeInfo"class="time">{{match.openDate | date :'HH:mm a'}}</span>
+                  }
+                  <span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
+                </dt>
+                <dd id="eventName">{{match.eventName}}</dd>
+              </dl>
+            </a>
+            <a routerlink="/mob-login" class="add-pin pin-off" ng-reflect-router-link="/mob-login"href="/mob-login"></a>
+          </li>
+        </ul>
+      }
     }
 
     @if (activetab=='competition') {
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Virtual International 2024</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-on"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live" style="display: flex;">game-live</span><span
-                  id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
-                  <pre>in-play</pre>Fancy
-                </span><span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
-                  <pre>in-play</pre>BookMaker
-                </span><span id="sportsBookIcon_2" class="game-sportsbook">Premium
-                  Cricket</span><span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span><span
-                  id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
+      @if (matches.length == 0) {
+        <div id="noDataDiv" class="no-data">
+            <p>There are no competition to be displayed. </p>
+        </div>
+      }
+      @else {
+        <div class="sortinglist-wrap filterbycomp" style="display: block;">
+          <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
+            <div *ngFor="let group of groupedMatches">
+              <h4>{{ group.competitionName }}</h4>
+              <li class="inplay-on" *ngFor="let match of group.matches">
+                <a id="info">
+                  <dl>
+                    <dt>
+                      <span id="streamingIcon" class="game-live" style="display: flex;">game-live</span>
+                      @if(match.isAutoFancy){
+                        <span id="fancyBetIcon" class="game-fancy in-play" style="display: flex;">
+                          <pre>in-play</pre>Fancy
+                        </span>
+                      }
+                      <!-- -->
+                      @if(match.isAutoFancy){
+                        <span id="bookMakerIcon" class="game-bookmaker in-play" style="display: flex;">
+                          <pre>in-play</pre>BookMaker
+                        </span>
+                      }
+                      <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span>
+                      @if(match.isInPlay){
+                        <span id="dateTimeInfo" class="time" style="color: #508D0E;">In-Play</span>
+                      }
+                      @else {
+                        <span id="dateTimeInfo"class="time">{{match.openDate | date :'HH:mm a'}}</span>
+                      }
+                        <span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
+                    </dt>
+                    <dd id="eventName">{{ match.eventName }}</dd>
+                  </dl>
+                </a><a class="add-pin pin-off"></a>
 
-              </dt>
-
-
-              <dd id="eventName">West Indies SRL T20 v England SRL T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">11:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Sri Lanka SRL T20 v Bangladesh SRL T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Virtual IPL 2024</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">01:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Gujarat Titans SRL T20 v Kolkata Knight Riders SRL T20
-              </dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">07:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Mumbai Indians SRL T20 v Punjab Kings SRL T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Test Matches</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">03:30 PM</span>
-
-              </dt>
-              <dd id="eventName">England v India</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">Tomorrow 12:00 AM</span>
-
-              </dt>
-              <dd id="eventName">West Indies v Australia</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Youth ODI</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">03:30 PM</span>
-
-              </dt>
-              <dd id="eventName">England Under-19s v India Under-19s</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Virtual SA 2024</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">03:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Joburg Super Kings SRL T20 v Sunrisers Eastern Cape SRL
-                T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>International Twenty20 Matches</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">04:30 PM</span>
-
-              </dt>
-              <dd id="eventName">Zimbabwe v South Africa</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Virtual Big Bash 2024</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">05:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Hobart Hurricanes SRL T20 v Melbourne Renegades SRL T20
-              </dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Virtual PSL 2024</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">09:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span>
-
-              </dt>
-              <dd id="eventName">Peshawar Zalmi SRL T20 v Islamabad United SRL T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>T20 Blast</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">Tomorrow 11:00 PM</span>
-
-              </dt>
-              <dd id="eventName">Durham v Leicestershire</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Global Super League T20</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">2025-07-16 04:30:00</span>
-
-              </dt>
-              <dd id="eventName">Hobart Hurricanes v Central Stags</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
-    <div class="sortinglist-wrap filterbycomp" style="display: block;">
-      <h4>Womens One Day Internationals</h4>
-      <ul id="highlightList" class="highlight-list" style="margin-bottom: 0;">
-        <li class="inplay-off"><a id="info">
-            <dl>
-              <dt><span id="streamingIcon" class="game-live">game-live</span><span id="fancyBetIcon"
-                  class="game-fancy">Fancy</span><span id="bookMakerIcon" class="game-bookmaker">BookMaker</span>
-
-                <span id="sportsBookIcon_2" class="game-sportsbook">Premium Cricket</span><span id="dateTimeInfo"
-                  class="time">2025-07-16 17:30:00</span>
-
-              </dt>
-              <dd id="eventName">England W v India W</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-
-        </li>
-      </ul>
-    </div>
+              </li>
+            </div>
+          </ul>
+        </div>
+      }
     }
   </div>
 

@@ -1,17 +1,18 @@
-import { Injectable, OnInit } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import * as CryptoJS from 'crypto-js';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
 })
 
-export class DataHandlerService implements OnInit{
+export class DataHandlerService implements OnInit {
   baseUrl = environment.baseUrl;
-  sendLoggedData : BehaviorSubject<any> = new BehaviorSubject('abc')
+  sendLoggedData: BehaviorSubject<any> = new BehaviorSubject('abc')
   sendLoggedData1 = new Subject<any>()
   sendLoggedData2 = new Subject<any>()
   sendLoggedData3 = new Subject<any>()
@@ -20,23 +21,24 @@ export class DataHandlerService implements OnInit{
   oneClickB = new Subject<any>()
   betSuccessMsg = new Subject<any>()
   private countListenter = new Subject<any>();
-  usersData : any;
-  loginFlag : any;
-  eventData : any;
-  sessionTimeout:any;
-  domain : any;
+  usersData: any;
+  loginFlag: any;
+  eventData: any;
+  sessionTimeout: any;
+  domain: any;
+  toaster = inject(ToastrService)
 
-  constructor(private http: HttpClient, private router : Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
-    this.domain = this.getdomain();
+    // this.domain = this.getdomain();
     // this.domain = 'luckywin.asia'
-    this.baseUrl = `https://ag.${this.domain}/api-V2`
+    // this.baseUrl = `https://ag.${this.domain}/api-V2`
   }
 
-  getdomain(){
-    let dname = window.location.hostname;
-    return dname;
+  getdomain() {
+    // let dname = window.location.hostname;
+    // return dname;
   }
 
   logout(): void {
@@ -46,7 +48,7 @@ export class DataHandlerService implements OnInit{
     this.router.navigate(['/home'])
   }
 
-  token : any = localStorage.getItem("token")
+  token: any = localStorage.getItem("token")
 
   getCaptcha(fingerPrintHash: string, timestamp: number): Observable<Blob> {
     const url = `https://node.fluc.eu/api/v1/users/captcha?fp=${fingerPrintHash}&_t=${timestamp}`;
@@ -57,7 +59,7 @@ export class DataHandlerService implements OnInit{
     return this.http.post(`${this.baseUrl}/getGamesCount`, {})
   }
 
-  getGameListener(){
+  getGameListener() {
     return this.countListenter.asObservable();
   }
 
@@ -67,41 +69,25 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  getTodayGames(){
+  getTodayGames() {
     return this.http.post(`${this.baseUrl}/getTodayGames`, {})
   }
 
-  getTomorrowGames(){
+  getTomorrowGames() {
     return this.http.post(`${this.baseUrl}/getTomorrowGames`, {})
   }
 
-  getInPlayGames(){
+  getInPlayGames() {
     return this.http.post(`${this.baseUrl}/getInPlayGames`, {})
   }
 
   validateLogin(obj: any) {
-    return this.http.post(`${this.baseUrl}/users/login`, obj ).subscribe((res:any)=>{
-      console.log('Login Response:', res);
+    return this.http.post(`${this.baseUrl}/users/user-login`, obj).subscribe({
+      next: (res: any) => {
+        this.router.navigate(['/home']);
+        console.log("toasterLog::", this.toaster.success);
 
-      if (res.type !== 'error') {
-        localStorage.setItem('loginTime', new Date().getTime().toString());
-        localStorage.setItem('token', res.password)
-        localStorage.setItem('userData', JSON.stringify(res))
-        let ddt = this.decodejwt(res.password)
-        this.router.navigate(['/home'])
-        this.sendLoggedData.next(res)
-        // this.init(ddt.exp);
-        let dataa = this.decodejwt(res?.password)
-        const date = new Date(dataa.exp * 1000);
-        let convertedDate = this.formatDate(date);
-        let expTkn = new Date(convertedDate)
-        let checkExpToken = expTkn.getTime()
-        this.init(checkExpToken)
-        setTimeout(() => {
-          window.location.reload()
-        }, 100);
-      } else {
-        this.sendLoggedData2.next(res.message)
+        this.toaster.success(res.message || 'User Logged in successfully');
       }
     })
   }
@@ -117,8 +103,8 @@ export class DataHandlerService implements OnInit{
     };
     return new Intl.DateTimeFormat('en-US', options).format(date);
   }
-  init(data:any) {
-    this.sessionTimeout=data;
+  init(data: any) {
+    this.sessionTimeout = data;
     const loginTimeStr = localStorage.getItem('loginTime');
     if (loginTimeStr) {
       const loginTime = parseInt(loginTimeStr, 10);
@@ -160,17 +146,17 @@ export class DataHandlerService implements OnInit{
   }
 
   getBalInfo() {
-    return this.http.post(`${this.baseUrl}/getUserBalanceExpo`,{});
+    return this.http.post(`${this.baseUrl}/getUserBalanceExpo`, {});
   }
-  getAccountStmt(pNo : any){
+  getAccountStmt(pNo: any) {
     return this.http.post(`${this.baseUrl}/getAccountStatements`, {
-      "pageNo" : pNo
+      "pageNo": pNo
     })
   }
 
-  getActivityLog(pNo : any){
+  getActivityLog(pNo: any) {
     return this.http.post(`${this.baseUrl}/getAccountLogs`, {
-      "pageNo" : pNo
+      "pageNo": pNo
     })
   }
 
@@ -191,37 +177,37 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  addToMultmarketList(eventId:any) {
+  addToMultmarketList(eventId: any) {
     return this.http.post(`${this.baseUrl}/setMatchAsMultiMarket`, {
       eventid: eventId,
     });
   }
 
   getUserWiseMultiMarket() {
-    return this.http.post(`${this.baseUrl}/getUserWiseMultiMarket`,{});
+    return this.http.post(`${this.baseUrl}/getUserWiseMultiMarket`, {});
   }
 
   getUserBets() {
-    return this.http.post(`${this.baseUrl}/getUserBets`,{});
+    return this.http.post(`${this.baseUrl}/getUserBets`, {});
   }
 
-  changeYourPassword(obj : any){
+  changeYourPassword(obj: any) {
     return this.http.post(`${this.baseUrl}/changeLoginOwnPassword`, obj)
   }
 
-  getBetHistory(obj : any){
+  getBetHistory(obj: any) {
     return this.http.post(`${this.baseUrl}/getUsersBetHistory`, JSON.stringify(obj))
   }
 
-  getListForResult(obj : any){
+  getListForResult(obj: any) {
     return this.http.post(`${this.baseUrl}/getListForResult?startDate=${obj.startDate}&endDate=${obj.endDate}&sportId=${obj.sportId}`, {})
   }
 
-  getUserOwnProfitLoss(obj : any){
+  getUserOwnProfitLoss(obj: any) {
     return this.http.post(`${this.baseUrl}/getUserOwnProfitLoss`, obj)
   }
 
-  getUserBetsBySourceId(obj : any){
+  getUserBetsBySourceId(obj: any) {
     return this.http.post(`${this.baseUrl}/getUserBetsBySourceId`, obj)
   }
 
@@ -229,7 +215,7 @@ export class DataHandlerService implements OnInit{
     return this.http.post(`${this.baseUrl}/getWebsiteData`, {}, { observe: 'response' });
   }
 
-  placeMatchOddsBet(data:any,stake:any) {
+  placeMatchOddsBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/placeMatchOddsBet`, {
       isBack: data.isBack,
       odds: data.odds,
@@ -244,7 +230,7 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  setTossMatchBet(data:any,stake:any) {
+  setTossMatchBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/setTossMatchBet`, {
       isBack: data.isBack,
       odds: data.odds,
@@ -260,7 +246,7 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  placeBookMakerBet(data:any,stake:any) {
+  placeBookMakerBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/placeBookMakerBet`, {
       isBack: data.isBack,
       odds: data.odds,
@@ -275,11 +261,11 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  placeFancyMatchBet(data:any,stake:any) {
+  placeFancyMatchBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/placeFancyMatchBet`, {
       isBack: data.isBack,
       odds: Number(data.odds),
-      priceValue : Number(data.selectionName),
+      priceValue: Number(data.selectionName),
       stake: Number(stake),
       matchName: data.matchName,
       eventId: data.eventId,
@@ -290,11 +276,11 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  setFancy1MatchBet(data:any,stake:any) {
+  setFancy1MatchBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/setFancy1MatchBet`, {
       isBack: data.isBack,
       odds: Number(data.odds),
-      priceValue : Number(data.selectionName),
+      priceValue: Number(data.selectionName),
       stake: Number(stake),
       matchName: data.matchName,
       eventId: data.eventId,
@@ -305,12 +291,12 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  setPremiumMatchBet(data:any,stake:any) {
+  setPremiumMatchBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/setPremiumMatchBet`, {
       isBack: data.isBack,
       odds: Number(data.odds),
-      selectionId : Number(data.selectionId),
-      selectionName : data.selectionName,
+      selectionId: Number(data.selectionId),
+      selectionName: data.selectionName,
       stake: Number(stake),
       matchName: data.matchName,
       eventId: data.eventId,
@@ -321,7 +307,7 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  setOtherMarketBet(data:any,stake:any) {
+  setOtherMarketBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/setOtherMarketBet`, {
       isBack: data.isBack,
       odds: data.odds,
@@ -337,7 +323,7 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  setWinnerBet(data:any,stake:any) {
+  setWinnerBet(data: any, stake: any) {
     return this.http.post(`${this.baseUrl}/setWinnerBet`, {
       isBack: data.isBack,
       odds: data.odds,
@@ -352,106 +338,106 @@ export class DataHandlerService implements OnInit{
     });
   }
 
-  getUserMatchBookData(eventid : any, type : any){
-    return this.http.post(`${this.baseUrl}/getUserMatchBookData`,{
-      eventid : eventid,
-      type : type
+  getUserMatchBookData(eventid: any, type: any) {
+    return this.http.post(`${this.baseUrl}/getUserMatchBookData`, {
+      eventid: eventid,
+      type: type
     })
   }
 
-  getUserFancyBookData(eventid : any){
-    return this.http.post(`${this.baseUrl}/getUserFancyBookData`,{
-      eventid : eventid
+  getUserFancyBookData(eventid: any) {
+    return this.http.post(`${this.baseUrl}/getUserFancyBookData`, {
+      eventid: eventid
     })
   }
 
-  getListBookData(sourceId : any){
-    return this.http.post(`${this.baseUrl}/getListBookData`,{
-      fancyid : sourceId
+  getListBookData(sourceId: any) {
+    return this.http.post(`${this.baseUrl}/getListBookData`, {
+      fancyid: sourceId
     })
   }
 
-  getPremiumFancyBook(eventid : any){
-    return this.http.post(`${this.baseUrl}/getPremiumFancyBook?eventid=${eventid}`,{
+  getPremiumFancyBook(eventid: any) {
+    return this.http.post(`${this.baseUrl}/getPremiumFancyBook?eventid=${eventid}`, {
     })
   }
 
-  editStake(editStkObj : any){
+  editStake(editStkObj: any) {
     return this.http.post(`${this.baseUrl}/editStakes`, editStkObj)
   }
 
-  getActiveLiabUserWise(){
+  getActiveLiabUserWise() {
     return this.http.post(`${this.baseUrl}/getActiveLiabUserWise`, {})
   }
 
-  getActiveBetsUserWise(sourceId : any){
-    return this.http.post(`${this.baseUrl}/getActiveBetsUserWise?sourceId=${sourceId}`,{})
+  getActiveBetsUserWise(sourceId: any) {
+    return this.http.post(`${this.baseUrl}/getActiveBetsUserWise?sourceId=${sourceId}`, {})
   }
 
-  LaunchAWCLobby(){
-    return this.http.post(`${this.baseUrl}/AELOBBY`,{})
+  LaunchAWCLobby() {
+    return this.http.post(`${this.baseUrl}/AELOBBY`, {})
   }
 
-  LaunchAWCGames(platform:any,gameType:any,gameCode:any){
-    return this.http.post(`${this.baseUrl}/LaunchAWCGames`,{
-      platform:platform,
-      gameType:gameType,
-      gameCode:gameCode
+  LaunchAWCGames(platform: any, gameType: any, gameCode: any) {
+    return this.http.post(`${this.baseUrl}/LaunchAWCGames`, {
+      platform: platform,
+      gameType: gameType,
+      gameCode: gameCode
     })
   }
 
-  LaunchIntGames(gameId:any,gameCode:any){
-    return this.http.post(`${this.baseUrl}/LaunchIntGames`,{
-      gameId:gameId,
-      gameCode:gameCode
+  LaunchIntGames(gameId: any, gameCode: any) {
+    return this.http.post(`${this.baseUrl}/LaunchIntGames`, {
+      gameId: gameId,
+      gameCode: gameCode
     })
   }
 
-  LaunchCasinoGames(data:any){
-    return this.http.post(`${this.baseUrl}${data}`,{})
+  LaunchCasinoGames(data: any) {
+    return this.http.post(`${this.baseUrl}${data}`, {})
   }
 
-  getMessageData(){
-    return this.http.post(`${this.baseUrl}/getMessageData`,{})
+  getMessageData() {
+    return this.http.post(`${this.baseUrl}/getMessageData`, {})
   }
 
-  changeIsOneClickBetStatus(){
-    return this.http.post(`${this.baseUrl}/changeIsOneClickBetStatus`,{})
+  changeIsOneClickBetStatus() {
+    return this.http.post(`${this.baseUrl}/changeIsOneClickBetStatus`, {})
   }
 
-  getUserOneClickBet(){
-    return this.http.post(`${this.baseUrl}/getUserOneClickBet`,{})
+  getUserOneClickBet() {
+    return this.http.post(`${this.baseUrl}/getUserOneClickBet`, {})
   }
 
-  isActiveOneClickBet(){
-    return this.http.post(`${this.baseUrl}/isActiveOneClickBet`,{})
+  isActiveOneClickBet() {
+    return this.http.post(`${this.baseUrl}/isActiveOneClickBet`, {})
   }
 
-  saveOneClickBetData(data:any){
+  saveOneClickBetData(data: any) {
     return this.http.post(`${this.baseUrl}/saveOneClickBetData`, data)
   }
 
-  getloggedData(data : any){
+  getloggedData(data: any) {
     this.usersData = data
     this.sendLoggedData.next(this.usersData);
   }
-  getEventData(data : any){
+  getEventData(data: any) {
     this.eventData = data
     this.sendLoggedData.next(this.eventData);
   }
-  getloginFlag(data : any){
+  getloginFlag(data: any) {
     this.loginFlag = data;
     this.sendLoggedData1.next(this.loginFlag)
   }
-  openLiveTv(data : any){
+  openLiveTv(data: any) {
     this.openLTV.next(data)
   }
-  oneClickBet(data : any){
+  oneClickBet(data: any) {
     this.oneClickB.next(data)
   }
-  betSuccess(data : any, alldata:any, stake : any, msg : any){
+  betSuccess(data: any, alldata: any, stake: any, msg: any) {
     let dataArr = [];
-    dataArr.push(data,alldata,stake, msg)
+    dataArr.push(data, alldata, stake, msg)
     this.betSuccessMsg.next(dataArr)
   }
   getOrganizedDataBySeriesname(gameList: any[]): { seriesname: string, matches: any[] }[] {
@@ -491,7 +477,17 @@ export class DataHandlerService implements OnInit{
     //   return null;
     // }
   }
+
+  getMatches(data: any = {}): Observable<any> {
+    return this.http.post(`${this.baseUrl}/usr/match/get`, data);
+  }
+
+  // getCompetitions(data: any = {}): Observable<any> {
+  //   return this.http.post(`${this.baseUrl}/usr/competiiton/get`, data);
+  // }
 }
+
+
 function lowercase(sourceBetType: any) {
   throw new Error('Function not implemented.');
 }

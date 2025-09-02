@@ -1,7 +1,10 @@
 import { MarqueeCompComponent } from './../../marquee-comp/marquee-comp.component';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { DataHandlerService } from '../../../services/datahandler.service';
+import { ToastrService } from 'ngx-toastr';
+import moment from 'moment';
 
 @Component({
   selector: 'app-mob-sports',
@@ -10,6 +13,25 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
   styleUrls: ['./mob-sports.component.css']
 })
 export class MobSportsComponent {
+  private api = inject(DataHandlerService);
+  private toastr = inject(ToastrService);
+  private route = inject(ActivatedRoute);
+  constructor(private router: Router) { }
+
+  matches: any[] = [];
+  groupedMatches: any[] = [];   // for competition grouping
+  viewMode: 'match' | 'competition' = 'competition'; // toggle view
+  loading: boolean = true;
+  error: string = '';
+  openDate: string = '';
+  isInPlay: boolean = false;
+
+  // pagination
+  pageNumber: number = 1;
+  pageSize: number = 200;
+  totalRecords: number = 0;
+  status: number = 1;
+  sportId: any = "4";
   banners = [
     { banner_images: '../../../assets/images/main/kv-skyexchange-m.jpg' },
     { banner_images: '../../../assets/images/main/kv-skyexchange-2-m.jpg' },
@@ -23,19 +45,93 @@ export class MobSportsComponent {
   ];
   activetab = 'time';
 
-  constructor(private route: Router) {
-
+  ngOnInit(): void {
+      this.fetchMatches();
   }
+
+  // fetchMatches(): void {
+  //   const requestBody = {
+  //     sportId: this.sportId,
+  //     page: this.pageNumber,
+  //     limit: this.pageSize,
+  //     filters: {
+  //       status: this.status
+  //     }
+  //   };
+
+  //   this.api.getMatches(requestBody).subscribe({
+  //     next: (res: any) => {
+  //       this.matches = res?.data?.data.map((ele: any) => {
+  //         const live = this.checkIfInPlay(ele.openDate);
+  //         return {
+  //           ...ele,
+  //           isInPlay: live
+  //         }
+  //       });
+  //       this.loading = false;
+  //     }
+  //   });
+  // }
+
+  fetchMatches(): void {
+    const requestBody = {
+      sportId: this.sportId,
+      page: this.pageNumber,
+      limit: this.pageSize,
+      filters: {
+        status: this.status
+      }
+    };
+
+    this.api.getMatches(requestBody).subscribe({
+      next: (res: any) => {
+        const flatMatches = res?.data?.data.map((ele: any) => {
+          return {
+            ...ele,
+            isInPlay: this.checkIfInPlay(ele.openDate)
+          };
+        });
+        this.matches = flatMatches;
+
+        // Group by competitionName
+        const grouped: any = {};
+        flatMatches.forEach((match: any) => {
+          const compName = match.competitionName || 'Other';
+          if (!grouped[compName]) {
+            grouped[compName] = {
+              competitionName: compName,
+              matches: []
+            };
+          }
+          grouped[compName].matches.push(match);
+        });
+
+        this.groupedMatches = Object.values(grouped);
+        console.log(this.groupedMatches);
+        
+        this.loading = false;
+      },
+      error: (err) => {
+        this.error = 'Failed to load matches';
+        this.loading = false;
+      }
+    });
+  }
+
+  
+  checkIfInPlay(date: any) {
+    const now = moment();
+    const gameStart =  moment(date);
+    // console.log(date,":::GAME START", gameStart);
+    const result = now.isSameOrAfter(gameStart);    
+    return result
+  }
+
   openResults() {
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    this.route.navigate(['/Mchecksportwiseresult']);
-    // } else {
-    //   this.route.navigate(['/mob-login']);
-    // }
+    this.router.navigateByUrl("/Mchecksportwiseresult");
+    // this.route.navigate(['/Mchecksportwiseresult']);
   }
   selectedtab(data: any) {
     this.activetab = data;
   }
-
 }

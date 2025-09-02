@@ -55,440 +55,57 @@
                     <li class="col-info"></li>
                 </ul>
                 <div class="game-list">
-                    <div id="noDataDiv" class="no-data" style="display: none;">
+                    <!-- <div *ngIf="loading">Loading matches...</div> -->
+                    <!-- <div *ngIf="error">{{ error }}</div> -->
+                    @if (matches.length == 0) {
+                    <div id="noDataDiv" class="no-data">
                         <p>There are no events to be displayed. </p>
                     </div>
-                    <div id="eventBoard">
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-in_play"><a
-                                    ng-reflect-router-link="/match/4/-10875196" routerLink="/match/4/-10875196">VfB
-                                    Gelsenkirchen v SC Krefeld Spartans</a><span id="dateTimeInfo"
-                                    class="game-list-time"><span class="in_play">In-Play</span></span><span
-                                    id="streamingIcon" class="game-live" style="display: none;">Live</span><span
-                                    id="fancyBetIcon" class="game-fancy in-play"
-                                    style="cursor: pointer; display: none;">Fancy</span><span id="bookMakerIcon"
-                                    class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
+                    }
+                    @else {
+                    <div id="eventBoard" *ngIf="matches.length > 0">
+                        <dl class="game-list-col mb-0" style="display: flex;" *ngFor="let match of matches">
+                            <dt id="eventInfo" style="cursor: pointer;">
+                                <img id="playIcon" src="../../../assets/images/transparent.gif" class="icon-in_play">
+                                <a ng-reflect-router-link="/match/4/34484327"
+                                    routerLink="/match/4/34484327">{{match.eventName}}</a>
+                                <span id="dateTimeInfo" class="game-list-time">
+                                    <span class="in_play">In-Play</span>
+                                </span>
+                                <span id="streamingIcon" class="game-live" style="display: none;">Live</span>
+                                <span id="fancyBetIcon" class="game-fancy in-play"
+                                    style="cursor: pointer; display: none;">Fancy</span>
+                                <span id="bookMakerIcon" class="game-bookmaker in-play"
+                                    style="cursor: pointer; display: none;">BookMaker</span>
+                            </dt>
                             <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
+                                <div class="suspend" style="display: none;">
+                                    <span>Suspend</span>
+                                </div>
+                                <a id="btnBack" side="Back" class="btn-back spark">1.18</a>
+                                <a id="btnLay" side="Lay" class="btn-lay spark">1.19</a>
                             </dd>
                             <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
+                                <div class="suspend" style="display: none;">
+                                    <span>Suspend</span>
+                                </div>
+                                <a id="btnBack" side="Back" class="btn-back">1000</a>
+                                <a id="btnLay" side="Lay" class="btn-lay">--</a>
                             </dd>
                             <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
+                                <div class="suspend" style="display: none;">
+                                    <span>Suspend</span>
+                                </div>
+                                <a id="btnBack" side="Back" class="btn-back spark">6.2</a>
+                                <a id="btnLay" side="Lay" class="btn-lay spark">6.4</a>
                             </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
+                            <dd class="col-info">
+                                <a title="Add to Multi Markets" style="cursor: pointer;" ng-reflect-ng-class="add-pin"
+                                    class="add-pin">Pin </a>
+                            </dd>
                         </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-in_play"><a
-                                    ng-reflect-router-link="/match/4/34484327" routerLink="/match/4/34484327">England v
-                                    India</a><span id="dateTimeInfo" class="game-list-time"><span
-                                        class="in_play">In-Play</span></span><span id="streamingIcon" class="game-live"
-                                    style="display: none;">Live</span><span id="fancyBetIcon" class="game-fancy in-play"
-                                    style="cursor: pointer; display: none;">Fancy</span><span id="bookMakerIcon"
-                                    class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.18</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.19</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">1000</a><a id="btnLay" side="Lay"
-                                    class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">6.2</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">6.4</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-in_play"><a
-                                    ng-reflect-router-link="/match/4/-10874249" routerLink="/match/4/-10874249">England
-                                    Under-19s v India Under-19s</a><span id="dateTimeInfo" class="game-list-time"><span
-                                        class="in_play">In-Play</span></span><span id="streamingIcon" class="game-live"
-                                    style="display: none;">Live</span><span id="fancyBetIcon" class="game-fancy in-play"
-                                    style="cursor: pointer; display: none;">Fancy</span><span id="bookMakerIcon"
-                                    class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-in_play"><a
-                                    ng-reflect-router-link="/match/4/-10874875" routerLink="/match/4/-10874875">Joburg Super
-                                    Kings SRL T20 v Sunrisers Eastern Cape SRL
-                                    T20</a><span id="dateTimeInfo" class="game-list-time"><span
-                                        class="in_play">In-Play</span></span><span id="sportsBookEIcon_4"
-                                    class="game-E"><i></i>Cricket</span><span id="streamingIcon" class="game-live"
-                                    style="display: none;">Live</span><span id="fancyBetIcon" class="game-fancy in-play"
-                                    style="cursor: pointer; display: none;">Fancy</span><span id="bookMakerIcon"
-                                    class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34507106" routerLink="/match/4/34507106">Zimbabwe v South
-                                    Africa</a><span class="game-list-time">04:30 PM</span><span id="streamingIcon"
-                                    class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">6.2</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">6.4</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.19</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.2</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/-10874877" routerLink="/match/4/-10874877">Hobart
-                                    Hurricanes SRL T20 v Melbourne Renegades SRL
-                                    T20</a><span class="game-list-time">05:30 PM</span><span id="sportsBookEIcon_4"
-                                    class="game-E"><i></i>Cricket</span><span id="streamingIcon" class="game-live"
-                                    style="display: none;">Live</span><span id="fancyBetIcon" class="game-fancy in-play"
-                                    style="cursor: pointer; display: none;">Fancy</span><span id="bookMakerIcon"
-                                    class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/-10874878" routerLink="/match/4/-10874878">Mumbai Indians
-                                    SRL T20 v Punjab Kings SRL T20</a><span class="game-list-time">07:30 PM</span><span
-                                    id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span><span id="streamingIcon"
-                                    class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/-10874879" routerLink="/match/4/-10874879">Peshawar Zalmi
-                                    SRL T20 v Islamabad United SRL T20</a><span class="game-list-time">09:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd>
-                        </dl>
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/-10874880" routerLink="/match/4/-10874880">Sri Lanka SRL
-                                    T20 v Bangladesh SRL T20</a><span class="game-list-time">11:30 PM</span><span id="sportsBookEIcon_4" class="game-E"><i></i>Cricket</span><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">--</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">--</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34491272" routerLink="/match/4/34491272">West Indies v
-                                    Australia</a><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span class="game-list-time">Tomorrow 12:00 AM</span><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">4.9</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">5</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">530</a><a id="btnLay" side="Lay"
-                                    class="btn-lay">620</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.25</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.26</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34513356" routerLink="/match/4/34513356">Durham v
-                                    Leicestershire</a><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span class="game-list-time">Tomorrow 11:00 PM</span><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.81</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.88</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">2.14</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">2.26</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34512844" routerLink="/match/4/34512844">Hobart
-                                    Hurricanes v Central Stags</a><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span class="game-list-time">2025-07-16 04:30:00</span><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.75</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.79</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">2.24</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">2.34</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34509763" routerLink="/match/4/34509763">England W v
-                                    India W</a><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span class="game-list-time">2025-07-16 17:30:00</span><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.67</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.68</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">2.46</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">2.5</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container-->
-                        <dl class="game-list-col mb-0" style="display: flex;">
-                            <dt id="eventInfo" style="cursor: pointer;"><img id="playIcon"
-                                    src="../../../assets/images/transparent.gif" class="icon-no_play"><a
-                                    ng-reflect-router-link="/match/4/34513891" routerLink="/match/4/34513891">Dubai Capitals v
-                                    Rangpur Riders</a><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span class="game-list-time">2025-07-16 19:30:00</span><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--bindings={
-  "ng-reflect-ng-if": "false"
-}--><span id="streamingIcon" class="game-live" style="display: none;">Live</span><span id="fancyBetIcon"
-                                    class="game-fancy in-play" style="cursor: pointer; display: none;">Fancy</span><span
-                                    id="bookMakerIcon" class="game-bookmaker in-play"
-                                    style="cursor: pointer; display: none;">BookMaker</span></dt>
-                            <dd id="selectTemp" class="col-visit">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">2.12</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">2.36</a>
-                            </dd>
-                            <dd class="col-draw">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back">--</a><a id="btnLay" side="Lay" class="btn-lay">--</a>
-                            </dd>
-                            <dd class="col-home">
-                                <div class="suspend" style="display: none;"><span>Suspend</span></div><a id="btnBack"
-                                    side="Back" class="btn-back spark">1.74</a><a id="btnLay" side="Lay"
-                                    class="btn-lay spark">1.88</a>
-                            </dd>
-                            <dd class="col-info"><a title="Add to Multi Markets" style="cursor: pointer;"
-                                    ng-reflect-ng-class="add-pin" class="add-pin">Pin </a></dd><!--bindings={
-  "ng-reflect-ng-if-else": "[object Object]"
-}--><!--container-->
-                        </dl><!--bindings={
-  "ng-reflect-ng-if": "true"
-}--><!--ng-container--><!--bindings={
-  "ng-reflect-ng-for-of": "[object Object],[object Object"
-}-->
                     </div>
+                    }
                 </div>
             </div>
             <div><app-desktop-footer _nghost-ng-c2433268588="">
@@ -529,7 +146,8 @@
                                         _ngcontent-ng-c2433268588="" id="telegramContent" target="_blank"></a></div>
                                 <div _ngcontent-ng-c2433268588="" id="supportDetail_skype"
                                     class="support-detail subskype" ng-reflect-ng-class=""><a
-                                        _ngcontent-ng-c2433268588="" id="skypeContent" target="_blank" routerLink=""></a>
+                                        _ngcontent-ng-c2433268588="" id="skypeContent" target="_blank"
+                                        routerLink=""></a>
                                 </div>
                                 <div _ngcontent-ng-c2433268588="" id="supportDetail_instagram"
                                     class="support-detail subinsta" ng-reflect-ng-class=""><a
@@ -570,7 +188,8 @@
                 </app-desktop-footer></div>
             <div class="oneClickB"><!--bindings={
   "ng-reflect-ng-if": "false"
-}--></div>
+}-->
+</div>
         </div>
     </div>
     <app-right-side-comp>

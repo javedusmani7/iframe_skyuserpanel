@@ -51,9 +51,9 @@ export class MobLoginPanelComponent implements OnInit, AfterViewInit {
 
   login(): void {
     const body = {
-      username: this.loggedData.value.userId,
+      identifier: this.loggedData.value.userId,
       password: this.loggedData.value.pass,
-      captcha: this.loggedData.value.validCode,
+      // captcha: this.loggedData.value.validCode,
       fp: this.fingerprintHash
     };
 
@@ -61,7 +61,7 @@ export class MobLoginPanelComponent implements OnInit, AfterViewInit {
       if (this.loggedData.value.userId != null && this.loggedData.value.pass != null) {
         this.dataServe.validateLogin(body);
       } else {
-        this.resultMessage = 'Username and Password is Required';
+        this.resultMessage = 'Identifier and Password is Required';
         this.resultClass = 'error';
       }
     } else {
