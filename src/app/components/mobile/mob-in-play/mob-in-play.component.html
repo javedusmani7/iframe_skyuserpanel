@@ -1,139 +1,64 @@
 <div class="mian-wrap">
+  <!-- Marquee -->
   <div class="marquee-box desktop-marquee">
-    <app-marquee-comp>
-    </app-marquee-comp>
+    <app-marquee-comp></app-marquee-comp>
   </div>
-  <div class="tab-wrap marq-space1" ng-reflect-ng-class="marq-space1">
+
+  <!-- Tab Navigation -->
+  <div class="tab-wrap marq-space1">
     <ul>
-      <li id="inplay" class="select"><a [routerLink]="['/mob-inplay']" neua="In-Play">In-Play</a></li>
-      <li id="today"><a [routerLink]="['/mob-inplay/today']">Today</a></li>
-      <li id="tomorrow"><a [routerLink]="['/mob-inplay/tomorrow']">Tomorrow</a></li>
-      <li id="tomorrow"><a (click)="openResults()">Results</a></li>
+      <li [class.select]="selectedTab === 'inplay'">
+        <a (click)="selectTab('inplay')">In-Play</a>
+      </li>
+      <li [class.select]="selectedTab === 'today'">
+        <a (click)="selectTab('today')">Today</a>
+      </li>
+      <li [class.select]="selectedTab === 'tomorrow'">
+        <a (click)="selectTab('tomorrow')">Tomorrow</a>
+      </li>
+      <li><a (click)="openResults()">Results</a></li>
     </ul>
   </div>
+
+  <!-- Match List Rendering -->
   <div id="inPlayData" class="wrap-highlight_list">
-    <div id="inPlayEventType_4" class="space" style="display: block;">
-      <h3 class="myHead" ng-reflect-ng-style="[object Object]"
-        style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);">
-        Cricket</h3>
-      <ul id="inPlayList_4" class="highlight-list">
-        <li class="inplay-on"><a id="info">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: flex;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: flex;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span><span id="sportsBookEIcon_4" class="game-E"
-                  style="display: flex;"><i></i>Cricket</span>
+    <ng-container *ngFor="let group of getMatchesForTab(selectedTab)">
+      <div class="space" style="display: block;">
+        <h3 class="myHead"
+            style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%);
+                   color: white;">
+          {{ group.sport }}
+        </h3>
+        <ul class="highlight-list">
+          <li class="inplay-on" *ngFor="let match of group.matches">
+            <a>
+              <dl>
+                <dt>
+                  <span class="game-live" style="display: flex;">game-live</span>
+                  <span *ngIf="match.isAutoFancy" class="game-fancy in-play" style="display: flex;">
+                    <pre>in-play</pre>Fancy
+                  </span>
+                  <span *ngIf="match.isAutoFancy" class="game-bookmaker in-play" style="display: flex;">
+                    <pre>in-play</pre>BookMaker
+                  </span>
+                  <span class="game-sportsbook" style="display: flex;">Premium {{ group.sport }}</span>
+                  <span class="time">{{ match.isInPlay ? 'In-Play' : (match.openDate | date:'HH:mm a') }}</span>
+                  <span class="game-E" style="display: flex;"><i></i>{{ group.sport }}</span>
+                </dt>
+                <dd id="eventName">{{ match.eventName }}</dd>
+              </dl>
+            </a>
+            <a class="add-pin pin-off"></a>
+          </li>
+        </ul>
+      </div>
+    </ng-container>
+  </div>
 
-              </dt>
-              <dd id="eventName">West Indies SRL T20 v England SRL T20</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-      </ul>
-    </div>
-
-
-    <div id="inplayVirtualCricketImage" class="footer-kv"><a id="inplayVirtualCricketEntrance" neua="BetRadar Banner"
-        class="entrance" style="cursor: pointer;"><img
-          src="../../../../assets/images/mobile/promo/kv-virtual-cricket-m.jpg" alt="" draggable="false"
-          style="width: 100%;"></a></div>
-    <div style="display: block;">
-      <h3 class="myHead" ng-reflect-ng-style="[object Object]"
-        style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);">
-        Soccer</h3>
-      <ul class="highlight-list">
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/1/34447693" href="/mob-match/1/34447693">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">Loudoun United FC v Louisville FC </dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/1/34471191" href="/mob-match/1/34471191">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">Wohlen v Aarau (5) - (1)</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/1/34402665" href="/mob-match/1/34402665">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">Flamengo v Sao Paulo (1) - (0)</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-      </ul>
-    </div>
-
-
-    <div id="inPlayEventType_2" style="display: block; margin-bottom: 100px;">
-      <h3 class="myHead" ng-reflect-ng-style="[object Object]"
-        style="background-image: linear-gradient(-180deg, rgb(46, 75, 94) 0%, rgb(36, 58, 72) 82%); color: rgb(255, 255, 255);">
-        Tennis</h3>
-      <ul class="highlight-list">
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/2/34511218" href="/mob-match/2/34511218">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">Nijboer v Kicker (1)0 - 0(1)</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/2/34511825" href="/mob-match/2/34511825">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">An Ghibaudo v Takahashi (0)4 - 5(0)</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-        <li class="inplay-on"><a ng-reflect-router-link="/mob-match/2/34511855" href="/mob-match/2/34511855">
-            <dl>
-              <dt><span class="game-live" style="display: flex;">game-live</span><span class="game-fancy in-play"
-                  style="display: none;">
-                  <pre>in-play</pre>Fancy
-                </span><span class="game-bookmaker in-play" style="display: none;">
-                  <pre>in-play</pre>BookMaker
-                </span><span class="game-sportsbook" style="display: flex;">Premium
-                  Cricket</span><span class="time">In-Play</span></dt>
-              <dd id="eventName">Ke Miyoshi v Riedi (1)3 - 5(1)</dd>
-            </dl>
-          </a><a class="add-pin pin-off"></a>
-        </li>
-      </ul>
-    </div>
+  <!-- Footer Banner -->
+  <div class="footer-kv">
+    <a id="inplayVirtualCricketEntrance" class="entrance" style="cursor: pointer;">
+      <img src="../../../../assets/images/mobile/promo/kv-virtual-cricket-m.jpg" alt="Cricket Banner" style="width: 100%;" />
+    </a>
   </div>
 </div>

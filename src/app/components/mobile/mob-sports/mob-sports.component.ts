@@ -8,16 +8,18 @@ import moment from 'moment';
 
 @Component({
   selector: 'app-mob-sports',
-  imports: [CommonModule, MarqueeCompComponent,RouterLink,RouterLinkActive],
+  imports: [CommonModule, MarqueeCompComponent],
   templateUrl: './mob-sports.component.html',
   styleUrls: ['./mob-sports.component.css']
 })
 export class MobSportsComponent {
+  // Injecting required services
   private api = inject(DataHandlerService);
-  private toastr = inject(ToastrService);
-  private route = inject(ActivatedRoute);
+  // private toastr = inject(ToastrService);
+  // private route = inject(ActivatedRoute);
   constructor(private router: Router) { }
 
+  // Match-related data
   matches: any[] = [];
   groupedMatches: any[] = [];   // for competition grouping
   viewMode: 'match' | 'competition' = 'competition'; // toggle view
@@ -26,12 +28,14 @@ export class MobSportsComponent {
   openDate: string = '';
   isInPlay: boolean = false;
 
-  // pagination
+  // Pagination and filtering
   pageNumber: number = 1;
   pageSize: number = 200;
   totalRecords: number = 0;
   status: number = 1;
   sportId: any = "4";
+
+  // Static banners
   banners = [
     { banner_images: '../../../assets/images/main/kv-skyexchange-m.jpg' },
     { banner_images: '../../../assets/images/main/kv-skyexchange-2-m.jpg' },
@@ -43,6 +47,8 @@ export class MobSportsComponent {
     { banner_images: '../../../assets/images/main/kv-sexy-roulette-m.jpg' },
     { banner_images: '../../../assets/images/main/kv-betgames-9livegames-m.png' },
   ];
+
+  // Tabs & states
   activetab = 'time';
   loadedTabs: Set<string> = new Set();
   selectedTab: string = 'Cricket'; // Default to Cricket
@@ -58,11 +64,14 @@ export class MobSportsComponent {
     this.selectTab(this.selectedTab); // Optionally load default tab data
   }
 
-  
+  // Set the active tab (like 'time', etc.)
   selectedtab(data: any) {
     this.activetab = data;
   }
-  
+
+  /**
+   * Selects a sport tab and loads data if not already loaded
+  */
   selectTab(tab: string) {
     this.selectedTab = tab;
 
@@ -84,6 +93,9 @@ export class MobSportsComponent {
     }
   }
   
+  /**
+   * Check if match is currently in play (live) using its start time
+  */
   checkIfInPlay(date: any) {
     const now = moment();
     const gameStart =  moment(date);
@@ -92,11 +104,17 @@ export class MobSportsComponent {
     return result
   }
 
+  /**
+   * Navigate to results page
+   */
   openResults() {
     this.router.navigateByUrl("/Mchecksportwiseresult");
     // this.route.navigate(['/Mchecksportwiseresult']);
   }
 
+  /**
+   * Load cricket matches
+   */
   loadCricketData() {
     console.log("inside loadCricketData");
     const sportKey="Cricket";
@@ -104,6 +122,9 @@ export class MobSportsComponent {
     this.loadMatchData(sportKey, sportId);
   }
 
+  /**
+   * Load soccer matches
+   */
   loadSoccerData() {
     console.log("inside loadSoccerData");
     const sportKey="Soccer";
@@ -111,23 +132,29 @@ export class MobSportsComponent {
     this.loadMatchData(sportKey, sportId);
   }
 
+  /**
+   * Load tennis matches
+   */
   loadTennisData() {
     const sportKey="Tennis";
     const sportId="2";
     this.loadMatchData(sportKey, sportId);
   }
 
+  // Placeholder for future feature
   loadResultData() {
     console.log("inside loadResultData");
   }
 
+  // Placeholder for eSoccer
   loadESoccerData() {
     console.log("inside loadESoccerData");
   }
 
+  /**
+   * Generic method to load match data for any sport
+   */
   loadMatchData(sportKey: string, sportId: string) {
-    console.log(`Loading data for: ${sportId}`);
-
     const requestBody = {
       sportId: sportId,
       page: this.pageNumber,
@@ -166,6 +193,7 @@ export class MobSportsComponent {
           grouped[compName].matches.push(match);
         });
 
+        // Convert grouped object to array
         this.groupedMatches = Object.values(grouped);
         this.loading = false;
       },
@@ -175,5 +203,4 @@ export class MobSportsComponent {
       }
     });
   }
-
 }
