@@ -1,7 +1,10 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { MarqueeCompComponent } from "../../marquee-comp/marquee-comp.component";
+import { Router } from "@angular/router";
+
 import { PlacedBetComponent } from "../placed-bet/placed-bet.component";
+import { MarqueeCompComponent } from "../../marquee-comp/marquee-comp.component";
+import { DataHandlerService } from "../../../services/datahandler.service";
 
 @Component({
   selector: 'app-mob-main-page',
@@ -17,6 +20,20 @@ export class MobMainPageComponent {
   hideHeader1: boolean = false;
   hideHeader2: boolean = false;
   fancyinfo=false
+  api = inject(DataHandlerService)
+
+  router = inject(Router);
+
+  constructor() {
+    const nav = this.router.getCurrentNavigation();
+    const data = nav?.extras?.state;
+
+    if (!data) {
+      this.api.redirectToPath('/mob-sport');
+    }
+    console.log("DATA", data);
+    
+  }
 
   hideFancyBet() {
     this.toggleFancy = true

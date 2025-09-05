@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { MarqueeCompComponent } from '../../marquee-comp/marquee-comp.component';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
+
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
-import { DataHandlerService } from '../../../services/datahandler.service';
+
 import moment from 'moment';
+
+import { MarqueeCompComponent } from '../../marquee-comp/marquee-comp.component';
+import { DataHandlerService } from '../../../services/datahandler.service';
 
 @Component({
   selector: 'app-mob-in-play',
-  imports: [CommonModule, MarqueeCompComponent, RouterLink],
+  imports: [CommonModule, MarqueeCompComponent],
   templateUrl: './mob-in-play.component.html',
   styleUrls: ['./mob-in-play.component.css']
 })

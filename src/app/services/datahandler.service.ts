@@ -1,10 +1,14 @@
 import { inject, Injectable, OnInit } from '@angular/core';
-import { environment } from '../environments/environment';
-import * as CryptoJS from 'crypto-js';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
+import * as CryptoJS from 'crypto-js';
+
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+
 import { ToastrService } from 'ngx-toastr';
+
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -480,6 +484,10 @@ export class DataHandlerService implements OnInit {
     return this.http.post(`${this.baseUrl}/usr/match/get`, data);
   }
 
+  redirectToPath(path: string, data: any = {}) {
+    this.router.navigateByUrl(path, { state: data });
+  }
+
   // getCompetitions(data: any = {}): Observable<any> {
   //   return this.http.post(`${this.baseUrl}/usr/competiiton/get`, data);
   // }
@@ -489,4 +497,6 @@ export class DataHandlerService implements OnInit {
 function lowercase(sourceBetType: any) {
   throw new Error('Function not implemented.');
 }
+
+
 

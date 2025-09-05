@@ -110,7 +110,7 @@
         <ul *ngIf="matches.length > 0" class="highlight-list">
           <li class="inplay-on" *ngFor="let match of matches">
             <a>
-              <dl>
+              <dl (click)="api.redirectToPath('/mob-match', match)">
                 <dt>
                   <span class="game-live">game-live</span>
 
@@ -147,7 +147,7 @@
               <h4>{{ group.competitionName }}</h4>
               <li class="inplay-on" *ngFor="let match of group.matches">
                 <a>
-                  <dl>
+                  <dl (click)="api.redirectToPath('/mob-match', match)">
                     <dt>
                       <span class="game-live">game-live</span>
                       <span *ngIf="match.isAutoFancy" class="game-fancy in-play"><pre>in-play</pre>Fancy</span>

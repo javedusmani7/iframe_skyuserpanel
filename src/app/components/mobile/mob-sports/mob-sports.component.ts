@@ -1,10 +1,13 @@
-import { MarqueeCompComponent } from './../../marquee-comp/marquee-comp.component';
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { DataHandlerService } from '../../../services/datahandler.service';
+
 import { ToastrService } from 'ngx-toastr';
+
 import moment from 'moment';
+
+import { MarqueeCompComponent } from './../../marquee-comp/marquee-comp.component';
+import { DataHandlerService } from '../../../services/datahandler.service';
 
 @Component({
   selector: 'app-mob-sports',
@@ -14,7 +17,7 @@ import moment from 'moment';
 })
 export class MobSportsComponent {
   // Injecting required services
-  private api = inject(DataHandlerService);
+  public api = inject(DataHandlerService);
   // private toastr = inject(ToastrService);
   // private route = inject(ActivatedRoute);
   constructor(private router: Router) { }
